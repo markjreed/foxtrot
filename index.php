@@ -39,7 +39,7 @@ int main(void)
   <form>
    <select id="programs">
 <?php 
-  $languages = json_decode(file_get_contents('languages.json'));
+  $languages = json_decode(file_get_contents('languages.json'), true);
   $filenames = glob('[Pp]unishment_*');
   $programs = array();
   foreach ($filenames as $name) { 
