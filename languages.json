@@ -16,6 +16,7 @@
     "coffee":       "CoffeeScript",
     "csh":          "C Shell",
     "d":            "D",
+    "dart":         "Dart",
     "dc":           "UNIX Desktop Calculator",
     "dcl":          "DEC Command Language",
     "erl":          "Erlang",
