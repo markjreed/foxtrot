@@ -1,0 +1,5 @@
+#!/usr/bin/logo
+repeat 500 [
+  print [I will not throw paper airplanes in class.]
+]
+bye

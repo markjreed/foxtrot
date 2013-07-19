@@ -1,0 +1,6 @@
+#USE "course.lib"
+-- Occam
+PROC punishment(CHAN OF BYTE board!)
+  SEQ Index = 0 FOR 500
+    out.string("I will not throw paper airplanes in class.*c*n", 0, board)
+:

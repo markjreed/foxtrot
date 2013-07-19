@@ -1,0 +1,5 @@
+<?php
+  for ($i=0; $i<500; ++$i) {
+    ?>I will not throw paper airplanes in class.<?php
+  }
+?>

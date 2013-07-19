@@ -1,0 +1,7 @@
+import std.stdio;
+
+void main() {
+  foreach (i; 0 .. 500) {
+    writeln("I will not throw paper airplanes in class.");
+  }
+}

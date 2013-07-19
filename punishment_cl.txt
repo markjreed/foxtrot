@@ -1,0 +1,2 @@
+(dotimes (i 500)
+ (write-line "I will not throw paper airplanes in class."))

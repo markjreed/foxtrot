@@ -1,0 +1,4 @@
+#!/usr/bin/env lua
+for i=1, 500 do 
+  print "I will not throw paper airplanes in class."
+end

@@ -1,0 +1,7 @@
+#!/usr/local/bin/a68g #
+# ALGOL 68 #
+BEGIN
+  TO 500 DO
+    print(("I will not throw paper airplanes in class.", newline))
+  OD
+END

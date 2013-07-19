@@ -1,0 +1,5 @@
+#!/usr/bin/osascript
+-- AppleScript 
+repeat 500 times
+    log "I will not throw paper airplanes in class." 
+end

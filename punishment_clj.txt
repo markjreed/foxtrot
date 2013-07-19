@@ -1,0 +1,6 @@
+#!/usr/bin/clojure
+(loop [n 500]
+  (if (not (zero? n))
+    (do
+      (println "I will not throw paper airplanes in class.")
+      (recur (- n 1)))))

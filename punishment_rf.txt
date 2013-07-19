@@ -1,0 +1,7 @@
+# RATFOR 77 
+program Punishment 
+    do i=1, 500 {
+        write(unit=*, fmt=1) 'I will not throw paper airplanes in class.';
+    }
+1   format(A42)
+end

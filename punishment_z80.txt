@@ -1,0 +1,18 @@
+	ld	c,2
+outer:	ld	b,0faH
+inner:	push	bc
+	ld	de,msg
+	ld	c,9
+	call	5
+	pop	bc
+	djnz	inner
+	dec	c
+	jr	nz,outer
+	ld	c,0
+	call	5
+	halt
+msg:
+	defm 'I will not throw paper airplanes in class.'
+	db	0dH
+	db	0aH
+	db	'$'

@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+500.times do 
+  puts "I will not throw paper airplanes in class."
+end

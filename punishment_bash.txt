@@ -1,0 +1,5 @@
+#!/bin/bash
+# Modern POSIX-compliant shell
+for (( i=0; i<500; ++i )); do
+  echo "I will not throw paper airplanes in class."
+done

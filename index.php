@@ -1,0 +1,184 @@
+<html>
+ <head>
+  <title>Foxtrot Translations</title>
+  <style>
+   html * { font-family: sans-serif; }
+   h1, p, form { margin-left: auto; margin-right: auto; text-align: center; }
+   #comic { width: 900px; height: 296px; background-size:900px 296px;
+            background-repeat:no-repeat;
+            margin-left: auto; margin-right: auto; text-align: center; 
+            background-image: url(foxtrot_ccode.jpg); 
+            padding-left: 2; padding-top: 0 }
+   #blackboard { width: 533px; height: 240px; max-height: 240px;
+                 background-color: black;  word-wrap: break-word; overflow-y: scroll;
+                 color: white; margin-left: 0; margin-top: 0; 
+                 scroll: auto; padding: 0; margin: 0; text-align: left } 
+   #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic sans ms", sans-serif;
+                     font-size: medium; padding-top: 0;}
+   #blackboard::-webkit-scrollbar { height: 0px; width: 0px; }
+  </style>
+ </head>
+ <body>
+  <h1>Foxtrot Translations</h1> 
+  <div id="comic"><div id="blackboard"><pre id="code">#include &lt;stdio.h>
+int main(void)
+{
+  int count;
+  for(count=1;count&lt;=500;count++)
+    printf("I will not throw paper airplanes in class.");
+  return 0;
+}</pre>
+   </div>
+  </div>
+
+  <p>Transcriptions from the blackboard in <a href="foxtrot_ccode.jpg">this picture</a> in alternate
+   universes where Jason chose a language other than C (and also to
+   output newlines).</p>
+
+  <p>Select Language</p>
+  <form>
+   <select id="programs">
+<?php 
+  $languages = array(
+    'a68'         => 'Algol-68',
+    'adb'         => 'Ada',
+    'apl'         => 'APL',
+    'applescript' => 'AppleScript',
+    'awk'         => 'AWK',
+    'bas'         => 'BASIC',
+    'bash'        => 'Bourne-Again Shell',
+    'bat'         => 'DOS Batch File',
+    'bef'         => 'Befunge',
+    'bf'          => 'Brainf@!<',
+    'c'           => 'C',
+    'cl'          => 'Common Lisp',
+    'clj'         => 'Clojure',
+    'cob'         => 'COBOL',
+    'coffee'      => 'CoffeeScript',
+    'csh'         => 'C Shell',
+    'd'           => 'D',
+    'dc'          => 'UNIX Desktop Calculator',
+    'dcl'         => 'DEC Command Language',
+    'erl'         => 'Erlang',
+    'factor'      => 'Factor',
+    'f'           => 'Fortran',
+    'fs'          => 'Forth',
+    'go'          => 'Go',
+    'hs'          => 'Haskell',
+    'i'           => 'INTERCAL',
+    'inf'         => 'Inforum',
+    'j'           => 'J',
+    'java'        => 'Java',
+    'js'          => 'JavaScript',
+    'logo'        => 'Logo',
+    'lol'         => 'LOLCODE',
+    'lua'         => 'Lua',
+    'm4'          => 'M4 Macros',
+    'occ'         => 'Occam',
+    'p'           => 'Pascal',
+    'p5'          => 'Perl 5',
+    'p6'          => 'Perl 6',
+    'php'         => 'PHP',
+    'pl'          => 'Prolog',
+    'pli'         => 'PL/I',
+    'py'          => 'Python',
+    'r'           => 'R',
+    'rf'          => 'Ratfor',
+    'rb'          => 'Ruby',
+    'rs'          => 'Rust',
+    'scala'       => 'Scala',
+    'scm'         => 'Scheme',
+    'semi'        => 'Semicolon',
+    'sh'          => 'Bourne Shell',
+    'st'          => 'SmallTalk',
+    'tcl'         => 'Tcl',
+    'vq'          => "var'aq",
+    'ws'          => "WhiteSpace",
+    'z80'         => "Z-80 Assembly"
+  );
+  $filenames = glob('[Pp]unishment_*');
+  $programs = array();
+  foreach ($filenames as $name) { 
+    list($a, $b) = explode('_', $name);
+    list($sfx, $c) = explode('.', $b);
+    $label = null;
+    if (array_key_exists($sfx, $languages)) {
+      $label = $languages[$sfx];
+    } else {
+      $label = $sfx;
+    } 
+    $programs[$name] = $label;
+  }
+  asort($programs);
+  foreach ($programs as $name => $label) {
+    if ($label == "C") {
+      $selected = ' selected';
+    } else {
+      $selected = '';
+    }
+    ?>
+    
+    <option<?=$selected?> value="<?=$name?>"><?= $label ?></option>
+<?php } ?>
+   </select>
+   <input type="button" id="download" value="Download">
+  </form>
+ </body>
+ <script>
+   function load(filename) {
+     var xhr = new XMLHttpRequest();
+     var i;
+     xhr.open("GET", filename);
+     xhr.onreadystatechange = function() {
+       if (xhr.readyState==4) {
+         code.innerHTML = 
+            xhr.responseText.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+       }
+     }
+     for (i=0; i<programs.options.length; ++i) {
+       if (programs.options[i].value == filename) {
+         programs.selectedIndex = i;
+         window.location.hash = '#' + encodeURIComponent(programs.options[i].label)
+         break;
+       }
+     }
+     xhr.send(null);
+   }
+   var blackboard, code, programs;
+   function loadCode() {
+     load(programs.options[programs.selectedIndex].value)
+     blackboard.scrollTop = 0;
+   }
+   var show = false;
+   function scrollCode() {
+     if (blackboard.scrollHeight > blackboard.clientHeight) {
+        blackboard.scrollTop += 1;
+     } 
+   }
+   function initialize() {
+     blackboard = document.getElementById("blackboard")
+     programs = document.getElementById("programs")
+     code = document.getElementById("code")
+     var h, i, o, download = document.getElementById("download")
+     download.onclick = function() { 
+       window.location = programs.options[programs.selectedIndex].value;
+     }
+     programs.onchange = loadCode
+     setInterval(scrollCode,100);
+     if (window.location.hash) {
+       h = decodeURIComponent(window.location.hash.substring(1)).toLowerCase()
+       for (i=0; i<programs.options.length; ++i) {
+         o = programs.options[i]
+         if (o.label.toLowerCase() == h || 
+             o.value.toLowerCase() == "punishment_" + h + ".txt") {
+           programs.selectedIndex = i;
+           loadCode();
+           break;
+         } 
+       }
+     }
+   }
+
+   window.onload = initialize;
+ </script>
+</html>

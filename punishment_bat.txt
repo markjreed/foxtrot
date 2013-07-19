@@ -1,0 +1,3 @@
+@echo off
+rem dos batch file
+for /l %%i  in (0,1,500) do echo I will not throw paper airplanes in class.

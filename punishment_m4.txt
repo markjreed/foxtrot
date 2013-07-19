@@ -1,0 +1,2 @@
+define(promise, `I will not throw paper airplanes in class.')define(`repeat', `ifelse($1, 1, `', `$2repeat(eval($1 - 1), `$2')')')repeat(500, promise()`
+')promise()

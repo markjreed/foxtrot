@@ -1,0 +1,4 @@
+#!/usr/bin/escript
+% Erlang
+main(_) -> lists:map(fun io:put_chars/1, 
+   lists:duplicate(500, "I will not throw paper airplanes in class.\n")), ok.

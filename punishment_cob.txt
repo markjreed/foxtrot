@@ -1,0 +1,12 @@
+        IDENTIFICATION DIVISION.
+        PROGRAM-ID.    Punishment.
+        DATA DIVISION.
+        WORKING-STORAGE SECTION.
+        01  i                   PIC 999.
+        PROCEDURE DIVISION.
+        BEGIN.
+        PERFORM VARYING i FROM 1 BY 1 
+          UNTIL i GREATER THAN 500
+                DISPLAY "I will not throw paper airplanes in class." 
+        END-PERFORM
+        STOP RUN.  

@@ -1,0 +1,8 @@
+* FORTRAN 77
+        PROGRAM Punishment
+        DO 1 i=1, 500
+            WRITE(unit=*, fmt=2) 
+     +      'I will not throw paper airplanes in class.'
+    1   CONTINUE
+    2   FORMAT(A42)
+        END

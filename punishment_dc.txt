@@ -1,0 +1,4 @@
+#!/usr/bin/dc -f
+[I will not throw paper airplanes in class.] ss
+0 si 500 sm
+[ ls p lm li 1 + d si <l ] d sl x

@@ -1,0 +1,7 @@
+object Punishment {
+  def main(args: Array[String]) {
+    for (i <- 0 until 500) {
+      println("I will not throw paper airplanes in class.");
+    }
+  }
+}

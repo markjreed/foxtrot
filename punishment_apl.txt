@@ -1,0 +1,5 @@
+⍝ APL
+∇PUNISHMENT
+I←1
+LOOP:⎕←'I will not throw paper airplanes in class.'
+→LOOP×((I←I+1)≤500)

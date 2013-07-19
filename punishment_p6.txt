@@ -1,0 +1,2 @@
+# Perl6
+say "I will not throw paper airplanes in class." for ^500;

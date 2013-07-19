@@ -1,0 +1,2 @@
+#!/usr/bin/perl
+print "I will not throw paper airplanes in class.\n" for 1..500;

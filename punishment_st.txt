@@ -1,0 +1,3 @@
+500 timesRepeat: [
+   (Transcript show: 'I will not throw paper airplanes in class.') cr.  
+]

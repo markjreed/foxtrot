@@ -1,0 +1,6 @@
+#!/usr/local/bin/gprolog --query-goal main --consult-file 
+main :- punish(500).
+punish(0) :- halt.
+punish(N) :- 
+  write('I will not throw paper airplanes in class.'), nl,
+  M is N-1, punish(M).

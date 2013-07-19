@@ -1,0 +1,9 @@
+#! /usr/local/bin/gforth
+: punish ( count -- )
+  0 do
+    ." I will not throw paper airplanes in class." 
+    cr
+  loop
+;
+500 punish
+bye

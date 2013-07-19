@@ -1,0 +1,3 @@
+#!/usr/local/bin/jconsole
+500 smoutput 'I will not throw paper airplanes in class.'
+exit 0
