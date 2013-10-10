@@ -1,3 +1,1 @@
-#!/usr/bin/coffee
-# CoffeeScript 
-(console.log "I will not throw paper airplanes in class." for i in [1..500])
+console.log "I will not throw paper airplanes in class." for i in [1..500]

@@ -1,7 +1,5 @@
 object Punishment {
   def main(args: Array[String]) {
-    for (i <- 0 until 500) {
-      println("I will not throw paper airplanes in class.");
-    }
+    (List fill 500)("I will not throw paper airplanes in class.") map println
   }
 }

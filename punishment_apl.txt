@@ -1,4 +1,3 @@
-⍝ APL
 ∇PUNISHMENT
 I←1
 LOOP:⎕←'I will not throw paper airplanes in class.'

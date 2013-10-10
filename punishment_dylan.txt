@@ -1,0 +1,5 @@
+Module: dylan-user
+
+define library punishment
+  use io, import: { format-out };
+end;

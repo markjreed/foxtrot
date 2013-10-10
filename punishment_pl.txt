@@ -1,4 +1,3 @@
-#!/usr/local/bin/gprolog --query-goal main --consult-file 
 main :- punish(500).
 punish(0) :- halt.
 punish(N) :- 

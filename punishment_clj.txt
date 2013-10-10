@@ -1,6 +1,1 @@
-#!/usr/bin/clojure
-(loop [n 500]
-  (if (not (zero? n))
-    (do
-      (println "I will not throw paper airplanes in class.")
-      (recur (- n 1)))))
+(dorun (map println (repeat 500 "I will not throw paper airplanes in class.")))

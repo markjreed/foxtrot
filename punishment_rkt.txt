@@ -1,0 +1,3 @@
+#lang lazy
+(for-each displayln 
+  (build-list 500 (lambda _ "I will not throw paper airplanes in class.")))

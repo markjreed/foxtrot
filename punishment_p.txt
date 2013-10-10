@@ -1,4 +1,3 @@
-{ Pascal }
 program punishment(output);
 
 var
