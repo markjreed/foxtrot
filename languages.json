@@ -21,6 +21,7 @@
     "dcl":          "DEC Command Language",
     "dylan":        "Dylan",
     "erl":          "Erlang",
+    "exs":          "Elixir",
     "f":            "Fortran",
     "factor":       "Factor",
     "fs":           "Forth",

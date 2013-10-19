@@ -1,0 +1,3 @@
+Enum.each 1..500, fn _ ->
+  IO.puts "I will not throw paper airplanes in class."
+end
