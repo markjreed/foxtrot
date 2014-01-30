@@ -1,1 +1,2 @@
-loop(500) => {^ 'I will not throw paper airplanes in class.\n' ^} 
+'I will not throw paper airplanes in class.'
+loop(499) => {^ '\nI will not throw paper airplanes in class.'^}
