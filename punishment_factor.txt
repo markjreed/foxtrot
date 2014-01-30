@@ -1,1 +1,3 @@
+USE: math
+USE: io
 500 [ "I will not throw paper airplanes in class." print ] times
