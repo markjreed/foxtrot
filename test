@@ -3,7 +3,7 @@ let keep=0
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-for old in punishment_*.txt run_*.sh; do 
+for old in [Pp]unishment_*.txt run_*.sh; do 
   new="${old%.txt}"
   cp -p "$old" "$dir/${new/_/.}"
 done
@@ -11,7 +11,9 @@ cd "$dir"
 IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
-  f=punishment.$ext
+  for f in {p,P}unishment.$ext; do
+     if [ -r "$f" ]; then break; fi
+  done
   echo -n "$name:"
   if [ ! -r "$f" ]; then
     result='[33mSKIP[0m'
@@ -45,7 +47,8 @@ for lang in "${languages[@]}"; do
       fs) run=(gforth "$f");;
       go) run=(go run "$f");;
       hs) run=(runhaskell "$f");;
-      i) compile=(ick "$f" ); run=(./punishment);;
+      i) compile=(ick "$f"); run=(./punishment);;
+      java) compile=(javac "$f"); run=(java Punishment);;
       js) run=(rhino "$f");;
       lol) run=(lci "$f");;
       p) compile=(fpc "$f" ); run=(./punishment);;
