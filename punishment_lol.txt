@@ -1,5 +1,5 @@
 HAI 1.2
 IM IN YR BlakBord UPPIN YR Kount WILE DIFFRINT Kount AN 500
-  VISIBLE "I NOT TRO PAPR AIRPLANEZ IN KLASS."
+  VISIBLE "I will not throw paper airplanes in class."
 IM OUTTA YR BlakBord 
 KTHXBYE
