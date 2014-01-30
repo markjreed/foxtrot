@@ -1,0 +1,89 @@
+#!/bin/bash 
+let keep=0
+dir=/tmp/foxtrot$$
+cd "$(dirname "$(type -p "$0")")"
+mkdir -p "$dir"
+for old in punishment_*.txt run_*.sh; do 
+  new="${old%.txt}"
+  cp -p "$old" "$dir/${new/_/.}"
+done
+cd "$dir"
+IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json)
+for lang in "${languages[@]}"; do
+  read ext name <<<"$lang"
+  f=punishment.$ext
+  echo -n "$name:"
+  if [ ! -r "$f" ]; then
+    result='[33mSKIP[0m'
+  else
+    result=
+    compile=()
+    run=()
+    in=
+    if [ -x "run.$ext.sh" ]; then
+      run=("./run.$ext.sh" )
+    else 
+      case "$ext" in
+      a68) run=(a68g "$f");;
+      adb) compile=(gnat make "$f"); run=(./punishment);;
+      applescript) run=(osascript "$f");;
+      awk) run=(awk -f "$f");;
+      bas) run=(basic "$f");;
+      bash|coffee|csh|dart|factor|lua|m4|php|scala|sh) run=("$ext" "$f");;
+      bat) run=(4bat "$f");;
+      bef) run=(bef -q "$f");;
+      bf) run=(bf); in="$f";;
+      c) compile=(gcc "$f" ); run=(./a.out);;
+      cl) run=(clisp "$f");;
+      clj) run=(lein exec "$f");;
+      cob) compile=(cobc -x "$f"); run=(./punishment);;
+      d) compile=(dmd "$f" ); run=(./punishment);;
+      dc) run=(dc -f "$f");;
+      erl) run=(escript "$f");;
+      exs) run=(elixir "$f");;
+      f) compile=(gfortran "$f" ); run=(./a.out);;
+      fs) run=(gforth "$f");;
+      go) run=(go run "$f");;
+      hs) run=(runhaskell "$f");;
+      i) compile=(ick "$f" ); run=(./punishment);;
+      js) run=(rhino "$f");;
+      lol) run=(lci "$f");;
+      p) compile=(fpc "$f" ); run=(./punishment);;
+      p5) run=(perl "$f");;
+      p6) run=(perl6 "$f");;
+      pl) run=(swipl -q -g main -l "$f");;
+      py) run=(python "$f");;
+      rb) run=(ruby "$f");;
+      r)  run=(r -q --slave -f "$f");;
+      rkt) run=(racket "$f");;
+      scm) run=(racket -f "$f");;
+      st) run=(gst "$f");;
+      tcl) run=(tclsh "$f");;
+      *) result='[33mSKIP[0m';;
+      esac 
+    fi
+    if [ -z "$result" ]; then
+      rm -f punishment a.out
+      if "${compile[@]}" >/dev/null 2>&1; then
+        if [ -n "$in" ]; then
+           "${run[@]}" <"$in"
+        else
+           "${run[@]}"
+        fi
+      fi 2>$ext.err | tr -d $'\r' >$ext.out 
+      if [ "$(md5 "$ext.out" | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
+        result='[32mPASS[0m'
+      else
+        result='[31mFAIL[0m'
+        keep=1
+      fi
+    fi
+    echo "$result"
+  fi
+done 
+if (( keep )); then
+  echo "Files are in $dir"
+else
+  rm -rf "$dir"
+fi
+
