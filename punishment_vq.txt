@@ -1,9 +1,9 @@
 ~ wa'ghItlh { 
-  "ghojmoHghachpa'Daq muD Dujmey vIpuvmoHbe'" cha' chu'DonwI' cha' 
+  "I will not throw paper airplanes in class." cha' 
 } pong
 
 ~  bIj { 
-  latlh 0 law''a'  { wa'ghItlh wa'teq bIj } HIja'chugh latlh 0 law''a' 
+  latlh 0 law''a'  { wa'ghItlh wa'boqHa' bIj } HIja'chugh latlh 0 law''a' 
    { woD } ghobe'chugh 
 } pong
 

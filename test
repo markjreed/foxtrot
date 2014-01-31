@@ -65,6 +65,7 @@ for lang in "${languages[@]}"; do
       scm) run=(racket -f "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
+      vq) run=(varaq "$f");;
       *) result='[33mSKIP[0m';;
       esac 
     fi
