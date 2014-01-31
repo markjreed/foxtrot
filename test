@@ -26,12 +26,12 @@ for lang in "${languages[@]}"; do
       run=("./run.$ext.sh" )
     else 
       case "$ext" in
+      bash|coffee|csh|dart|factor|logo|lua|m4|php|scala|sh|ws) run=("$ext" "$f");;
       a68) run=(a68g "$f");;
       adb) compile=(gnat make "$f"); run=(./punishment);;
       applescript) run=(osascript "$f");;
       awk) run=(awk -f "$f");;
       bas) run=(basic "$f");;
-      bash|coffee|csh|dart|factor|lua|m4|php|scala|sh) run=("$ext" "$f");;
       bat) run=(4bat "$f");;
       bef) run=(bef -q "$f");;
       bf) run=(bf); in="$f";;
@@ -48,8 +48,10 @@ for lang in "${languages[@]}"; do
       go) run=(go run "$f");;
       hs) run=(runhaskell "$f");;
       i) compile=(ick "$f"); run=(./punishment);;
+      j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
       js) run=(rhino "$f");;
+      lasso) run=(lasso9 "$f");;
       lol) run=(lci "$f");;
       p) compile=(fpc "$f" ); run=(./punishment);;
       p5) run=(perl "$f");;
@@ -59,6 +61,7 @@ for lang in "${languages[@]}"; do
       rb) run=(ruby "$f");;
       r)  run=(r -q --slave -f "$f");;
       rkt) run=(racket "$f");;
+      rs) compile=(rustc "$f"); run=(./punishment);;
       scm) run=(racket -f "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
