@@ -1,5 +1,13 @@
-Module: dylan-user
+Module: punishment
+Synopsis: 
+Author: 
+Copyright: 
 
-define library punishment
-  use io, import: { format-out };
-end;
+define function main (name :: <string>, arguments :: <vector>)
+  for ( i :: <integer> from 1 to 500 )
+    format-out("I will not throw paper airplanes in class.\n");
+  end for;
+  exit-application(0);
+end function main;
+
+main(application-name(), application-arguments());

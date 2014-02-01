@@ -26,9 +26,8 @@ for lang in "${languages[@]}"; do
       run=("./run.$ext.sh" )
     else 
       case "$ext" in
-      bash|coffee|csh|dart|factor|logo|lua|m4|php|scala|sh|ws) run=("$ext" "$f");;
       a68) run=(a68g "$f");;
-      adb) compile=(gnat make "$f"); run=(./punishment);;
+      adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       applescript) run=(osascript "$f");;
       awk) run=(awk -f "$f");;
       bas) run=(basic "$f");;
@@ -38,22 +37,24 @@ for lang in "${languages[@]}"; do
       c) compile=(gcc "$f" ); run=(./a.out);;
       cl) run=(clisp "$f");;
       clj) run=(lein exec "$f");;
-      cob) compile=(cobc -x "$f"); run=(./punishment);;
-      d) compile=(dmd "$f" ); run=(./punishment);;
+      cob) compile=(cobc -x "$f"); run=("./${f%.$ext}");;
+      d) compile=(dmd "$f" ); run=("./${f%.$ext}");;
       dc) run=(dc -f "$f");;
+      dylan) run=(rundylan "$f");;
       erl) run=(escript "$f");;
       exs) run=(elixir "$f");;
       f) compile=(gfortran "$f" ); run=(./a.out);;
       fs) run=(gforth "$f");;
       go) run=(go run "$f");;
       hs) run=(runhaskell "$f");;
-      i) compile=(ick "$f"); run=(./punishment);;
+      i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
+      inf) compile=(inform6 "$f"); run=(dfrotz -Rmp "${f%.$ext}.z5");;
       j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
       js) run=(rhino "$f");;
       lasso) run=(lasso9 "$f");;
       lol) run=(lci "$f");;
-      p) compile=(fpc "$f" ); run=(./punishment);;
+      p) compile=(fpc "$f" ); run=("./${f%.$ext}");;
       p5) run=(perl "$f");;
       p6) run=(perl6 "$f");;
       pl) run=(swipl -q -g main -l "$f");;
@@ -61,12 +62,16 @@ for lang in "${languages[@]}"; do
       rb) run=(ruby "$f");;
       r)  run=(r -q --slave -f "$f");;
       rkt) run=(racket "$f");;
-      rs) compile=(rustc "$f"); run=(./punishment);;
+      rs) compile=(rustc "$f"); run=("./${f%.$ext}");;
       scm) run=(racket -f "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
       vq) run=(varaq "$f");;
-      *) result='[33mSKIP[0m';;
+      *) if type -t "$ext"  >/dev/null; then
+           run=("$ext" "$f")
+         else
+           result='[33mSKIP[0m'
+         fi;;
       esac 
     fi
     if [ -z "$result" ]; then
@@ -78,7 +83,7 @@ for lang in "${languages[@]}"; do
            "${run[@]}"
         fi
       fi 2>$ext.err | tr -d $'\r' >$ext.out 
-      if [ "$(md5 "$ext.out" | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
+      if [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
         result='[32mPASS[0m'
       else
         result='[31mFAIL[0m'
