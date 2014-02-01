@@ -1,9 +1,4 @@
-  500 store a
-	.Loop;
-	print_ret "I will not throw paper airplanes in class."
-	dec a
-	load a
-	jz ?Done
-	jump ?Loop
-	.Done;
-	ret
+[ Main index;
+  for (index=0: index<500: index++) 
+    print "I will not throw paper airplanes in class.^";
+];
