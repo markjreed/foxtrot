@@ -1,4 +1,5 @@
  {
+    "a60":          "Algol-60",
     "a68":          "Algol-68",
     "adb":          "Ada",
     "apl":          "APL",
@@ -57,6 +58,7 @@
     "sh":           "Bourne Shell",
     "st":           "SmallTalk",
     "tcl":          "Tcl",
+    "unl":          "Unlambda",
     "vq":           "var'aq",
     "ws":           "WhiteSpace",
     "z80":          "Z-80 Assembly"

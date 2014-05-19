@@ -27,6 +27,7 @@ for lang in "${languages[@]}"; do
     else 
       case "$ext" in
       a68) run=(a68g "$f");;
+      a60) run=(racket -e '(require algol60/algol60) (eval (list '\''include-algol (vector-ref (current-command-line-arguments) 0)))' -- "$f");;
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       applescript) run=(osascript "$f");;
       awk) run=(awk -f "$f");;
@@ -51,7 +52,6 @@ for lang in "${languages[@]}"; do
       inf) compile=(inform6 "$f"); run=(dfrotz -Rmp "${f%.$ext}.z5");;
       j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
-      js) run=(rhino "$f");;
       lasso) run=(lasso9 "$f");;
       lol) run=(lci "$f");;
       p) compile=(fpc "$f" ); run=("./${f%.$ext}");;
@@ -66,6 +66,7 @@ for lang in "${languages[@]}"; do
       scm) run=(racket -f "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
+      unl) run=(unlambda "$f");;
       vq) run=(varaq "$f");;
       *) if type -t "$ext"  >/dev/null; then
            run=("$ext" "$f")

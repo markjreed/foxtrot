@@ -1,0 +1,5 @@
+begin
+  integer i;
+  for i := 1 step 1 until 500 do
+    printsln(`I will not throw paper airplanes in class.');
+end
