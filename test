@@ -58,6 +58,7 @@ for lang in "${languages[@]}"; do
       p5) run=(perl "$f");;
       p6) run=(perl6 "$f");;
       pl) run=(swipl -q -g main -l "$f");;
+      ps) result='[33mSKIP[0m';;
       py) run=(python "$f");;
       rb) run=(ruby "$f");;
       r)  run=(r -q --slave -f "$f");;
