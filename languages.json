@@ -58,6 +58,7 @@
     "semi":         "Semicolon",
     "sh":           "Bourne Shell",
     "st":           "SmallTalk",
+    "swift":        "Swift",
     "tcl":          "Tcl",
     "unl":          "Unlambda",
     "vq":           "var'aq",

@@ -66,6 +66,7 @@ for lang in "${languages[@]}"; do
       rs) compile=(rustc "$f"); run=("./${f%.$ext}");;
       scm) run=(racket -f "$f");;
       st) run=(gst "$f");;
+      swift) run=(swift -i "$f");;
       tcl) run=(tclsh "$f");;
       unl) run=(unlambda "$f");;
       vq) run=(varaq "$f");;
