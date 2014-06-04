@@ -53,7 +53,7 @@ int main(void)
     } 
     $programs[$name] = $label;
   }
-  asort($programs);
+  natcasesort($programs);
   foreach ($programs as $name => $label) {
     if ($label == "C") {
       $selected = ' selected';
