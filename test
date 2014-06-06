@@ -23,7 +23,7 @@ for lang in "${languages[@]}"; do
     run=()
     in=
     if [ -x "run.$ext.sh" ]; then
-      run=("./run.$ext.sh" )
+      run=("./run.$ext.sh" "$f" )
     else 
       case "$ext" in
       a68) run=(a68g "$f");;
