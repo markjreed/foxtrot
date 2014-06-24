@@ -1,5 +1,5 @@
 fn main()  {
-  500.times(||
-    { println("I will not throw paper airplanes in class."); }
-  )
+  for _ in range(0,500) {
+     println!("I will not throw paper airplanes in class."); 
+  }
 }
