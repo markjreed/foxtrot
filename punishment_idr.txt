@@ -1,3 +1,3 @@
 module Main
 main : IO ()
-main = putStrLn( with List foldl Prelude.Strings.(++) "" (intersperse "\n" (replicate 500 "I will not throw paper airplanes in class.")))
+main = with List traverse_ putStrLn (replicate 500 "I will not throw paper airplanes in class.")
