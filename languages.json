@@ -31,6 +31,7 @@
     "go":           "Go",
     "hs":           "Haskell",
     "i":            "INTERCAL",
+    "idr":          "Idris",
     "inf":          "Inform 6",
     "j":            "J",
     "java":         "Java",
