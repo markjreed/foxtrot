@@ -22,6 +22,7 @@
     "dcl":          "DEC Command Language",
     "doge":         "dogescript",
     "dylan":        "Dylan",
+    "elm":          "Elm",
     "erl":          "Erlang",
     "exs":          "Elixir",
     "f":            "Fortran",

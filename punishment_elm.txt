@@ -1,0 +1,1 @@
+main = plainText(join "\n" (repeat 500 "I will not throw paper airplanes in class." ))
