@@ -1,5 +1,2 @@
-main :- punish(500).
-punish(0) :- halt.
-punish(N) :- 
-  write('I will not throw paper airplanes in class.'), nl,
-  M is N-1, punish(M).
+main :- foreach(between(1,500,_), 
+            writeln('I will not throw paper airplanes in class.')), halt.
