@@ -1,2 +1,2 @@
-for i in range(500):
+for _ in xrange(500):
   print "I will not throw paper airplanes in class."
