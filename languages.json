@@ -8,6 +8,7 @@
     "bas":          "BASIC",
     "bash":         "Bourne-Again Shell",
     "bat":          "DOS Batch File",
+    "batsh":        "Batsh",
     "bef":          "Befunge",
     "bf":           "Brainf@!<",
     "c":            "C",

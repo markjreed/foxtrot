@@ -33,6 +33,7 @@ for lang in "${languages[@]}"; do
       awk) run=(awk -f "$f");;
       bas) run=(basic "$f");;
       bat) run=(4bat "$f");;
+      batsh) run=(bash -c "$(batsh bash "$f")");;
       bef) run=(bef -q "$f");;
       bf) run=(bf); in="$f";;
       c) compile=(gcc "$f" ); run=(./a.out);;
@@ -49,6 +50,7 @@ for lang in "${languages[@]}"; do
       go) run=(go run "$f");;
       hs) run=(runhaskell "$f");;
       i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
+      idr) compile=(idris -o a.out "$f"); run=(./a.out);;
       inf) compile=(inform6 "$f"); run=(dfrotz -Rmp "${f%.$ext}.z5");;
       j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
