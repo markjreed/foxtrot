@@ -14,6 +14,13 @@ for lang in "${languages[@]}"; do
   for f in {p,P}unishment.$ext; do
      if [ -r "$f" ]; then break; fi
   done
+  old_f="${f%.$ext}_$ext.txt"
+  for arg in "$@"; do
+    case "$arg" in
+      "$ext"|"$name"|"$f"|"$old_f") :;;
+      *) continue 2;;
+    esac
+  done
   echo -n "$name:"
   if [ ! -r "$f" ]; then
     result='[33mSKIP[0m'
@@ -62,6 +69,7 @@ for lang in "${languages[@]}"; do
       pl) run=(swipl -q -g main -l "$f");;
       ps) result='[33mSKIP[0m';;
       py) run=(python "$f");;
+      py3) run=(python3 "$f");;
       rb) run=(ruby "$f");;
       r)  run=(r -q --slave -f "$f");;
       rkt) run=(racket "$f");;
