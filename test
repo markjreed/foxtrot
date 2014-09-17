@@ -43,7 +43,7 @@ for lang in "${languages[@]}"; do
       awk) run=(awk -f "$f");;
       bas) run=(basic "$f");;
       bat) run=(4bat "$f");;
-      batsh) run=(bash -c "$(batsh bash "$f")");;
+      batsh) if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
       bef) run=(bef -q "$f");;
       bf) run=(bf); in="$f";;
       c) compile=(gcc "$f" ); run=(./a.out);;
