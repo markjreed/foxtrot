@@ -11,13 +11,16 @@ cd "$dir"
 IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
+  lext="$(tr A-Z a-z <<<"$ext")"
+  lname="$(tr A-Z a-z <<<"$name")"
   for f in {p,P}unishment.$ext; do
      if [ -r "$f" ]; then break; fi
   done
-  old_f="${f%.$ext}_$ext.txt"
+  lf="$(tr A-Z a-z <<<"$f")"
+  old_f="$(tr A-Z a-z <<<"${lf%.$lext}_$lext.txt")"
   for arg in "$@"; do
-    case "$arg" in
-      "$ext"|"$name"|"$f"|"$old_f") :;;
+    case "$(tr A-Z a-z <<<"$arg")" in
+      $lext|$lname|$lf|$old_f) :;;
       *) continue 2;;
     esac
   done
