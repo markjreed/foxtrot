@@ -54,6 +54,7 @@
     "pli":          "PL/I",
     "ps":           "Postscript",
     "py":           "Python",
+    "py3":          "Python 3",
     "r":            "R",
     "rb":           "Ruby",
     "rkt":          "Racket",
