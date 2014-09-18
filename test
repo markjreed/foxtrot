@@ -3,7 +3,7 @@ let keep=0
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-for old in [Pp]unishment_*.txt run_*.sh; do 
+for old in [Pp]unishment_*.txt compile_*.sh run_*.sh; do 
   new="${old%.txt}"
   cp -p "$old" "$dir/${new/_/.}"
 done
@@ -33,6 +33,9 @@ for lang in "${languages[@]}"; do
     run=()
     in=
     if [ -x "run.$ext.sh" ]; then
+      if [ -x "compile.$ext.sh" ]; then
+        compile=("./compile.$ext.sh" "$f" )
+      fi
       run=("./run.$ext.sh" "$f" )
     else 
       case "$ext" in
