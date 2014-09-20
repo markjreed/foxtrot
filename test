@@ -69,6 +69,7 @@ for lang in "${languages[@]}"; do
       java) compile=(javac "$f"); run=(java Punishment);;
       lasso) run=(lasso9 "$f");;
       lol) run=(lci "$f");;
+      ml) run=(ocaml  "$f");;
       occ) compile=(kroc "$f" -lcourse); run=(./punishment);;
       p) compile=(fpc "$f" ); run=("./${f%.$ext}");;
       p5) run=(perl "$f");;

@@ -45,6 +45,7 @@
     "lol":          "LOLCODE",
     "lua":          "Lua",
     "m4":           "M4 Macros",
+    "ml":           "OCaml",
     "occ":          "Occam",
     "p":            "Pascal",
     "p5":           "Perl 5",
