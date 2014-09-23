@@ -41,3 +41,5 @@ expect {
 }
 puts [regsub "\[\r\n \]*$" $accum {}]
 EOF
+cd - >/dev/null 2>&1
+rm -rf "$dir"
