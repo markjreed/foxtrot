@@ -1,2 +1,2 @@
 #!/bin/sh
-osascript ./punishment.applescript 2>&1
+osascript "$1" 2>&1
