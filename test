@@ -1,14 +1,20 @@
 #!/bin/bash 
-let keep=0
+let keep=0 verbose=0
+if [[ "$1" == -v ]]; then 
+  let verbose=1
+  exec 3>&2
+  shift
+fi
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-for old in [Pp]unishment_*.txt compile_*.sh run_*.sh; do 
+for old in [Pp]unishment_*.txt; do 
   new="${old%.txt}"
   cp -p "$old" "$dir/${new/_/.}"
 done
+cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
-IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json)
+IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
   lext="$(tr A-Z a-z <<<"$ext")"
@@ -32,11 +38,11 @@ for lang in "${languages[@]}"; do
     compile=()
     run=()
     in=
-    if [ -x "run.$ext.sh" ]; then
-      if [ -x "compile.$ext.sh" ]; then
-        compile=("./compile.$ext.sh" "$f" )
+    if [ -x "run_$ext.sh" ]; then
+      if [ -x "compile_$ext.sh" ]; then
+        compile=("./compile_$ext.sh" "$f" )
       fi
-      run=("./run.$ext.sh" "$f" )
+      run=("./run_$ext.sh" "$f" )
     else 
       case "$ext" in
       a68) run=(a68g "$f");;
@@ -98,7 +104,9 @@ for lang in "${languages[@]}"; do
     fi
     if [ -z "$result" ]; then
       rm -f punishment a.out
+      if (( verbose )); then echo $'\n\t'"${compile[@]}" >&3; fi 
       if "${compile[@]}" >/dev/null 2>&1; then
+        if (( verbose )); then echo $'\t'"${run[@]}" >&3; fi 
         if [ -n "$in" ]; then
            "${run[@]}" <"$in"
         else
