@@ -1,2 +1,2 @@
 #!/bin/bash
-apl --script -f "$@" | grep '^[^ ]'
+exec apl --script -f "$@" | grep '^[^ ]'

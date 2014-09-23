@@ -1,2 +1,2 @@
 #!/bin/sh
-osascript "$1" 2>&1
+exec osascript "$1" 2>&1

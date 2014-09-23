@@ -1,3 +1,2 @@
 #!/bin/bash
-dogescript "$@" >/tmp/doge.js
-node /tmp/doge.js
+exec node "${1%.*}-doge.js"
