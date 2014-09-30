@@ -46,7 +46,6 @@ for lang in "${languages[@]}"; do
     else 
       case "$ext" in
       a68) run=(a68g "$f");;
-      a60) run=(racket -e '(require algol60/algol60) (eval (list '\''include-algol (vector-ref (current-command-line-arguments) 0)))' -- "$f");;
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       applescript) run=(osascript "$f");;
       awk) run=(awk -f "$f");;
