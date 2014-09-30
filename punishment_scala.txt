@@ -1,5 +1,1 @@
-object Punishment {
-  def main(args: Array[String]) {
-    (List fill 500)("I will not throw paper airplanes in class.") map println
-  }
-}
+(List fill 500)("I will not throw paper airplanes in class.") map println
