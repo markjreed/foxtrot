@@ -1,7 +1,11 @@
 PUNISH: PROCEDURE OPTIONS (MAIN);
 
-DO I = 1 TO 500;
-  PUT SKIP DATA('I WILL NOT THROW PAPER AIRPLANES IN CLASS.');
-END LOOP;
+  DCL SYSPRINT FILE PRINT;
+  DCL I FIXED DEC (3);
+
+  PUT STRING(DATA('I will not throw paper airplanes in class.'));
+  DO I = 1 TO 499;
+    PUT SKIP STRING(DATA('I will not throw paper airplanes in class.'));
+  END;
 
 END PUNISH;
