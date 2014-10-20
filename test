@@ -77,6 +77,7 @@ for lang in "${languages[@]}"; do
       ml) run=(ocaml  "$f");;
       occ) compile=(kroc "$f" -lcourse); run=(./punishment);;
       p) compile=(fpc "$f" ); run=("./${f%.$ext}");;
+      p4) run=(perl4 "$f");;
       p5) run=(perl "$f");;
       p6) run=(perl6 "$f");;
       pl) run=(swipl -q -g main -l "$f");;
