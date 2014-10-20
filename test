@@ -90,7 +90,6 @@ for lang in "${languages[@]}"; do
       scm) run=(racket -f "$f");;
       semi) run=(semicolon "$f");;
       st) run=(gst "$f");;
-      swift) run=(swift -i "$f");;
       tcl) run=(tclsh "$f");;
       unl) run=(unlambda "$f");;
       vq) run=(varaq "$f");;
