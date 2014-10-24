@@ -1,1 +1,2 @@
-main = mapM_ putStrLn $ replicate 500 "I will not throw paper airplanes in class." 
+import Control.Monad (replicateM_)
+main = replicateM_ 500 $ putStrLn "I will not throw paper airplanes in class."
