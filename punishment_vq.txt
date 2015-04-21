@@ -1,10 +1,10 @@
-~ wa'ghItlh { 
-  "I will not throw paper airplanes in class." cha' 
+~ wa'ghItlh {
+  "I will not throw paper airplanes in class." cha'
 } pong
 
-~  bIj { 
-  latlh 0 law''a'  { wa'ghItlh wa'boqHa' bIj } HIja'chugh latlh 0 law''a' 
-   { woD } ghobe'chugh 
+~  bIj {
+  latlh 0 law''a'  { wa'ghItlh wa'boqHa' bIj } HIja'chugh latlh 0 law''a'
+   { woD } ghobe'chugh
 } pong
 
 500 bIj

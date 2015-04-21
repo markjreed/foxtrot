@@ -1,82 +1,82 @@
-       PLEASE ,1 <- #43 
-           DO ,1 SUB #1 <- #110 
-           DO ,1 SUB #2 <- #398 
-   
-       PLEASE ,1 SUB #3 <- #22 
-           DO ,1 SUB #4 <- #344 
-           DO ,1 SUB #5 <- #352 
-           DO ,1 SUB #6 <- #256 
-   
-       PLEASE ,1 SUB #7 <- #306 
-           DO ,1 SUB #8 <- #142 
-           DO ,1 SUB #9 <- #128 
-           DO ,1 SUB #10 <- #456 
-   
+       PLEASE ,1 <- #43
+           DO ,1 SUB #1 <- #110
+           DO ,1 SUB #2 <- #398
+
+       PLEASE ,1 SUB #3 <- #22
+           DO ,1 SUB #4 <- #344
+           DO ,1 SUB #5 <- #352
+           DO ,1 SUB #6 <- #256
+
+       PLEASE ,1 SUB #7 <- #306
+           DO ,1 SUB #8 <- #142
+           DO ,1 SUB #9 <- #128
+           DO ,1 SUB #10 <- #456
+
        PLEASE ,1 SUB #11 <- #298
-           DO ,1 SUB #12 <- #214 
-           DO ,1 SUB #13 <- #280 
-           DO ,1 SUB #14 <- #200 
-   
-       PLEASE ,1 SUB #15 <- #88 
-           DO ,1 SUB #16 <- #264 
-           DO ,1 SUB #17 <- #490 
-           DO ,1 SUB #18 <- #246 
-   
-       PLEASE ,1 SUB #19 <- #136 
-           DO ,1 SUB #20 <- #376 
-           DO ,1 SUB #21 <- #104 
-           DO ,1 SUB #22 <- #344 
-   
-       PLEASE ,1 SUB #23 <- #330 
-           DO ,1 SUB #24 <- #126 
-           DO ,1 SUB #25 <- #240 
-           DO ,1 SUB #26 <- #328 
-   
-       PLEASE ,1 SUB #27 <- #320 
+           DO ,1 SUB #12 <- #214
+           DO ,1 SUB #13 <- #280
+           DO ,1 SUB #14 <- #200
+
+       PLEASE ,1 SUB #15 <- #88
+           DO ,1 SUB #16 <- #264
+           DO ,1 SUB #17 <- #490
+           DO ,1 SUB #18 <- #246
+
+       PLEASE ,1 SUB #19 <- #136
+           DO ,1 SUB #20 <- #376
+           DO ,1 SUB #21 <- #104
+           DO ,1 SUB #22 <- #344
+
+       PLEASE ,1 SUB #23 <- #330
+           DO ,1 SUB #24 <- #126
+           DO ,1 SUB #25 <- #240
+           DO ,1 SUB #26 <- #328
+
+       PLEASE ,1 SUB #27 <- #320
            DO ,1 SUB #28 <- #216
-           DO ,1 SUB #29 <- #176 
-           DO ,1 SUB #30 <- #272 
-   
-       PLEASE ,1 SUB #31 <- #208 
-           DO ,1 SUB #32 <- #216 
-           DO ,1 SUB #33 <- #458 
-           DO ,1 SUB #34 <- #110 
-   
-       PLEASE ,1 SUB #35 <- #288 
-           DO ,1 SUB #36 <- #370 
-           DO ,1 SUB #37 <- #62 
-           DO ,1 SUB #38 <- #400 
-   
-       PLEASE ,1 SUB #39 <- #176 
-           DO ,1 SUB #40 <- #184 
-           DO ,1 SUB #41 <- #256 
-           DO ,1 SUB #42 <- #346 
-   
-       PLEASE ,1 SUB #43 <- #292 
-           DO READ OUT ,1 
-           DO ,1 SUB #1 <- #190 
-           DO .1 <- #499 
-           DO (100) NEXT 
-           DO GIVE UP 
+           DO ,1 SUB #29 <- #176
+           DO ,1 SUB #30 <- #272
 
- (100)     DO COME FROM (200) 
-           DO READ OUT ,1 
- (200)     DO (2010) NEXT 
-(2010) PLEASE ABSTAIN FROM (2004) 
+       PLEASE ,1 SUB #31 <- #208
+           DO ,1 SUB #32 <- #216
+           DO ,1 SUB #33 <- #458
+           DO ,1 SUB #34 <- #110
 
-(2000)     DO STASH .2 
-           DO .2 <- #1 
-           DO (2001) NEXT 
+       PLEASE ,1 SUB #35 <- #288
+           DO ,1 SUB #36 <- #370
+           DO ,1 SUB #37 <- #62
+           DO ,1 SUB #38 <- #400
 
-(2001)     DO FORGET #1 
-           DO .1 <- '?.1$.2'~'#0$#65535' 
-           DO (2002) NEXT 
+       PLEASE ,1 SUB #39 <- #176
+           DO ,1 SUB #40 <- #184
+           DO ,1 SUB #41 <- #256
+           DO ,1 SUB #42 <- #346
+
+       PLEASE ,1 SUB #43 <- #292
+           DO READ OUT ,1
+           DO ,1 SUB #1 <- #190
+           DO .1 <- #499
+           DO (100) NEXT
+           DO GIVE UP
+
+ (100)     DO COME FROM (200)
+           DO READ OUT ,1
+ (200)     DO (2010) NEXT
+(2010) PLEASE ABSTAIN FROM (2004)
+
+(2000)     DO STASH .2
+           DO .2 <- #1
+           DO (2001) NEXT
+
+(2001)     DO FORGET #1
+           DO .1 <- '?.1$.2'~'#0$#65535'
+           DO (2002) NEXT
            DO .2 <- !2$#0'~'#32767$#1'
-   
-           DO (2001) NEXT 
-(2003) PLEASE RESUME "?!1~.2'$#1"~#3 
-(2002)     DO (2003) NEXT 
-           DO RETRIEVE .2 
-(2004)     DO RESUME #2 
-       PLEASE REINSTATE (2004) 
+
+           DO (2001) NEXT
+(2003) PLEASE RESUME "?!1~.2'$#1"~#3
+(2002)     DO (2003) NEXT
+           DO RETRIEVE .2
+(2004)     DO RESUME #2
+       PLEASE REINSTATE (2004)
        PLEASE RESUME '?"!1~.1'~#1"$#2'~#6

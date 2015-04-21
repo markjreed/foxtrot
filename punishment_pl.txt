@@ -1,2 +1,2 @@
-main :- foreach(between(1,500,_), 
+main :- foreach(between(1,500,_),
             writeln('I will not throw paper airplanes in class.')), halt.

@@ -1,2 +1,2 @@
-(for-each display 
+(for-each display
   (make-list 500 "I will not throw paper airplanes in class.\n"))

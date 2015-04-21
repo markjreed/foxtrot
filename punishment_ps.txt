@@ -2,10 +2,10 @@
 /Courier findfont 12 scalefont setfont
 (I will not throw paper airplanes in class.) dup /msg exch def
 stringwidth pop -1 mul /width exch def
-10 { 
-  72 704 moveto 
-  50 { 
-    msg show width -12 rmoveto 
-  } repeat 
-  showpage 
+10 {
+  72 704 moveto
+  50 {
+    msg show width -12 rmoveto
+  } repeat
+  showpage
 } repeat

@@ -1,5 +1,5 @@
 fn main()  {
   for _ in range(0u,500) {
-     println!("I will not throw paper airplanes in class."); 
+     println!("I will not throw paper airplanes in class.");
   }
 }

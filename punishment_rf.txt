@@ -1,4 +1,4 @@
-program Punishment 
+program Punishment
     do i=1, 500 {
         write(unit=*, fmt=1) 'I will not throw paper airplanes in class.';
     }
