@@ -1,0 +1,3 @@
+do index = 1 to 500
+  say "I will not throw paper airplanes in class."
+end
