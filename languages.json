@@ -68,6 +68,7 @@
     "scala":        "Scala",
     "scm":          "Scheme",
     "semi":         "Semicolon",
+    "spl":          "SPL",
     "sh":           "Bourne Shell",
     "sl":           "S-Lang",
     "st":           "SmallTalk",
