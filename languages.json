@@ -71,6 +71,7 @@
     "spl":          "SPL",
     "sh":           "Bourne Shell",
     "sl":           "S-Lang",
+    "sml":          "Standard ML",
     "st":           "SmallTalk",
     "swift":        "Swift",
     "tcl":          "Tcl",
