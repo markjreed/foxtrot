@@ -69,11 +69,13 @@
     "scm":          "Scheme",
     "semi":         "Semicolon",
     "sh":           "Bourne Shell",
+    "sl":           "S-Lang",
     "st":           "SmallTalk",
     "swift":        "Swift",
     "tcl":          "Tcl",
     "unl":          "Unlambda",
     "vq":           "var'aq",
     "ws":           "WhiteSpace",
+    "yorick":       "Yorick",
     "z80":          "Z-80 Assembly"
  }
