@@ -95,6 +95,7 @@ for lang in "${languages[@]}"; do
       sl) run=(slsh "$f");;
       sml) compile=(mlton "$f"); run=("./${f%.$ext}");;
       spl) run=(splrun "$f");;
+      sq) run=(subleq "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
       unl) run=(unlambda "$f");;
