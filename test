@@ -91,6 +91,7 @@ for lang in "${languages[@]}"; do
       scm) run=(racket -f "$f");;
       semi) run=(semicolon "$f");;
       sl) run=(slsh "$f");;
+      sml) compile=(mlton "$f"); run=("./${f%.$ext}");;
       spl) run=(splrun "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
