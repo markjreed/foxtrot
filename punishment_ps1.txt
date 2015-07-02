@@ -1,0 +1,5 @@
+$result = @()
+foreach ($i in 1..500) {
+    $result += "I will not throw paper airplanes in class."
+}
+$result

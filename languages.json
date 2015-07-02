@@ -57,6 +57,7 @@
     "pl":           "Prolog",
     "pli":          "PL/I",
     "ps":           "Postscript",
+    "ps1":          "PowerShell",
     "py":           "Python",
     "py3":          "Python 3",
     "r":            "R",
