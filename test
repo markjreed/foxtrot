@@ -8,9 +8,9 @@ fi
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-for old in [Pp]unishment_*.txt; do 
+for old in [Pp]unishment_*.txt Gemfile* vendor; do 
   new="${old%.txt}"
-  cp -p "$old" "$dir/${new/_/.}"
+  cp -rp "$old" "$dir/${new/_/.}"
 done
 cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
@@ -48,7 +48,7 @@ for lang in "${languages[@]}"; do
       a68) run=(a68g "$f");;
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       applescript) run=(osascript "$f");;
-      awk) run=(awk -f "$f");;
+      awk) run=(awk -f ./"$f");;
       bas) run=(basic "$f");;
       bat) run=(4bat "$f");;
       batsh) if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
