@@ -58,6 +58,8 @@ for lang in "${languages[@]}"; do
       cl) run=(clisp "$f");;
       clj) run=(lein exec "$f");;
       cob) compile=(cobc -x "$f"); run=("./${f%.$ext}");;
+      cpp) compile=(g++ "$f" ); run=(./a.out);;
+      cs) compile=(mcs "$f"); run=(mono "${f%.*}.exe");;
       d) compile=(dmd "$f" ); run=("./${f%.$ext}");;
       dc) run=(dc -f "$f");;
       dylan) run=(rundylan "$f");;

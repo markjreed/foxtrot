@@ -1,0 +1,9 @@
+public class Punixhment
+{
+  public static void Main()
+  {
+     for (int i=0; i<500; ++i) {
+        System.Console.WriteLine("I will not throw paper airplanes in class.");
+     }
+  }
+}

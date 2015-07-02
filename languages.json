@@ -16,6 +16,8 @@
     "clj":          "Clojure",
     "cob":          "COBOL",
     "coffee":       "CoffeeScript",
+    "cpp":          "C++",
+    "cs":           "C#",
     "csh":          "C Shell",
     "d":            "D",
     "dart":         "Dart",
