@@ -50,6 +50,7 @@
     "lua":          "Lua",
     "m4":           "M4 Macros",
     "ml":           "OCaml",
+    "nim":          "Nim",
     "occ":          "Occam",
     "p":            "Pascal",
     "p4":           "Perl 4",
