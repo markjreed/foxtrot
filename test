@@ -68,6 +68,7 @@ for lang in "${languages[@]}"; do
       erl) run=(escript "$f");;
       exs) run=(elixir "$f");;
       f) compile=(gfortran "$f" ); run=(./a.out);;
+      fr) compile=(fregec "$f" ); run=(frege Punishment);;
       4th) run=(gforth "$f");;
       go) run=(go run "$f");;
       hs) run=(runhaskell "$f");;

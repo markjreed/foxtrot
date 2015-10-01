@@ -1,0 +1,2 @@
+module Punishment where
+main _ = replicateM_ 500 $ println "I will not throw paper airplanes in class."
