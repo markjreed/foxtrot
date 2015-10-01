@@ -9,8 +9,10 @@ dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
 for old in [Pp]unishment_*.txt Gemfile* vendor; do 
-  new="${old%.txt}"
-  cp -rp "$old" "$dir/${new/_/.}"
+  if [ -r "$old" ]; then
+    new="${old%.txt}"
+    cp -rp "$old" "$dir/${new/_/.}"
+  fi
 done
 cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
