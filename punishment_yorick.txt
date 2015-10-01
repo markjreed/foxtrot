@@ -1,2 +1,2 @@
-for (i=0; i<500; ++i)
-    write,format="%-s","I will not throw paper airplanes in class.\n"
+write,format="%s\n",array("I will not throw paper airplanes in class.",500)
+quit
