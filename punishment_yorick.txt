@@ -1,1 +1,3 @@
-write,format="%s\n",array("I will not throw paper airplanes in class.",500)
+write, format="%s\n", array(
+    "I will not throw paper airplanes in class.",
+    500)
