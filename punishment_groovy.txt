@@ -1,0 +1,3 @@
+for (i=0; i<500; ++i) {
+  Console.println("I will not throw paper airplanes in class.")
+}
