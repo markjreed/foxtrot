@@ -98,6 +98,7 @@ for lang in "${languages[@]}"; do
       semi) run=(semicolon "$f");;
       sl) run=(slsh "$f");;
       sml) compile=(mlton "$f"); run=("./${f%.$ext}");;
+      sno) run=(snobol4 "$f");;
       spl) run=(splrun "$f");;
       sq) run=(subleq "$f");;
       st) run=(gst "$f");;
