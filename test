@@ -80,6 +80,7 @@ for lang in "${languages[@]}"; do
       java) compile=(javac "$f"); run=(java Punishment);;
       lasso) run=(lasso9 "$f");;
       lol) run=(lci "$f");;
+      lsl) result='[33mSKIP[0m';;
       ml) run=(ocaml  "$f");;
       nim) run=(nim --verbosity:0 --run compile "$f");;
       occ) compile=(kroc "$f" -lcourse); run=(./punishment);;
