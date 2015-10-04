@@ -66,6 +66,7 @@
     "py":           "Python",
     "py3":          "Python 3",
     "r":            "R",
+    "reb":          "REBOL",
     "rb":           "Ruby",
     "rexx":         "Rexx",
     "rkt":          "Racket",

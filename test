@@ -90,8 +90,9 @@ for lang in "${languages[@]}"; do
       ps) result='[33mSKIP[0m';;
       py) run=(python "$f");;
       py3) run=(python3 "$f");;
-      rb) run=(ruby "$f");;
       r)  run=(r -q --slave -f "$f");;
+      rb) run=(ruby "$f");;
+      reb) run=(rebol -q "$f");;
       rkt) run=(racket "$f");;
       rs) compile=(rustc "$f"); run=("./${f%.$ext}");;
       scm) run=(racket -f "$f");;
