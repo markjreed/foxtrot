@@ -97,6 +97,7 @@ for lang in "${languages[@]}"; do
       rs) compile=(rustc "$f"); run=("./${f%.$ext}");;
       scm) run=(racket -f "$f");;
       semi) run=(semicolon "$f");;
+      sim) compile=(cim "$f"); run=("./${f%.$ext}");;
       sl) run=(slsh "$f");;
       sml) compile=(mlton "$f"); run=("./${f%.$ext}");;
       sno) run=(snobol4 "$f");;
