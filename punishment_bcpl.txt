@@ -1,0 +1,6 @@
+GET "libhdr"
+LET start() = VALOF { 
+  FOR i = 1 TO 500 DO writef("I will not throw paper airplanes in class.*n")
+  RESULTIS 0
+}
+  
