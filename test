@@ -40,10 +40,10 @@ for lang in "${languages[@]}"; do
     compile=()
     run=()
     in=
+    if [ -x "compile_$ext.sh" ]; then
+      compile=("./compile_$ext.sh" "$f" )
+    fi
     if [ -x "run_$ext.sh" ]; then
-      if [ -x "compile_$ext.sh" ]; then
-        compile=("./compile_$ext.sh" "$f" )
-      fi
       run=("./run_$ext.sh" "$f" )
     else 
       case "$ext" in
@@ -51,6 +51,7 @@ for lang in "${languages[@]}"; do
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       applescript) run=(osascript "$f");;
       awk) run=(awk -f ./"$f");;
+      b) run=(./a.out);;
       bas) run=(basic "$f");;
       bat) run=(4bat "$f");;
       batsh) if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
