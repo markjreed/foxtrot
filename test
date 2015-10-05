@@ -25,14 +25,16 @@ for lang in "${languages[@]}"; do
   mv "$old_f" "$f"
   lf="$(tr A-Z a-z <<<"$f")"
   old_f="$(tr A-Z a-z <<<"${lf%.$lext}_$lext.txt")"
-  for arg in "$@"; do
-    found=0
-    case "$(tr A-Z a-z <<<"$arg")" in
-      $lext|$lname|$lf|$old_f) found=1; break;;
-    esac
-  done
-  if (( ! found )); then
-    continue
+  if (( $# )); then
+    for arg in "$@"; do
+      found=0
+      case "$(tr A-Z a-z <<<"$arg")" in
+        $lext|$lname|$lf|$old_f) found=1; break;;
+      esac
+    done
+    if (( ! found )); then
+      continue
+    fi
   fi
   echo -n "$name:"
   if [ ! -r "$f" ]; then
