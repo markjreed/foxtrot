@@ -8,12 +8,7 @@ fi
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-for old in [Pp]unishment_*.txt Gemfile* vendor; do 
-  if [ -r "$old" ]; then
-    new="${old%.txt}"
-    cp -rp "$old" "$dir/${new/_/.}"
-  fi
-done
+cp [Pp]unishment_*.txt Gemfile* vendor compile_*.sh run_*.sh "$dir" >&/dev/null
 cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
 IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
@@ -21,17 +16,24 @@ for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
   lext="$(tr A-Z a-z <<<"$ext")"
   lname="$(tr A-Z a-z <<<"$name")"
-  for f in {p,P}unishment.$ext; do
+  for f in {p,P}unishment_$ext.txt; do
      if [ -r "$f" ]; then break; fi
   done
+  old_f=$f
+  f=${f%.txt}
+  f=${f//_/.}
+  mv "$old_f" "$f"
   lf="$(tr A-Z a-z <<<"$f")"
   old_f="$(tr A-Z a-z <<<"${lf%.$lext}_$lext.txt")"
   for arg in "$@"; do
+    found=0
     case "$(tr A-Z a-z <<<"$arg")" in
-      $lext|$lname|$lf|$old_f) :;;
-      *) continue 2;;
+      $lext|$lname|$lf|$old_f) found=1; break;;
     esac
   done
+  if (( ! found )); then
+    continue
+  fi
   echo -n "$name:"
   if [ ! -r "$f" ]; then
     result='[33mSKIP[0m'
