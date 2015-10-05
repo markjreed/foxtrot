@@ -74,6 +74,7 @@ for lang in "${languages[@]}"; do
       go) run=(go run "$f");;
       hs) run=(runhaskell "$f");;
       i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
+      ico)  run=(icon "$f");;
       idr) compile=(idris -o a.out "$f"); run=(./a.out);;
       inf) compile=(inform6 "$f"); run=(dfrotz -Rmp "${f%.$ext}.z5");;
       j) run=(jconsole "$f");;
