@@ -14,8 +14,20 @@
                  color: white; margin-left: 0; margin-top: 0; 
                  scroll: auto; padding: 0; margin: 0; text-align: left } 
    #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic sans ms", sans-serif;
-                     font-size: medium; padding-top: 0;}
+                     font-size: 96%; padding-top: 0;}
    #blackboard::-webkit-scrollbar { height: 0px; width: 0px; }
+   #programs::-webkit-scrollbar { -webkit-appearance: none; }
+   #programs::-webkit-scrollbar:vertical { width: 11px; }
+   #programs::-webkit-scrollbar-thumb  {
+     border-radius: 8px;
+     border: 2px solid white; /* should match background, can't be transparent */
+     background-color: rgba(0, 0, 0, .5);
+   }
+
+   #programs::-webkit-scrollbar-track { 
+      background-color: #fff; 
+      border-radius: 8px; 
+   } 
   </style>
  </head>
  <body>
@@ -37,7 +49,7 @@ int main(void)
 
   <p>Select Language</p>
   <form>
-   <select id="programs">
+   <select id="programs" size="15">
 <?php 
   $languages = json_decode(file_get_contents('languages.json'), true);
   $filenames = glob('[Pp]unishment_*');
