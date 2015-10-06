@@ -56,6 +56,7 @@
     "lol":          "LOLCODE",
     "lsl":          "LSL",
     "lua":          "Lua",
+    "m":            "Objective-C",
     "m4":           "M4 Macros",
     "ml":           "OCaml",
     "moon":         "MoonScript",

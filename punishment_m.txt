@@ -1,0 +1,10 @@
+#import <Foundation/Foundation.h>
+
+int main() {
+  [[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(1, 500)]
+    enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+      printf("%s\n", 
+             [@"I will not throw paper airplanes in class." UTF8String]);
+  }];
+  return 0;
+}
