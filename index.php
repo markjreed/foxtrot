@@ -43,7 +43,7 @@ int main(void)
    </div>
   </div>
 
-  <p>Transcriptions from the blackboard in <a href="foxtrot_ccode.jpg">this picture</a> in alternate
+  <p>Transcribed blackboards in <a href="foxtrot_ccode.jpg">this picture</a> from alternate
    universes where Jason chose a language other than C (and also to
    output newlines).</p>
 
