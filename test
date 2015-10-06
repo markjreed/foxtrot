@@ -1,4 +1,9 @@
 #!/bin/bash 
+if ! type -p md5 >&/dev/null; then
+  md5() {
+    md5sum "$@" | awk '{print $1}'
+  }
+fi
 let keep=0 verbose=0
 if [[ "$1" == -v ]]; then 
   let verbose=1
@@ -87,6 +92,7 @@ for lang in "${languages[@]}"; do
       lol) run=(lci "$f");;
       lsl) result='[33mSKIP[0m';;
       m) compile=(clang -framework Foundation "$f"); run=(./a.out);;
+      m3) compile=(cm3); run=(bash -c "./*/prog"); rm -f punishment.*;;
       ml) run=(ocaml  "$f");;
       nim) run=(nim --verbosity:0 --run compile "$f");;
       occ) compile=(kroc "$f" -lcourse); run=(./punishment);;

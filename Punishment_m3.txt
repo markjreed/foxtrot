@@ -1,0 +1,11 @@
+MODULE Punishment EXPORTS Main;
+
+IMPORT IO;
+
+VAR count: INTEGER;
+
+BEGIN
+  FOR count := 1 TO 500 DO
+    IO.Put("I will not throw paper airplanes in class.\n");
+  END
+END Punishment.
