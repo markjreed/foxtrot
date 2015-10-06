@@ -1,3 +1,1 @@
-500.times do 
-  puts "I will not throw paper airplanes in class."
-end
+500.times { puts "I will not throw paper airplanes in class." }
