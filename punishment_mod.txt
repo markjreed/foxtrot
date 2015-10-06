@@ -1,6 +1,4 @@
-MODULE Punishment;
-
-FROM InOut IMPORT WriteString, WriteLn;
+MODULE Punishment; FROM InOut IMPORT WriteString, WriteLn;
 
 VAR count: INTEGER;
 
