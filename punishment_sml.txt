@@ -1,8 +1,1 @@
-let 
-  val i = ref 500
-in
-  while !i > 0 do (
-    print "I will not throw paper airplanes in class.\n";
-    i := !i - 1
-  )
-end;
+List.tabulate(500, fn i => print "I will not throw paper airplanes in class.\n");
