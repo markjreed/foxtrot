@@ -59,6 +59,7 @@
     "m":            "Objective-C",
     "m4":           "M4 Macros",
     "ml":           "OCaml",
+    "mumps":        "MUMPS",
     "moon":         "MoonScript",
     "nim":          "Nim",
     "occ":          "Occam",
