@@ -1,1 +1,1 @@
-List.tabulate(500, fn i => print "I will not throw paper airplanes in class.\n");
+List.tabulate(500, fn _ => print "I will not throw paper airplanes in class.\n");
