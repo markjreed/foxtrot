@@ -1,2 +1,1 @@
-do for i=1:1:500 w "I will not throw paper airplanes in class.",!
-
+DO FOR I=1:1:500 WRITE "I will not throw paper airplanes in class.",!
