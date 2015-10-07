@@ -1,0 +1,4 @@
+use perl5i::2;
+[1..500]->foreach(
+  func($i) { "I will not throw paper airplanes in class."->say }
+)
