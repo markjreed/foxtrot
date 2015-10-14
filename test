@@ -13,7 +13,7 @@ fi
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-cp [Pp]unishment_*.txt Gemfile* vendor compile_*.sh run_*.sh "$dir" >&/dev/null
+cp -r [Pp]unishment_*.txt Gemfile* .bundle vendor compile_*.sh run_*.sh "$dir" >&/dev/null
 cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
 IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
