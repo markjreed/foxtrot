@@ -13,7 +13,7 @@ fi
 dir=/tmp/foxtrot$$
 cd "$(dirname "$(type -p "$0")")"
 mkdir -p "$dir"
-cp -r [Pp]unishment_*.txt Gemfile* .bundle vendor compile_*.sh run_*.sh "$dir" >&/dev/null
+cp -r [Pp]unishment_*.txt Gemfile* .bundle vendor compile_*.sh run_*.sh *COM ybc basic "$dir" >&/dev/null
 cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
 IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
@@ -58,11 +58,9 @@ for lang in "${languages[@]}"; do
       case "$ext" in
       a68) run=(a68g "$f");;
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
-      applescript) run=(osascript "$f");;
       awk) run=(awk -f ./"$f");;
       b) run=(./a.out);;
       bas) run=(basic "$f");;
-      bat) run=(4bat "$f");;
       batsh) if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
       bef) run=(bef -q "$f");;
       bf) run=(bf); in="$f";;
@@ -142,8 +140,10 @@ for lang in "${languages[@]}"; do
         else
            "${run[@]}"
         fi
-      fi 2>$ext.err | tr -d $'\r' >$ext.out 
-      if [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
+      fi 2>$ext.err >$ext.out 
+      if (( $? == 123 )); then
+        result='[33mSKIP[0m'
+      elif [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
         result='[32mPASS[0m'
       else
         result='[31mFAIL[0m'
