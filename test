@@ -86,6 +86,7 @@ for lang in "${languages[@]}"; do
       inf) compile=(inform6 "$f"); run=(dfrotz -Rmp "${f%.$ext}.z5");;
       j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
+      kt) compile=(kotlinc "$f"); run=(kotlin PunishmentKt);;
       lasso) run=(lasso9 "$f");;
       lol) run=(lci "$f");;
       lsl) result='[33mSKIP[0m';;

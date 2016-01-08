@@ -1,0 +1,4 @@
+fun main(args: Array<String>) {
+    for (a in 1..500)
+        println("I will not throw paper airplanes in class.")
+}
