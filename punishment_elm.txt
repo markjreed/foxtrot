@@ -1,1 +1,5 @@
-main = plainText(join "\n" (repeat 500 "I will not throw paper airplanes in class." ))
+import Html exposing (pre, text)
+import List exposing (repeat)
+import String exposing (join)
+
+main = pre [] [text (join "\n" (repeat 500 "I will not throw paper airplanes in class."))]
