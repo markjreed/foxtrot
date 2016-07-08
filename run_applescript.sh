@@ -1,5 +1,6 @@
 #!/bin/sh
-case `uname -s` in
-  Darwin) exec osascript "$1" 2>&1;;
-  *) exit 123;;
-esac
+if type -p osascript >/dev/null 2>&1; then
+  exec osascript "$1" 2>&1
+else
+  exit 2
+fi
