@@ -19,8 +19,8 @@ cd "$dir"
 IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
-  lext="$(tr A-Z a-z <<<"$ext")"
-  lname="$(tr A-Z a-z <<<"$name")"
+  lext=$(tr A-Z a-z <<<"$ext")
+  lname=$(tr A-Z a-z <<<"$name")
   for f in {p,P}unishment_$ext.txt; do
      if [ -r "$f" ]; then break; fi
   done
@@ -144,7 +144,7 @@ for lang in "${languages[@]}"; do
             result='[33mSKIP[0m'
           else
             result='[31mFAIL[0m'
-            keep=1
+	    keep=1
           fi
         else
           result='[33mSKIP[0m'
@@ -158,7 +158,7 @@ for lang in "${languages[@]}"; do
           else
             "${run[@]}"
           fi
-        elif (( $? == 2 )); then
+        else
           result='[33mSKIP[0m'
         fi >$ext.out1 2>$ext.err 
         tr -d $'\r' <$ext.out1 >$ext.out 
