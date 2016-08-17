@@ -89,7 +89,7 @@ for lang in "${languages[@]}"; do
       j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
       kt) compile=(kotlinc "$f"); run=(kotlin PunishmentKt);;
-      lasso) run=(lasso9 "$f");;
+      lasso) run=(lasso "$f");;
       lol) run=(lci "$f");;
       lsl) result='[33mSKIP[0m';;
       m) compile=(clang -framework Foundation "$f"); run=(./a.out);;
