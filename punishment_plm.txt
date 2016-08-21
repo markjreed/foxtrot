@@ -1,9 +1,9 @@
 punishment: do;
   printf: procedure(str) external; declare str pointer; end printf;
   main: procedure;
-    declare msg pointer 
-      initial(@('I will not throw paper airplanes in class.',0aH)),
-              i integer;
+    declare i   integer,
+            msg pointer
+               initial(@('I will not throw paper airplanes in class.',0aH));
     do i = 1 to 500 by 1;
       call printf(msg);
     end;
