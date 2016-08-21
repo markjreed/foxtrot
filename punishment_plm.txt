@@ -1,0 +1,11 @@
+punishment: do;
+  printf: procedure(str) external; declare str pointer; end printf;
+  main: procedure;
+    declare msg pointer 
+      initial(@('I will not throw paper airplanes in class.',0aH)),
+              i integer;
+    do i = 1 to 500 by 1;
+      call printf(msg);
+    end;
+  end main;
+end punishment;
