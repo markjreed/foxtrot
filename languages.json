@@ -73,6 +73,7 @@
     "php":          "PHP",
     "pl":           "Prolog",
     "pli":          "PL/I",
+    "plm":          "PL/M",
     "ps":           "Postscript",
     "ps1":          "PowerShell",
     "py":           "Python",
