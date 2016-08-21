@@ -1,11 +1,11 @@
 punishment: do;
-  printf: procedure(str) external; declare str pointer; end printf;
+  puts: procedure(str) external; declare str pointer; end puts;
   main: procedure;
     declare i   integer,
             msg pointer
-               initial(@('I will not throw paper airplanes in class.',0aH));
+                initial(@('I will not throw paper airplanes in class.'));
     do i = 1 to 500 by 1;
-      call printf(msg);
+      call puts(msg);
     end;
   end main;
 end punishment;
