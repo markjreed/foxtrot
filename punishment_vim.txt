@@ -1,2 +1,2 @@
 call append(0, repeat(["I will not throw paper airplanes in class."], 500))
-normal dd
+normal Gdd
