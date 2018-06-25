@@ -99,6 +99,7 @@
     "st":           "SmallTalk",
     "swift":        "Swift",
     "tcl":          "Tcl",
+    "ts":           "TypeScript",
     "unl":          "Unlambda",
     "vala":         "Vala",
     "vim":          "VimL",
