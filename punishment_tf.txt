@@ -1,0 +1,8 @@
+data "template_file" "punishment" {
+  count = 500
+  template = "I will not throw paper airplanes in class."
+}
+
+output "values" {
+  value = "${join("\n",data.template_file.punishment.*.rendered)}"
+}

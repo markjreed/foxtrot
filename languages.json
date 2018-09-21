@@ -100,6 +100,7 @@
     "swift":        "Swift",
     "tcl":          "Tcl",
     "ts":           "TypeScript",
+    "tf":           "Terraform",
     "unl":          "Unlambda",
     "vala":         "Vala",
     "vim":          "VimL",
