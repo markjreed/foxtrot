@@ -2,3 +2,4 @@
 20 FOR I = 1 TO 500 
 30   PRINT "I will not throw paper airplanes in class."
 40 NEXT I
+50 EXIT
