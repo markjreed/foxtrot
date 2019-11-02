@@ -163,13 +163,17 @@ for lang in "${languages[@]}"; do
         else
           result='[33mSKIP[0m'
         fi >$ext.out1 2>$ext.err 
-        tr -d $'\r' <$ext.out1 >$ext.out 
-        if [ -z "$result" ]; then
-          if [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
-            result='[32mPASS[0m'
-          else
-            result='[31mFAIL[0m'
-            keep=1
+        if (( $? == 2 )); then
+          result='[33mSKIP[0m'
+        else
+          tr -d $'\r' <$ext.out1 >$ext.out 
+          if [ -z "$result" ]; then
+            if [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
+              result='[32mPASS[0m'
+            else
+              result='[31mFAIL[0m'
+              keep=1
+            fi
           fi
         fi
       fi
