@@ -5,7 +5,7 @@ if (( ! $#  )); then
 fi
 dir=/tmp/runcpm$$
 mkdir "$dir" && cp "$1" "$dir/RUNME.Z80" && cd "$dir"
-disksrc=/usr/local/Cellar/yaze-ag/2.30.1/lib/yaze/disks
+disksrc=$(echo /usr/local/Cellar/yaze-ag/*/lib/yaze/disks)
 for disk in BOOT_UTILS CPM3_SYS; do
   gzcat "$disksrc/$disk.ydsk" >"$disk.ydsk"
 done
@@ -28,12 +28,10 @@ EOF
 expect <<'EOF'
 log_user 0
 spawn yaze
-expect {Hit Any Key}
-send { }
 expect "A>RUNME\r\r\n"
 set accum {}
 expect {
-  "\r\nA>" { send "E\r" }
+  "A>" { send "E\r" }
   -regexp {..*} {
     set accum "${accum}$expect_out(0,string)"
     exp_continue

@@ -63,7 +63,7 @@ for lang in "${languages[@]}"; do
       b) run=(./a.out);;
       bas) run=(basic "$f");;
       bat) run=(4bat "$f");;
-      batsh) if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
+      batsh) eval "$(opam env)";if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
       bef) run=(bef -q "$f");;
       bf) run=(bf); in="$f";;
       c) compile=(gcc "$f" ); run=(./a.out);;
@@ -81,7 +81,7 @@ for lang in "${languages[@]}"; do
       fr) compile=(fregec "$f" ); run=(frege Punishment);;
       4th) run=(gforth "$f");;
       go) run=(go run "$f");;
-      hs) run=(runhaskell "$f");;
+      hs) . "$HOME/.ghcup/env"; run=(runhaskell "$f");;
       i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
       ico)  run=(icon "$f");;
       idr) compile=(idris -o a.out "$f"); run=(./a.out);;
