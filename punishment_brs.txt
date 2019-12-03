@@ -1,0 +1,5 @@
+Function Main() as Void
+  For _ = 1 to 500
+    Print("I will not throw paper airplanes in class.")
+  End For
+End Function
