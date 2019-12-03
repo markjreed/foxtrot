@@ -1,0 +1,81 @@
++++++ [>+++++<-]                        set c1 to 5x5=25 using c0 as auxiliary counter
+                                        (now c0=0 and c1=25)
+>                                       move to c1
+[>+++++ [<<++>>-] <-]                   use c1 and c2 to set c0 to 250
+                                        (now c0=250 c1=0 c2=0)
+>                                       skip c1 which we will use as the inner loop counter
+>                                       skip c2 whose 0 value we will use as a flag for the start of the string
+
+                                        Initialize string text
+>+++++++++ [<++++++++>-] < + >          set c3 to 9 x 8 plus 1 = 73 (I)
+>++++++++ [<++++>-]                     set c4 to 8 x 4 = 32 (space)
+
+>+++++++++++ [<+++++++++++>-] <-->      set c5 to 11 x 11 minus 2 = 119 (w)
+>++++++++++ [<++++++++++>-] <+++++>     set c6 to 10 x 10 plus 5  = 105 (i)
+>+++++++++++ [<++++++++++>-] <-->       set c7 to 11 x 10 minus 2 = 108 (l)
+>+++++++++++ [<++++++++++>-] <-->       set c8 to 11 x 10 minus 2 = 108 (l)
+
+>++++++++ [<++++>-]                     set c9 to 8 x 4 = 32 (space)
+
+>+++++++++++ [<++++++++++>-]            set c10 to 11 x 10         = 110 (n)
+>+++++++++++ [<++++++++++>-] <+>        set c11 to 11 x 10 plus 1  = 111 (o)
+>+++++++++++ [<+++++++++++>-] <----->   set c12 to 11 x 11 minus 5 = 116 (t)
+
+>++++++++ [<++++>-]                     set c13 to 8 x 4 = 32 (space)
+
+>+++++++++++ [<+++++++++++>-] <----->   set c14 to 11 x 11 minus 5 = 116 (t)
+>++++++++++ [<++++++++++>-] <++++>      set c15 to 10 x 10 plus 4  = 104 (h)
+>+++++++++++ [<++++++++++>-] <++++>     set c16 to 11 x 10 plus 4  = 114 (r)
+>+++++++++++ [<++++++++++>-] <+>        set c17 to 11 x 10 plus 1  = 111 (o)
+>+++++++++++ [<+++++++++++>-] <-->      set c18 to 11 x 11 minus 2 = 119 (w)
+
+>++++++++ [<++++>-]                     set c19 to 8 x 4 = 32 (space)
+
+>+++++++++++ [<++++++++++>-] <++>       set c20 to 11 x 10 plus 2 = 112 (p)
+>++++++++++++++++ [<++++++>-] <+>       set c21 to 16 x 6 plus 1  =  97 (a)
+>+++++++++++ [<++++++++++>-] <++>       set c22 to 11 x 10 plus 2 = 112 (p)
+>++++++++++++++++ [<++++++>-] <+++++>   set c23 to 16 x 6 plus 5  = 101 (e)
+>+++++++++++ [<++++++++++>-] <++++>     set c24 to 11 x 10 plus 4 = 114 (r)
+
+>++++++++ [<++++>-]                     set c25 to 8 x 4 = 32 (space)
+
+>++++++++++++++++ [<++++++>-] <+>       set c26 to 16 x 6 plus 1  =   97 (a)
+>++++++++++ [<++++++++++>-] <+++++>     set c27 to 10 x 10 plus 5 =  105 (i)
+>+++++++++++ [<++++++++++>-] <++++>     set c28 to 11 x 10 plus 4 =  114 (r)
+>+++++++++++ [<++++++++++>-] <++>       set c29 to 11 x 10 plus 2 =  112 (p)
+>+++++++++++ [<++++++++++>-] <-->       set c30 to 11 x 10 minus 2 = 108 (l)
+>++++++++++++++++ [<++++++>-] <+>       set c31 to 16 x 6 plus 1 =    97 (a)
+>+++++++++++ [<++++++++++>-]            set c32 to 11 x 10 =         110 (n)
+>++++++++++ [<++++++++++>-] <+>         set c33 to 10 x 10 plus 1  = 101 (e)
+>+++++++++++ [<++++++++++>-] <+++++>    set c34 to 11 x 10 plus 5  = 115 (s)
+
+>++++++++ [<++++>-]                     set c35 to 8 x 4 = 32 (space)
+
+>++++++++++ [<++++++++++>-] <+++++>     set c36 to 10 x 10 plus 5 = 105 (i)
+>+++++++++++ [<++++++++++>-]            set c37 to 11 x 10        = 110 (n)
+
+>++++++++ [<++++>-]                     set c38 to 8 x 4 = 32 (space)
+
+>++++++++++ [<++++++++++>-] <->         set c39 to 10 x 10 minus 1 =  99 (c)
+>+++++++++++ [<++++++++++>-] <-->       set c40 to 11 x 10 minus 2 = 108 (l)
+>++++++++++++++++ [<++++++>-] <+>       set c41 to 16 x 6 plus   1 =  97 (a)
+>+++++++++++ [<++++++++++>-] <+++++>    set c42 to 11 x 10 plus  5 = 115 (s)
+>+++++++++++ [<++++++++++>-] <+++++>    set c43 to 11 x 10 plus  5 = 115 (s)
+>+++++++++ [<+++++>-] <+>               set c44 to 9 x 5 plus    1 =  46 (period)
+>+++++ [<++>-]                          set c45 to 5 x 2           =  10 (newline)
+>                                       skip c46 so it is set to 0
+
+<<[<]                                   move back until we find an earlier 0 byte
+                                        (which will be our sentinel at c2)
+<<                                      then move back to c0 (which is initially set to 250)
+
+[                                       begin outer loop with pointer at c0
+ >++                                    move to c1 and set to 2
+ [                                      begin inner loop with pointer at c1
+  >>                                    move to c3
+  [.>]                                  print memory until we get to a 0
+  <[<]                                  move back to c2 again
+  <-                                    move back to c1 and decrement it
+ ]                                      loop while c1 is not 0
+ <-                                     move back to c0 and decrement it
+]                                       loop while c0 is not 0
