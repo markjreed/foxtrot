@@ -4,5 +4,5 @@ data "template_file" "punishment" {
 }
 
 output "values" {
-  value = "${join("\n",data.template_file.punishment.*.rendered)}"
+  value = join("\n",[for t in data.template_file.punishment: t.rendered])
 }
