@@ -59,7 +59,7 @@ for lang in "${languages[@]}"; do
       a68) run=(a68g "$f");;
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       awk) run=(awk -f ./"$f");;
-      b) run=(./a.out);;
+      b) compile=(bash -c "ybc -c "$PWD/$f"; clang -m32 $f.o /usr/local/opt/ybc/b-lib.o"); run=(./a.out);;
       bas) run=(basic "$f");;
       bat) run=(4bat "$f");;
       batsh) eval "$(opam env)";if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
@@ -87,6 +87,7 @@ for lang in "${languages[@]}"; do
       inf) compile=(inform6 "$f"); run=(dfrotz -Rmp "${f%.$ext}.z5");;
       j) run=(jconsole "$f");;
       java) compile=(javac "$f"); run=(java Punishment);;
+      js) run=(node "$f");;
       kt) compile=(kotlinc "$f"); run=(kotlin PunishmentKt);;
       lasso) run=(lasso "$f");;
       lol) run=(lci "$f");;
