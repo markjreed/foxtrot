@@ -2,8 +2,8 @@
 bdos	equ 0005h	; address for BDOS system calls
 putstr	equ 0009h	; id of call to print a string
 
-	ld c,2		; this lets the b decrement loop go down past 0 once
-	ld b,244	; 500 - 256
+	ld c,2		; MSB + 1 of our count (500)
+	ld b,244	; LSB of our count (500)
 loop:
 	push bc		; have to stash our counters
 	ld c, putstr	; set up the system call
