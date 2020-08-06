@@ -1,18 +1,20 @@
-	ld	c,2
-outer:	ld	b,0faH
-inner:	push	bc
-	ld	de,msg
-	ld	c,9
-	call	5
-	pop	bc
-	djnz	inner
-	dec	c
-	jr	nz,outer
-	ld	c,0
-	call	5
-	halt
-msg:
-	defm 'I will not throw paper airplanes in class.'
-	db	0dH
-	db	0aH
-	db	'$'
+		org 0100h		; standard location for code run from CP/M
+bdos	equ 0005h		; address for BDOS system calls
+putstr	equ 0009h		; id of call to print a string
+
+        ld c,2          ; this lets the b decrement loop go down past 0 once
+        ld b,244        ; 500 - 256
+loop:
+        push bc         ; have to stash our counters
+		ld c, putstr	; set up the system call
+		ld de, msg		; with parameter
+		call bdos	 	; make the call
+        pop bc          ; retrieve counters
+        djnz loop
+		dec c
+        jp nz,loop
+		ret				; return to caller
+
+		; the message to print
+msg:	defm 'I will not throw paper airplanes in class.',0dh,0ah,'$'
+		end 0100h		; signal end of unit
