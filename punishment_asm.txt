@@ -16,7 +16,7 @@ INNER   PUSH    B
         MVI     C,0
 CALL    BDOS
         RET
-MSG     DB      'I WILL NOT THROW PAPER AIRPLANES IN CLASS.'
+MSG     DB      'I will not throw paper airplanes in class.'
         DB      0DH
         DB      0AH
         DB      '$'
