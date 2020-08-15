@@ -1,0 +1,24 @@
+        ORG     100H    ;TRANSIENT PROGRAM AREA
+BDOS    EQU     0005H   ;BDOS ENTRY POINT
+WSTR    EQU     9       ;WRITE STRING FUNCTION
+
+        MVI     C,2
+OUTER   MVI     B,250D
+INNER   PUSH    B
+        LXI     D,MSG
+        MVI     C,WSTR
+        CALL    BDOS
+        POP     B
+        DCR     B
+        JNZ     INNER
+        DCR     C
+        JNZ     OUTER
+        MVI     C,0
+CALL    BDOS
+        RET
+MSG     DB      'I WILL NOT THROW PAPER AIRPLANES IN CLASS.'
+        DB      0DH
+        DB      0AH
+        DB      '$'
+        END     100H
+
