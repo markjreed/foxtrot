@@ -1,0 +1,16 @@
+MODULE punishment;
+ *COPYC cyp$put_next_line;
+  PROGRAM punishment;
+    VAR
+      i: integer;
+      status: ost$status;
+
+    FOR i := 1 TO 500 DO
+      cyp$put_next_line($output,
+                        'I will not throw paper airplanes in class.',
+                        status);
+      IF NOT status.NORMAL then
+        RETURN;
+    FOREND
+  PROCEND punishment;
+MODEND punishment;
