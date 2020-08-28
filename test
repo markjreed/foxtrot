@@ -73,6 +73,7 @@ for lang in "${languages[@]}"; do
       d) compile=(dmd "$f" ); run=("./${f%.$ext}");;
       dc) run=(dc -f "$f");;
       dylan) run=(rundylan "$f");;
+      elm) result='[33mSKIP[0m';;
       erl) run=(escript "$f");;
       exs) run=(elixir "$f");;
       f) compile=(gfortran "$f" ); run=(./a.out);;
@@ -119,7 +120,6 @@ for lang in "${languages[@]}"; do
       sml) compile=(mlton "$f"); run=("./${f%.$ext}");;
       sno) run=(snobol4 "$f");;
       spl) run=(splrun "$f");;
-      sq) run=(subleq "$f");;
       st) run=(gst "$f");;
       tcl) run=(tclsh "$f");;
       ts) compile=(tsc "$f"); run=(node "${f%.$ext}.js");;
