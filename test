@@ -16,7 +16,7 @@ mkdir -p "$dir"
 cp -r [Pp]unishment_*.txt Gemfile* .bundle vendor compile_*.sh run_*.sh *COM ybc basic "$dir" >&/dev/null
 cp compile_*.sh run_*.sh "$dir"
 cd "$dir"
-IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
+IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value.name' <~-/languages.json | sort -k2,2)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
   lext=$(tr A-Z a-z <<<"$ext")
@@ -64,7 +64,6 @@ for lang in "${languages[@]}"; do
       bat) run=(4bat "$f");;
       batsh) eval "$(opam env)";if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
       bef) run=(bef -q "$f");;
-      bf) run=(bf); in="$f";;
       c) compile=(gcc "$f" ); run=(./a.out);;
       cl) run=(clisp "$f");;
       clj) run=(lein exec "$f");;
