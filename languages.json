@@ -1,116 +1,386 @@
- {
-    "a60":          "Algol-60",
-    "a68":          "Algol-68",
-    "adb":          "Ada",
-    "apl":          "APL",
-    "applescript":  "AppleScript",
-    "asm":          "8080 Assembly",
-    "awk":          "AWK",
-    "b":            "B",
-    "bas":          "BASIC",
-    "bash":         "Bourne-Again Shell",
-    "bat":          "DOS Batch File",
-    "batsh":        "Batsh",
-    "bcpl":         "BCPL",
-    "bef":          "Befunge",
-    "bf":           "Brainf@!<",
-    "brs":          "BrightScript",
-    "c":            "C",
-    "cl":           "Common Lisp",
-    "clj":          "Clojure",
-    "cob":          "COBOL",
-    "coffee":       "CoffeeScript",
-    "com":          "COMAL",
-    "cpp":          "C++",
-    "cs":           "C#",
-    "csh":          "C Shell",
-    "cyb":          "CybIL (Cyber Instruction Language)",
-    "d":            "D",
-    "dart":         "Dart",
-    "dc":           "UNIX Desktop Calculator",
-    "dcl":          "DEC Command Language",
-    "doge":         "dogescript",
-    "dylan":        "Dylan",
-    "e":            "Eiffel",
-    "elm":          "Elm",
-    "erl":          "Erlang",
-    "exs":          "Elixir",
-    "f":            "Fortran",
-    "factor":       "Factor",
-    "4th":          "Forth",
-    "fr":           "Frege",
-    "fs":           "F#",
-    "go":           "Go",
-    "groovy":       "Groovy",
-    "hs":           "Haskell",
-    "i":            "INTERCAL",
-    "ico":          "Icon",
-    "idr":          "Idris",
-    "inf":          "Inform 6",
-    "io":           "Io",
-    "j":            "J",
-    "java":         "Java",
-    "joy":          "Joy",
-    "jq":           "JQ",
-    "js":           "JavaScript",
-    "julia":        "Julia",
-    "kt":           "Kotlin",
-    "lasso":        "Lasso",
-    "lily":         "Lily",
-    "logo":         "Logo",
-    "lol":          "LOLCODE",
-    "lsl":          "LSL",
-    "lua":          "Lua",
-    "m":            "Objective-C",
-    "mod":          "Modula-2",
-    "m3":           "Modula-3",
-    "m4":           "M4 Macros",
-    "ml":           "OCaml",
-    "mumps":        "MUMPS",
-    "moon":         "MoonScript",
-    "nim":          "Nim",
-    "occ":          "Occam",
-    "p":            "Pascal",
-    "p4":           "Perl 4",
-    "p5":           "Perl 5",
-    "p5i":          "Perl 5+i",
-    "raku":         "Raku (formerly Perl 6)",
-    "php":          "PHP",
-    "pl":           "Prolog",
-    "pli":          "PL/I",
-    "plm":          "PL/M",
-    "ps":           "Postscript",
-    "ps1":          "PowerShell",
-    "py2":          "Python 2",
-    "py3":          "Python 3",
-    "r":            "R",
-    "reb":          "REBOL",
-    "rb":           "Ruby",
-    "rexx":         "Rexx",
-    "rkt":          "Racket",
-    "rf":           "Ratfor",
-    "rs":           "Rust",
-    "scala":        "Scala",
-    "scl":          "SCL (NOS/VE System Command Language)",
-    "scm":          "Scheme",
-    "semi":         "Semicolon",
-    "sno":          "SNOBOL 4",
-    "spl":          "SPL",
-    "sh":           "Bourne Shell",
-    "sim":          "Simula",
-    "sl":           "S-Lang",
-    "sml":          "Standard ML",
-    "sq":           "SUBLEQ",
-    "st":           "SmallTalk",
-    "swift":        "Swift",
-    "tcl":          "Tcl",
-    "ts":           "TypeScript",
-    "tf":           "Terraform",
-    "unl":          "Unlambda",
-    "vala":         "Vala",
-    "vim":          "VimL",
-    "vq":           "var'aq",
-    "ws":           "WhiteSpace",
-    "yorick":       "Yorick",
-    "z80":          "Z-80 Assembly"
- }
+{
+  "a60": {
+    "name": "Algol-60",
+    "package": "http://mirrors.ibiblio.org/pub/mirrors/gnu/ftp/gnu/marst/marst-2.7.tar.gz"
+  },
+  "a68": {
+    "name": "Algol-68",
+    "package": "algol68g"
+  },
+  "adb": {
+    "name": "Ada",
+    "package": "gnat"
+  },
+  "apl": {
+    "name": "APL",
+    "package": "http://mirrors.ibiblio.org/pub/mirrors/gnu/ftp/gnu/apl/apl-1.8.tar.gz"
+  },
+  "applescript": {
+    "name": "AppleScript"
+  },
+  "asm": {
+    "name": "8080 Assembly"
+  },
+  "awk": {
+    "name": "AWK"
+  },
+  "b": {
+    "name": "B"
+  },
+  "bas": {
+    "name": "BASIC",
+    "package": "bwbasic"
+  },
+  "bash": {
+    "name": "Bourne-Again Shell"
+  },
+  "bat": {
+    "name": "DOS Batch File",
+    "package": "dosbox"
+  },
+  "batsh": {
+    "name": "Batsh"
+  },
+  "bcpl": {
+    "name": "BCPL"
+  },
+  "bef": {
+    "name": "Befunge"
+  },
+  "bf": {
+    "name": "Brainf@!<"
+  },
+  "brs": {
+    "name": "BrightScript"
+  },
+  "c": {
+    "name": "C"
+  },
+  "cl": {
+    "name": "Common Lisp",
+    "package": "clisp"
+  },
+  "clj": {
+    "name": "Clojure",
+    "package": "leiningen"
+  },
+  "cob": {
+    "name": "COBOL",
+    "package": "gnucobol"
+  },
+  "coffee": {
+    "name": "CoffeeScript",
+    "package": "coffeescript"
+  },
+  "com": {
+    "name": "COMAL"
+  },
+  "cpp": {
+    "name": "C++"
+  },
+  "cs": {
+    "name": "C#"
+  },
+  "csh": {
+    "name": "C Shell"
+  },
+  "cyb": {
+    "name": "CybIL (Cyber Instruction Language)"
+  },
+  "d": {
+    "name": "D"
+  },
+  "dart": {
+    "name": "Dart"
+  },
+  "dc": {
+    "name": "UNIX Desktop Calculator",
+    "package": "dc"
+  },
+  "dcl": {
+    "name": "DEC Command Language"
+  },
+  "doge": {
+    "name": "dogescript"
+  },
+  "dylan": {
+    "name": "Dylan"
+  },
+  "e": {
+    "name": "Eiffel"
+  },
+  "elm": {
+    "name": "Elm"
+  },
+  "erl": {
+    "name": "Erlang",
+    "package": "erlang-base"
+  },
+  "exs": {
+    "name": "Elixir",
+    "package": "elixir"
+  },
+  "f": {
+    "name": "Fortran",
+    "package": "gfortran"
+  },
+  "factor": {
+    "name": "Factor",
+    "package": "factor-linux-x86-64-0.98.tar.gz"
+  },
+  "4th": {
+    "name": "Forth",
+    "package": "gforth"
+  },
+  "fr": {
+    "name": "Frege"
+  },
+  "fs": {
+    "name": "F#",
+    "package": "fsharp"
+  },
+  "go": {
+    "name": "Go",
+    "package": "golang"
+  },
+  "groovy": {
+    "name": "Groovy",
+    "package": "groovy"
+  },
+  "hs": {
+    "name": "Haskell",
+    "package": "haskell-platform"
+  },
+  "i": {
+    "name": "INTERCAL",
+    "package": "intercal"
+  },
+  "ico": {
+    "name": "Icon"
+  },
+  "idr": {
+    "name": "Idris"
+  },
+  "inf": {
+    "name": "Inform 6"
+  },
+  "io": {
+    "name": "Io"
+  },
+  "j": {
+    "name": "J"
+  },
+  "java": {
+    "name": "Java"
+  },
+  "joy": {
+    "name": "Joy"
+  },
+  "jq": {
+    "name": "JQ",
+    "package": "jq"
+  },
+  "js": {
+    "name": "JavaScript",
+    "package": "nodejs"
+  },
+  "julia": {
+    "name": "Julia",
+    "package": "julia"
+  },
+  "kt": {
+    "name": "Kotlin"
+  },
+  "lasso": {
+    "name": "Lasso"
+  },
+  "lily": {
+    "name": "Lily"
+  },
+  "logo": {
+    "name": "Logo",
+    "package": "ucblogo"
+  },
+  "lol": {
+    "name": "LOLCODE",
+    "package": "https://github.com/justinmeza/lci"
+  },
+  "lsl": {
+    "name": "LSL"
+  },
+  "lua": {
+    "name": "Lua",
+    "package": "lua"
+  },
+  "m": {
+    "name": "Objective-C"
+  },
+  "mod": {
+    "name": "Modula-2"
+  },
+  "m3": {
+    "name": "Modula-3"
+  },
+  "m4": {
+    "name": "M4 Macros",
+    "package": "m4"
+  },
+  "ml": {
+    "name": "OCaml",
+    "package": "ocaml"
+  },
+  "mumps": {
+    "name": "MUMPS"
+  },
+  "moon": {
+    "name": "MoonScript"
+  },
+  "nim": {
+    "name": "Nim"
+  },
+  "occ": {
+    "name": "Occam"
+  },
+  "p": {
+    "name": "Pascal"
+  },
+  "p4": {
+    "name": "Perl 4"
+  },
+  "p5": {
+    "name": "Perl 5"
+  },
+  "p5i": {
+    "name": "Perl 5+i"
+  },
+  "raku": {
+    "name": "Raku (formerly Perl 6)",
+    "package": "rakudo"
+  },
+  "php": {
+    "name": "PHP",
+    "package": "php-cli"
+  },
+  "pl": {
+    "name": "Prolog",
+    "package": "gprolog"
+  },
+  "pli": {
+    "name": "PL/I"
+  },
+  "plm": {
+    "name": "PL/M"
+  },
+  "ps": {
+    "name": "Postscript",
+    "package": "ghostscript"
+  },
+  "ps1": {
+    "name": "PowerShell"
+  },
+  "py2": {
+    "name": "Python 2",
+    "package": "python2"
+  },
+  "py3": {
+    "name": "Python 3",
+    "package": "python3"
+  },
+  "r": {
+    "name": "R"
+  },
+  "reb": {
+    "name": "REBOL"
+  },
+  "rb": {
+    "name": "Ruby",
+    "package": "ruby"
+  },
+  "rexx": {
+    "name": "Rexx"
+  },
+  "rkt": {
+    "name": "Racket",
+    "package": "racket"
+  },
+  "rf": {
+    "name": "Ratfor"
+  },
+  "rs": {
+    "name": "Rust",
+    "package": "rustc"
+  },
+  "scala": {
+    "name": "Scala",
+    "package": "scala"
+  },
+  "scl": {
+    "name": "SCL (NOS/VE System Command Language)"
+  },
+  "scm": {
+    "name": "Scheme",
+    "package": "guile"
+  },
+  "semi": {
+    "name": "Semicolon"
+  },
+  "sno": {
+    "name": "SNOBOL 4"
+  },
+  "spl": {
+    "name": "SPL"
+  },
+  "sh": {
+    "name": "Bourne Shell"
+  },
+  "sim": {
+    "name": "Simula"
+  },
+  "sl": {
+    "name": "S-Lang"
+  },
+  "sml": {
+    "name": "Standard ML"
+  },
+  "sq": {
+    "name": "SUBLEQ"
+  },
+  "st": {
+    "name": "SmallTalk"
+  },
+  "swift": {
+    "name": "Swift"
+  },
+  "tcl": {
+    "name": "Tcl",
+    "package": "tcl"
+  },
+  "ts": {
+    "name": "TypeScript"
+  },
+  "tf": {
+    "name": "Terraform",
+    "package": "terraform"
+  },
+  "unl": {
+    "name": "Unlambda"
+  },
+  "vala": {
+    "name": "Vala"
+  },
+  "vim": {
+    "name": "VimL"
+  },
+  "vq": {
+    "name": "var'aq"
+  },
+  "ws": {
+    "name": "WhiteSpace"
+  },
+  "yorick": {
+    "name": "Yorick"
+  },
+  "z80": {
+    "name": "Z-80 Assembly"
+  }
+}
