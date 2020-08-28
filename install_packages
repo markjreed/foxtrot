@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+main() {
+  jq -r 'to_entries[]|.value|select(.package)|.package' "$(dirname "${BASH_SOURCE[0]}")/languages.json"| while read pkg; do
+    if [[ "$pkg" == *git* ]]; then
+      git clone "$pkg" 
+      d=${pkg##*/}
+      d=${d%.git}
+      (cd "$d" && install_dir .)
+    elif [[ "$pkg" == *://* ]]; then
+      echo "downloading '$pkg'"
+      curl -LO "$pkg"
+      f=${pkg##*/}
+      if [[ $f == *.tgz || $f == *.tar.gz ]]; then
+        tar xzf "$f"
+        d=${f%.t*gz}
+        (cd "$d" && install_dir .)
+       elif [[ $f == *zip ]]; then
+         unzip "$f"
+        d=${f%.zip}
+        (cd "$d" && install_dir .)
+       fi
+    else
+      apt-get -y install "$pkg"
+    fi
+  done
+}
+
+install_dir() {
+  if [[ -r config.*in ]]; then
+    ./configure 
+  fi
+  if [[ -r Makefile ]]; then
+    make && make install
+  elif [[ -r CMakefile ]]; then
+    cmake && cmake install
+  fi
+  mv "$PWD" /opt
+}
+
+main "$@"

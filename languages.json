@@ -262,7 +262,7 @@
   },
   "pl": {
     "name": "Prolog",
-    "package": "gprolog"
+    "package": "swi-prolog"
   },
   "pli": {
     "name": "PL/I"
@@ -359,7 +359,7 @@
   },
   "tf": {
     "name": "Terraform",
-    "package": "terraform"
+    "package": "https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip"
   },
   "unl": {
     "name": "Unlambda"
