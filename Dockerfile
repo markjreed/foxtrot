@@ -1,8 +1,7 @@
 FROM ubuntu:20.04
 RUN dpkg --add-architecture i386
-RUN apt-get install -qqy software-properties-common
-RUN add-apt-repository ppa:avsm/ppa
 RUN apt-get -qq update
+RUN apt-get install -qqy software-properties-common
 RUN apt-get install -qqy libc6:i386 libstdc++6:i386 gcc-multilib
 RUN apt-get install -qqy unzip libxt6 python3-software-properties
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential curl git jq vim apt-utils
@@ -18,5 +17,5 @@ COPY . /opt/foxtrot
 #    && tar xzf yaze-ag-2.4*trans.tar.gz && cd yaze-ag-2.4*trans && \
 #    make -f Makefile_linux_64_intel_corei7 install
 RUN /opt/foxtrot/install_packages
-RUN mkdir ~/.lein && cp profiles.clj ~/.lein
+RUN mkdir ~/.lein && mv /opt/foxtrot/profiles.clj ~/.lein
 RUN DEBIAN_FRONT_END=noninteractive apt-get -y install npm && npm install -g typescript
