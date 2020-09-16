@@ -127,6 +127,7 @@ for lang in "${languages[@]}"; do
       unl) run=(unlambda "$f");;
       vala) compile=(valac "$f"); run=("./${f%.$ext}");;
       vq) run=(varaq "$f");;
+      wren) run=(wren_cli "$f");;
       yorick) run=(yorick -batch "$f");;
       *) if type -t "$ext"  >/dev/null; then
            run=("$ext" "$f")
