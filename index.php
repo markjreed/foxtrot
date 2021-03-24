@@ -1,3 +1,6 @@
+<?php 
+header('Content-Type: text/html');
+?>
 <html>
  <head>
   <title>Foxtrot Translations</title>
