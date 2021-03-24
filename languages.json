@@ -62,6 +62,7 @@
     "lsl":          "LSL",
     "lua":          "Lua",
     "m":            "Objective-C",
+    "mad":          "MAD",
     "mod":          "Modula-2",
     "m3":           "Modula-3",
     "m4":           "M4 Macros",

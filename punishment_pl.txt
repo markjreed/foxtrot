@@ -1,3 +1,12 @@
-% vim: ft=prolog
-main :- foreach(between(1,500,_),
-            writeln('I will not throw paper airplanes in class.')), halt.
+% some convenience predicates (these are predefined in SWI-Prolog)
+foreach(Generator, Goal) :-
+    findall(Goal, Generator, Goals),
+    maplist(call, Goals).
+
+writeln(Goal) :-
+    display(Goal),
+    nl.
+
+main :-
+    foreach(between(1,500,_),
+    writeln('I will not throw paper airplanes in class.')), halt.
