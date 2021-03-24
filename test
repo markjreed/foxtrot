@@ -93,6 +93,7 @@ for lang in "${languages[@]}"; do
       lol) run=(lci "$f");;
       lsl) result='[33mSKIP[0m';;
       m) compile=(clang -framework Foundation "$f"); run=(./a.out);;
+      mad) compile=(mad "$f"); run=(./"${f%.*}");;
       mod) compile=(gm2 -fno-pth -flibs=log,pim "$f"); run=(./a.out);;
       m3) compile=(cm3); run=(bash -c "./*/prog"); rm -f punishment.*;;
       ml) run=(ocaml  "$f");;

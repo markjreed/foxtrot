@@ -214,6 +214,9 @@
   "m": {
     "name": "Objective-C"
   },
+  "mad": {
+    "name": "MAD"
+  },
   "mod": {
     "name": "Modula-2"
   },

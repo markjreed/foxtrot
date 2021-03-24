@@ -1,0 +1,6 @@
+            INTEGER I
+            VECTOR VALUES LINE = $43H I will not throw paper airplanes in class.*$
+            THROUGH DONE, FOR I = 1, 1, I .G. 500
+            PRINT FORMAT LINE
+DONE        CONTINUE
+            END OF PROGRAM
