@@ -1,0 +1,3 @@
+for (0 ..^ 500) { |_|
+   say "I will not throw paper airplanes in class."
+}
