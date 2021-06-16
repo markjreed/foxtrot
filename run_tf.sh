@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-(terraform init && terraform apply ) >&/dev/null && \
-terraform output | sed 's/^values = //'
+(terraform init && terraform apply -auto-approve ) >&/dev/null && \
+terraform output | sed /EOT/d
