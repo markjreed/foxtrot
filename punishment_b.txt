@@ -1,6 +1,6 @@
 main() {
   auto i;
   i=0;
-  while (i++ < 500) 
+  while (i++ < 500)
     printf("I will not throw paper airplanes in class.*n");
 }

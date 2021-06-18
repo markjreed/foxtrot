@@ -3,7 +3,7 @@ MODULE Punishment; FROM InOut IMPORT WriteString, WriteLn;
 VAR count: INTEGER;
 
 BEGIN
-  FOR count := 1 TO 500 DO 
+  FOR count := 1 TO 500 DO
     WriteString('I will not throw paper airplanes in class.');
     WriteLn
   END
