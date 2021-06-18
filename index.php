@@ -4,6 +4,7 @@ header('Content-Type: text/html');
 <html>
  <head>
   <title>Foxtrot Translations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
   <style>
    html * { font-family: sans-serif; }
    h1, p, form { margin-left: auto; margin-right: auto; text-align: center; }
@@ -16,8 +17,8 @@ header('Content-Type: text/html');
                  background-color: black;  word-wrap: break-word; overflow-y: scroll;
                  color: white; margin-left: 0; margin-top: 0; 
                  scroll: auto; padding: 0; margin: 0; text-align: left } 
-   #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic sans ms", sans-serif;
-                     font-size: 94%; padding-top: 0;}
+   #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic mono", "comic sans ms", sans-serif;
+                     font-size: 90%; padding-top: 0;}
    #blackboard::-webkit-scrollbar { height: 0px; width: 0px; }
    #programs::-webkit-scrollbar { -webkit-appearance: none; }
    #programs::-webkit-scrollbar:vertical { width: 11px; }
