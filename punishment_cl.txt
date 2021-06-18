@@ -1,2 +1,2 @@
-(dotimes (i 500)
- (write-line "I will not throw paper airplanes in class."))
+(format t "~{~*I will not throw paper airplanes in class.~%~}"
+          (make-list 500))
