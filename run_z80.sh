@@ -1,5 +1,5 @@
 #!/bin/sh -e
-if (( ! $#  )); then 
+if (( ! $#  )); then
   echo >&2 "Usage: $0 z80-assembly-file"
   exit 1
 fi
@@ -19,7 +19,7 @@ B:SETDEF [NOPAGE]
 Z80ASM RUNME/AK
 RUNME
 EOF
-cdm BOOT_UTILS.ydsk >&/dev/null  <<'EOF' 
+cdm BOOT_UTILS.ydsk >&/dev/null  <<'EOF'
 era profile.sub
 cp t:profile.sub
 cp t:runme.z80

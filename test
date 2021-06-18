@@ -1,11 +1,11 @@
-#!/bin/bash 
+#!/bin/bash
 if ! type -p md5 >&/dev/null; then
   md5() {
     md5sum "$@" | awk '{print $1}'
   }
 fi
 let keep=0 verbose=0
-if [[ "$1" == -v ]]; then 
+if [[ "$1" == -v ]]; then
   let verbose=1
   exec 3>&2
   shift
@@ -54,7 +54,7 @@ for lang in "${languages[@]}"; do
     fi
     if [ -x "run_$ext.sh" ]; then
       run=("./run_$ext.sh" "$f" )
-    else 
+    else
       case "$ext" in
       a68) run=(a68g "$f");;
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
@@ -137,12 +137,12 @@ for lang in "${languages[@]}"; do
          else
            result='[33mSKIP[0m'
          fi;;
-      esac 
+      esac
     fi
     if [ -z "$result" ]; then
       rm -f punishment a.out
       if (( ${#compile[@]} )); then
-        if (( verbose )); then echo $'\n\t'"${compile[@]}" >&3; fi 
+        if (( verbose )); then echo $'\n\t'"${compile[@]}" >&3; fi
         if type -p "${compile[0]}" >/dev/null 2>&1; then
           if "${compile[@]}" >/dev/null 2>&1; then
             :
@@ -157,7 +157,7 @@ for lang in "${languages[@]}"; do
         fi
       fi
       if [ -z "$result" ]; then
-        if (( verbose )); then echo $'\t'"${run[@]}" >&3; fi 
+        if (( verbose )); then echo $'\t'"${run[@]}" >&3; fi
         if type -p "${run[0]}" >/dev/null 2>&1; then
           if [ -n "$in" ]; then
             "${run[@]}" <"$in"
@@ -166,11 +166,11 @@ for lang in "${languages[@]}"; do
           fi
         else
           result='[33mSKIP[0m'
-        fi >$ext.out1 2>$ext.err 
+        fi >$ext.out1 2>$ext.err
         if (( $? == 2 )); then
           result='[33mSKIP[0m'
         else
-          tr -d $'\r' <$ext.out1 >$ext.out 
+          tr -d $'\r' <$ext.out1 >$ext.out
           if [ -z "$result" ]; then
             if [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
               result='[32mPASS[0m'
@@ -184,7 +184,7 @@ for lang in "${languages[@]}"; do
     fi
     echo "$result"
   fi
-done 
+done
 if (( keep )); then
   echo "Files are in $dir"
 else

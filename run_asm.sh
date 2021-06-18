@@ -1,5 +1,5 @@
 #!/bin/sh -e
-if (( ! $#  )); then 
+if (( ! $#  )); then
   echo >&2 "Usage: $0 8080-assembly-file"
   exit 1
 fi
@@ -20,7 +20,7 @@ B:MAC RUNME
 B:HEXCOM RUNME
 RUNME
 EOF
-cdm BOOT_UTILS.ydsk >&/dev/null  <<'EOF' 
+cdm BOOT_UTILS.ydsk >&/dev/null  <<'EOF'
 era profile.sub
 cp t:profile.sub
 cp t:runme.asm
