@@ -1,4 +1,4 @@
-<?php 
+<?php
 header('Content-Type: text/html');
 ?>
 <html>
@@ -10,13 +10,13 @@ header('Content-Type: text/html');
    h1, p, form { margin-left: auto; margin-right: auto; text-align: center; }
    #comic { width: 900px; height: 296px; background-size:900px 296px;
             background-repeat:no-repeat;
-            margin-left: auto; margin-right: auto; text-align: center; 
-            background-image: url(foxtrot_ccode.jpg); 
+            margin-left: auto; margin-right: auto; text-align: center;
+            background-image: url(foxtrot_ccode.jpg);
             padding-left: 2; padding-top: 0 }
    #blackboard { width: 533px; height: 240px; max-height: 240px;
                  background-color: black;  word-wrap: break-word; overflow-y: scroll;
-                 color: white; margin-left: 0; margin-top: 0; 
-                 scroll: auto; padding: 0; margin: 0; text-align: left } 
+                 color: white; margin-left: 0; margin-top: 0;
+                 scroll: auto; padding: 0; margin: 0; text-align: left }
    #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic mono", "comic sans ms", sans-serif;
                      font-size: 90%; padding-top: 0;}
    #blackboard::-webkit-scrollbar { height: 0px; width: 0px; }
@@ -28,14 +28,14 @@ header('Content-Type: text/html');
      background-color: rgba(0, 0, 0, .5);
    }
 
-   #programs::-webkit-scrollbar-track { 
-      background-color: #fff; 
-      border-radius: 8px; 
-   } 
+   #programs::-webkit-scrollbar-track {
+      background-color: #fff;
+      border-radius: 8px;
+   }
   </style>
  </head>
  <body>
-  <h1>Foxtrot Translations</h1> 
+  <h1>Foxtrot Translations</h1>
   <div id="comic"><div id="blackboard"><pre id="code">#include &lt;stdio.h>
 int main(void)
 {
@@ -54,17 +54,17 @@ int main(void)
   <p>Select Language</p>
   <form>
    <select id="programs" size="15">
-<?php 
+<?php
   $languages = json_decode(file_get_contents('languages.json'), true);
   $filenames = glob('[Pp]unishment_*');
   $programs = array();
-  foreach ($filenames as $name) { 
+  foreach ($filenames as $name) {
     list($a, $b) = explode('_', $name);
     list($sfx, $c) = explode('.', $b);
     $label = null;
     if (array_key_exists($sfx, $languages)) {
       $programs[$name] = $languages[$sfx];
-    } 
+    }
   }
   natcasesort($programs);
   foreach ($programs as $name => $label) {
@@ -74,7 +74,7 @@ int main(void)
       $selected = '';
     }
     ?>
-    
+
     <option<?=$selected?> value="<?=$name?>"><?= $label ?></option>
 <?php } ?>
    </select>
@@ -88,7 +88,7 @@ int main(void)
      xhr.open("GET", filename);
      xhr.onreadystatechange = function() {
        if (xhr.readyState==4) {
-         code.innerHTML = 
+         code.innerHTML =
             xhr.responseText.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
        }
      }
@@ -110,14 +110,14 @@ int main(void)
    function scrollCode() {
      if (blackboard.scrollHeight > blackboard.clientHeight) {
         blackboard.scrollTop += 1;
-     } 
+     }
    }
    function initialize() {
      blackboard = document.getElementById("blackboard")
      programs = document.getElementById("programs")
      code = document.getElementById("code")
      var h, i, o, download = document.getElementById("download")
-     download.onclick = function() { 
+     download.onclick = function() {
        window.location = programs.options[programs.selectedIndex].value;
      }
      programs.onchange = loadCode
@@ -126,12 +126,12 @@ int main(void)
        h = decodeURIComponent(window.location.hash.substring(1)).toLowerCase()
        for (i=0; i<programs.options.length; ++i) {
          o = programs.options[i]
-         if (o.label.toLowerCase() == h || 
+         if (o.label.toLowerCase() == h ||
              o.value.toLowerCase() == "punishment_" + h + ".txt") {
            programs.selectedIndex = i;
            loadCode();
            break;
-         } 
+         }
        }
      }
    }
