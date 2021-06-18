@@ -66,7 +66,7 @@ for lang in "${languages[@]}"; do
       bef) run=(bef -q "$f");;
       bf) run=(bf); in="$f";;
       c) compile=(gcc "$f" ); run=(./a.out);;
-      cl) run=(clisp "$f");;
+      lisp) run=(clisp "$f");;
       clj) run=(lein exec "$f");;
       cob) compile=(cobc -x "$f"); run=("./${f%.$ext}");;
       cpp) compile=(g++ "$f" ); run=(./a.out);;
