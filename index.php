@@ -63,11 +63,8 @@ int main(void)
     list($sfx, $c) = explode('.', $b);
     $label = null;
     if (array_key_exists($sfx, $languages)) {
-      $label = $languages[$sfx];
-    } else {
-      $label = $sfx;
+      $programs[$name] = $languages[$sfx];
     } 
-    $programs[$name] = $label;
   }
   natcasesort($programs);
   foreach ($programs as $name => $label) {
