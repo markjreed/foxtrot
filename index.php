@@ -18,7 +18,7 @@ header('Content-Type: text/html');
                  color: white; margin-left: 0; margin-top: 0;
                  scroll: auto; padding: 0; margin: 0; text-align: left }
    #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic mono", "comic sans ms", sans-serif;
-                     font-size: 90%; padding-top: 0;}
+                     font-size: 85%; padding-top: 0;}
    #blackboard::-webkit-scrollbar { height: 0px; width: 0px; }
    #programs::-webkit-scrollbar { -webkit-appearance: none; }
    #programs::-webkit-scrollbar:vertical { width: 11px; }
