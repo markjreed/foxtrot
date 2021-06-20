@@ -1,2 +1,2 @@
-for _ in 1..500 do
+for count in 1..500 do
   printfn "%s" "I will not throw paper airplanes in class.";;
