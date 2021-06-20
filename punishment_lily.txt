@@ -1,2 +1,2 @@
-for i in 1...500:
+for count in 1...500:
   printfmt("%s\n", "I will not throw paper airplanes in class.")

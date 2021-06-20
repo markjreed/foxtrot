@@ -1,4 +1,4 @@
 # Modern POSIX-compliant shell
-for (( i=0; i<500; ++i )); do
+for (( count=0; count<500; ++count )); do
   echo "I will not throw paper airplanes in class."
 done

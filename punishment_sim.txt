@@ -1,5 +1,5 @@
 Begin
-  integer i;
-  for i := 1 step 1 until 500 do
+  integer count;
+  for count := 1 step 1 until 500 do
     outtext("I will not throw paper airplanes in class.");
 End;

@@ -1,5 +1,5 @@
-i = 0;
-while (i < 500) {
+count = 0;
+while (count < 500) {
   echo("I will not throw paper airplanes in class.");
-  i = i + 1;
+  count = count + 1;
 }

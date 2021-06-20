@@ -1,7 +1,7 @@
 default {
   state_entry() {
-    integer i;
-    for (i=0; i<500; i++) {
+    integer count;
+    for (count=0; count<500; count++) {
       llOwnerSay("I will not throw paper airplanes in class.");
     }
   }

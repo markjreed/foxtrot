@@ -1,3 +1,3 @@
-for i = 1 to 500 do
+for count = 1 to 500 do
   print_string "I will not throw paper airplanes in class.\n"
 done;;

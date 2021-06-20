@@ -1,9 +1,9 @@
 program punishment(output);
 
 var
-  i: integer;
+  count: integer;
 
 begin
-  for i := 1 to 500 do
+  for count := 1 to 500 do
     writeln('I will not throw paper airplanes in class.')
 end.

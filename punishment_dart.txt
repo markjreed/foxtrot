@@ -1,5 +1,5 @@
 main() {
-  for (var i=0; i<500; ++i) {
+  for (var count=0; count<500; ++count) {
     print('I will not throw paper airplanes in class.');
   }
 }

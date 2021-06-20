@@ -1,1 +1,1 @@
-for(i,1,500, "I will not throw paper airplanes in class." println)
+for(count,1,500, "I will not throw paper airplanes in class." println)

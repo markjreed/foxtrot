@@ -1,5 +1,5 @@
 BEGIN {
-  for (i=0;i<500;++i) {
+  for (count=0;count<500;++count) {
     print "I will not throw paper airplanes in class."
   }
 }

@@ -1,10 +1,10 @@
 class PUNISHMENT create make feature
-    i: INTEGER
+    count: INTEGER
     make is
          do
-           from i := 1 until i > 500 loop
+           from count := 1 until count > 500 loop
              print ("I will not throw paper airplanes in class.%N")
-             i := i + 1
+             count := count + 1
            end
          end
 end
