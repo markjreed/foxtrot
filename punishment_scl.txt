@@ -1,5 +1,5 @@
 PROC display_punishment, disp ( count, c: INTEGER = 500 )
-    FOR i = 1 TO 500 DO
+    FOR i = 1 TO count DO
         DISPLAY_VALUE 'I will not throw paper airplanes in class.')
     FOREND
 PROCEND display_punishment
