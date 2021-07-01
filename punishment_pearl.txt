@@ -1,14 +1,15 @@
-MODULE Punishment;
+MODULE (Punishment);
   SYSTEM;
     blackboard: STDOUT;
 
   PROBLEM;
     DECLARE i FIXED;
 
-    TASK MAIN;
+    scribe: TASK MAIN;
       FOR i FROM 1 BY 1 TO 500
       REPEAT
         PUT 'I will not throw paper airplanes in class.' TO blackboard BY A;
-      END;
+      END; ! repeat
+    END; ! scribe
 
-MODEND;
+MODEND; ! Punishment
