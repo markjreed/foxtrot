@@ -72,6 +72,7 @@
     "nim":          "Nim",
     "occ":          "Occam",
     "p":            "Pascal",
+    "pearl":        "PEARL",
     "p4":           "Perl 4",
     "p5":           "Perl 5",
     "p5i":          "Perl 5+i",
