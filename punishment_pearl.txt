@@ -3,10 +3,10 @@ MODULE (Punishment);
     blackboard: STDOUT;
 
   PROBLEM;
-    DECLARE i FIXED;
+    DECLARE count FIXED;
 
     scribe: TASK MAIN;
-      FOR i FROM 1 BY 1 TO 500
+      FOR count FROM 1 BY 1 TO 500
       REPEAT
         PUT 'I will not throw paper airplanes in class.' TO blackboard BY A;
       END; ! repeat
