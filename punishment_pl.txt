@@ -4,7 +4,7 @@ foreach(Generator, Goal) :-
     maplist(call, Goals).
 
 writeln(Goal) :-
-    display(Goal),
+    write(Goal),
     nl.
 
 main :-
