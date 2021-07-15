@@ -1,0 +1,2 @@
+(for count 0 500
+  (print "I will not throw paper airplanes in class."))
