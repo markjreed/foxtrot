@@ -1,0 +1,2 @@
+(do 500 (prinl "I will not throw paper airplanes in class."))
+(bye)
