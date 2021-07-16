@@ -8,5 +8,5 @@ writeln(Goal) :-
     nl.
 
 main :-
-    foreach(between(1,500,_),
+    foreach(between(1,500,Count),
     writeln('I will not throw paper airplanes in class.')), halt.
