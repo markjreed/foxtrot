@@ -1,0 +1,2 @@
+(io:put_chars (lists:join "\n" 
+  (lists:duplicate 500 "I will not throw paper airplanes in class.")))

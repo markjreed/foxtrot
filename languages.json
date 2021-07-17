@@ -16,6 +16,7 @@
     "bf":           "Brainf@!<",
     "brs":          "BrightScript",
     "c":            "C",
+    "lfe":          "Lisp-Flavored Erlang",
     "lisp":         "Common Lisp",
     "clj":          "Clojure",
     "cob":          "COBOL",
