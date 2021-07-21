@@ -60,7 +60,7 @@ for lang in "${languages[@]}"; do
       adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       awk) run=(awk -f ./"$f");;
       b) if ! type -p ybc >&/dev/null; then result='[33mSKIP[0m'; else compile=(bash -c "ybc -c "$PWD/$f"; clang -m32 $f.o /usr/local/opt/ybc/b-lib.o"); run=(./a.out); fi;;
-      bas) run=(basic "$f");;
+      bas) run=(cbmbasic "$f");;
       bat) run=(4bat "$f");;
       batsh) eval "$(opam env)";if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
       bef) run=(bef -q "$f");;
