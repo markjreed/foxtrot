@@ -1,5 +1,6 @@
+(patom (implode 14))
 (setq count 0)
 (dowhile (lessp count 500)
+  (setq count (add count 1))
   (patom '"I will not throw paper airplanes in class.")
-  (patom (implode '(13)))
-  (setq count (+ count 1)))
+  (patom (implode '(13))))
