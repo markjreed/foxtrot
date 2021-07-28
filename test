@@ -115,6 +115,7 @@ for lang in "${languages[@]}"; do
       reb) run=(rebol -q "$f");;
       rkt) run=(racket "$f");;
       rs) compile=(rustc "$f"); run=("./${f%.$ext}");;
+      sci) run=(scilab-cli -nb -f "$f" -quit);;
       scm) run=(scheme --quiet --load "$f" --eval '(exit)');;
       semi) run=(semicolon "$f");;
       sf) run=(sidef "$f");;
