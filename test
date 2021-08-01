@@ -77,7 +77,7 @@ for lang in "${languages[@]}"; do
       elm) result='SKIP';;
       erl) run=(escript "$f");;
       exs) run=(elixir "$f");;
-      f) compile=(gfortran "$f" ); run=(./a.out);;
+      f) compile=(gfortran -std=legacy "$f" ); run=(./a.out);;
       fr) compile=(fregec "$f" ); run=(frege Punishment);;
       4th) run=(gforth "$f");;
       go) run=(go run "$f");;
