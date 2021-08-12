@@ -38,6 +38,7 @@
     "exs":          "Elixir",
     "f":            "Fortran",
     "factor":       "Factor",
+    "foc":          "FOCAL",
     "4th":          "Forth",
     "fr":           "Frege",
     "fs":           "F#",
