@@ -4,7 +4,7 @@
     "adb":          "Ada",
     "apl":          "APL",
     "applescript":  "AppleScript",
-    "asm":          "8080 Assembly",
+    "asm":          "8080 Assembly on CP/M",
     "awk":          "AWK",
     "b":            "B",
     "bas":          "BASIC",
@@ -125,5 +125,5 @@
     "wren":         "Wren",
     "ws":           "WhiteSpace",
     "yorick":       "Yorick",
-    "z80":          "Z-80 Assembly"
+    "z80":          "Z-80 Assembly on CP/M"
  }
