@@ -1,0 +1,7 @@
+      C:C=0
+*Loop T:I will not throw paper airplanes in class.
+      C:C=C+1
+      C:$=C
+      M:500
+      JN:*Loop
+      E:

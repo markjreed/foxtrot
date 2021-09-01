@@ -83,6 +83,7 @@
     "p5":           "Perl 5",
     "p5i":          "Perl 5+i",
     "pil":          "PicoLisp",
+    "pilot":        "PILOT",
     "raku":         "Raku (formerly Perl 6)",
     "php":          "PHP",
     "pl":           "Prolog",
