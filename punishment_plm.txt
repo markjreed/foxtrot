@@ -1,11 +1,11 @@
 punishment: do;
-   puts: procedure(str) external; declare str pointer; end puts;
-   main: procedure;
-      dcl count integer,
-            msg pointer
-                initial(@('I will not throw paper airplanes in class.'));
-      do count = 1 to 500 by 1;
-         call puts(msg);
-      end;
-    end main;
+  puts: procedure(str) external; declare str pointer; end puts;
+  main: procedure;
+    dcl count integer,
+          msg pointer
+              initial(@('I will not throw paper airplanes in class.'));
+    do count = 1 to 500 by 1;
+      call puts(msg);
+    end;
+  end main;
 end punishment;
