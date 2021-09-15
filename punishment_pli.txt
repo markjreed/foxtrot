@@ -1,8 +1,8 @@
 punishment: procedure options(main);
    declare
-      count fixed decimal(3);
+      count fixed decimal(3),
       msg   character(42) static
-            initial('I will not throw paper airplanes in class.'),
+            initial('I will not throw paper airplanes in class.');
    put list(msg);
    do count = 1 to 499;
       put skip list(msg);
