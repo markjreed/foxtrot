@@ -1,11 +1,10 @@
-PUNISH: PROCEDURE OPTIONS (MAIN);
-
-  DCL SYSPRINT FILE PRINT;
-  DCL I FIXED DEC (3);
-
-  PUT STRING(DATA('I will not throw paper airplanes in class.'));
-  DO I = 1 TO 499;
-    PUT SKIP STRING(DATA('I will not throw paper airplanes in class.'));
-  END;
-
-END PUNISH;
+punish:
+  proc options(main);
+    dcl
+       msg character(42) static initial('I will not throw paper airplanes in class.'),
+       i fixed dec (3);
+    put list(msg);
+    do i = 1 to 499;
+       put skip list(msg);
+    end;
+end punish;
