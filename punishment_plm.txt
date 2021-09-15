@@ -3,7 +3,7 @@ punishment: do;
    main: procedure;
       declare count integer,
               msg   pointer
-                    initial(@('I will not throw paper airplanes in class.'));
+                 initial(@('I will not throw paper airplanes in class.'));
       do count = 1 to 500 by 1;
          call puts(msg);
       end;
