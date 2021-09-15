@@ -1,11 +1,10 @@
-punish:
-  proc options(main);
-    dcl
-       msg char(42) static
+punishment: procedure options(main);
+   declare
+      msg character(42) static
          initial('I will not throw paper airplanes in class.'),
-       i fixed dec (3);
-    put list(msg);
-    do i = 1 to 499;
-       put skip list(msg);
-    end;
-end punish;
+      count fixed decimal(3);
+   put list(msg);
+   do count = 1 to 499;
+      put skip list(msg);
+   end;
+end punishment;
