@@ -1,7 +1,7 @@
 punish:
   proc options(main);
     dcl
-       msg character(42) static initial('I will not throw paper airplanes in class.'),
+       msg char(42) static initial('I will not throw paper airplanes in class.'),
        i fixed dec (3);
     put list(msg);
     do i = 1 to 499;
