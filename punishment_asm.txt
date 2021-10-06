@@ -1,8 +1,10 @@
-        ORG     100H    ;TRANSIENT PROGRAM AREA
-BDOS    EQU     0005H   ;BDOS ENTRY POINT
-WSTR    EQU     9       ;WRITE STRING FUNCTION
+        ORG     100H    ;transient program area
+BDOS    EQU     0005H   ;BDOS entry point
+EXIT    EQU     0       ;exit to CP/M
+WSTR    EQU     9       ;write string to console
 
-        LXI     B, 2F4H
+        LXI     B, 500D ;Number of iterations
+        INR     B       ;increment high byte to simplify loop logic
 LOOP    PUSH    B
         LXI     D,MSG
         MVI     C,WSTR
@@ -12,7 +14,7 @@ LOOP    PUSH    B
         JNZ     LOOP
         DCR     B
         JNZ     LOOP
-        MVI     C,0
+        MVI     C,EXIT
         CALL    BDOS
         RET
 MSG     DB      'I will not throw paper airplanes in class.'
