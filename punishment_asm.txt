@@ -2,17 +2,16 @@
 BDOS    EQU     0005H   ;BDOS ENTRY POINT
 WSTR    EQU     9       ;WRITE STRING FUNCTION
 
-        MVI     C,2
-OUTER   MVI     B,250D
-INNER   PUSH    B
+        LXI     B, 2F4H
+LOOP    PUSH    B
         LXI     D,MSG
         MVI     C,WSTR
         CALL    BDOS
         POP     B
-        DCR     B
-        JNZ     INNER
         DCR     C
-        JNZ     OUTER
+        JNZ     LOOP
+        DCR     B
+        JNZ     LOOP
         MVI     C,0
         CALL    BDOS
         RET
