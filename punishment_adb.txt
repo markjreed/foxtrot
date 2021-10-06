@@ -2,7 +2,7 @@ with Ada.Text_IO;
 use Ada.Text_IO;
 procedure Punishment is
 begin
-  for I in 1..500 loop
+  for Count in 1..500 loop
     Put_Line("I will not throw paper airplanes in class.");
   end loop;
 end Punishment;
