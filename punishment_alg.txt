@@ -1,0 +1,8 @@
+BEGIN
+COMMENT ALGOL-M;
+
+INTEGER COUNT;
+FOR COUNT:=1 STEP 1 UNTIL 500 DO
+  WRITE("I will not throw paper airplanes in class.");
+END
+EOF
