@@ -5,6 +5,7 @@ pub fn main() !void {
   var count: usize = 0;
   while (count < 500) {
     count += 1;
-    try stdout.print("{s}\n", .{"I will not throw paper airplanes in class."});
+    try stdout.print("{s}\n",
+                     .{"I will not throw paper airplanes in class."});
   }
 }
