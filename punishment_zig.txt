@@ -6,6 +6,6 @@ pub fn main() !void {
   while (count < 500) {
     count += 1;
     try stdout.print("{s}\n",
-                     .{"I will not throw paper airplanes in class."});
+                   .{"I will not throw paper airplanes in class."});
   }
 }
