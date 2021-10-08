@@ -1,10 +1,7 @@
-        ORG     100H    ;transient program area
-BDOS    EQU     0005H   ;BDOS entry point
-EXIT    EQU     0       ;exit to CP/M
-WSTR    EQU     9       ;write string to console
-
-        LXI     B, 500D ;Number of iterations
-        INR     B       ;increment high byte to simplify loop logic
+        ORG     100H    
+BDOS    EQU     0005H   
+WSTR    EQU     9       
+        LXI     B, 756D 
 LOOP    PUSH    B
         LXI     D,MSG
         MVI     C,WSTR
@@ -14,12 +11,6 @@ LOOP    PUSH    B
         JNZ     LOOP
         DCR     B
         JNZ     LOOP
-        MVI     C,EXIT
-        CALL    BDOS
         RET
-MSG     DB      'I will not throw paper airplanes in class.'
-        DB      0DH
-        DB      0AH
-        DB      '$'
+MSG     DB      'I will not throw paper airplanes in class.',0DH,0AH,'$"
         END     100H
-
