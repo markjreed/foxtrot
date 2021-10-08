@@ -1,21 +1,16 @@
-        org 0100h     ; standard location for code run from CP/M
-bdos    equ 0005h     ; address for BDOS system calls
-putstr  equ 0009h     ; id of call to print a string
-
-         ld b,244     ; djnz instruction is 8-bit and operates on b, so
-         ld c,2       ; b gets the low byte even though it's the high half of BC
-loop:
-       push bc        ; have to stash our counters
-         ld c, putstr ; set up the system call
-         ld de, msg   ; with parameter
-       call bdos      ; make the call
-        pop bc        ; retrieve counters
+        org 0100h
+bdos    equ 0005h
+putstr  equ 0009h
+         ld b,244
+         ld c,2
+loop:  push bc
+         ld c, putstr
+         ld de, msg
+       call bdos
+        pop bc
        djnz loop
         dec c
          jp nz,loop
-        ret           ; return to caller
-
-       ; the message to print
+        ret
 msg:   defm 'I will not throw paper airplanes in class.',0dh,0ah,'$'
-
-        end 0100h ; signal end of unit
+        end 0100h

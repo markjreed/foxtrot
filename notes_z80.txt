@@ -1,0 +1,30 @@
+        org 0100h     ; standard location for code run from CP/M
+bdos    equ 0005h     ; address for BDOS system calls
+putstr  equ 0009h     ; id of call to print a string
+
+        ; 500 = 1x256+244. We store 2 instead of 1 to simplify logic - the
+        ; loop ends when the counter hits zero instead of needing to continue
+        ; until it wraps around to 255.
+
+        ; when BC is used as a 16-bit register pair, B holds the high half,
+        ; but there are no handy 16-bit instructions for decrementing BC and
+        ; looping if zero. The DJNZ instruction operates on B alone as an 8-bit
+        ; value, so we swap their roles and store the high byte (+1) in C.
+
+         ld b,244     ; djnz instruction is 8-bit and operates on b, so
+         ld c,2       ; b gets the low byte even though it's the high half of BC
+loop:
+       push bc        ; have to stash our counters
+         ld c, putstr ; set up the system call
+         ld de, msg   ; with parameter
+       call bdos      ; make the call
+        pop bc        ; retrieve counters
+       djnz loop
+        dec c
+         jp nz,loop
+        ret           ; return to caller
+
+       ; the message to print
+msg:   defm 'I will not throw paper airplanes in class.',0dh,0ah,'$'
+
+        end 0100h ; signal end of unit
