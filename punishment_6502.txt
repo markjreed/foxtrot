@@ -1,9 +1,9 @@
 chrout = $ffd2
 ptr    = $fb
 count  = $fd
-       lda #$f4
+       lda #2
        sta count
-       ldx #2
+       ldx #$f4
        lda #<msg
        sta ptr
        lda #>msg
@@ -14,9 +14,9 @@ inner: lda (ptr),y
        jsr chrout
        iny
        bne inner
-done:  dec count
+done:  dex
        bne outer
-       dex
+       dec count
        bne outer
        rts
 msg: .byte 14,"I will not throw paper airplanes in class.",13,0
