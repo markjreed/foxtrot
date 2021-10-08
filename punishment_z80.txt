@@ -1,8 +1,7 @@
         org 0100h
 bdos    equ 0005h
 putstr  equ 0009h
-         ld b,244
-         ld c,2
+         ld b,62466
 loop:  push bc
          ld c, putstr
          ld de, msg
