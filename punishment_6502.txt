@@ -1,0 +1,22 @@
+chrout = $ffd2
+ptr    = $fb
+count  = $fd
+       lda #$f4
+       sta count
+       ldx #2
+       lda #<msg
+       sta temp
+       lda #>msg
+       sta temp+1
+outer: ldy #0
+inner: lda (temp),y
+       beq done
+       jsr chrout
+       iny
+       bne inner
+done:  dec count
+       bne outer
+       dex
+       bne outer
+       rts
+msg: .byte 14,"I will not throw paper airplanes in class.",13,0
