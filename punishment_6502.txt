@@ -5,11 +5,11 @@ count  = $fd
        sta count
        ldx #2
        lda #<msg
-       sta temp
+       sta ptr
        lda #>msg
-       sta temp+1
+       sta ptr+1
 outer: ldy #0
-inner: lda (temp),y
+inner: lda (ptr),y
        beq done
        jsr chrout
        iny
