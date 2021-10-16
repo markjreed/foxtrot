@@ -1,4 +1,4 @@
 LOOP    OUTPUT = "I will not throw paper airplanes in class."
-        COUNT = COUNT + 1  
+        COUNT = COUNT + 1
         LT(COUNT,500)          :S(LOOP)
 END
