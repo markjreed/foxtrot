@@ -1,7 +1,7 @@
         PROGRAM Punishment
-        DO 1 count=1, 500
-            WRITE(unit=*, fmt=2)
+        DO 10 count=1, 500
+            WRITE(unit=*, fmt=20)
      +      'I will not throw paper airplanes in class.'
-    1   CONTINUE
-    2   FORMAT(A42)
+   10   CONTINUE
+   20   FORMAT(A42)
         END
