@@ -2,10 +2,8 @@ const std = @import("std");
 
 pub fn main() !void {
   const stdout = std.io.getStdOut().writer();
-  var count: usize = 0;
-  while (count < 500) {
-    count += 1;
-    try stdout.print("{s}\n",
-                   .{"I will not throw paper airplanes in class."});
+  var count: u16 = 0;
+  while (count < 500) : ( count += 1 ) {
+    try stdout.print("I will not throw paper airplanes in class.\n", .{});
   }
 }
