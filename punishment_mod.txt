@@ -7,7 +7,4 @@ BEGIN
     WriteString('I will not throw paper airplanes in class.');
     WriteLn
   END
-  IF 1 # 2 THEN
-    WriteString('1 is not equal to 2.  Surprise!');
-  END
 END Punishment.
