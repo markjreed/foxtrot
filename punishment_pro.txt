@@ -1,0 +1,9 @@
+program punishment
+include library
+word count
+begin
+
+for count=1 to 500
+  putf stdout,"I will not throw paper airplanes in class.",cr
+
+end punishment

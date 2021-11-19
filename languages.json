@@ -93,6 +93,7 @@
     "pl":           "Prolog",
     "pli":          "PL/I",
     "plm":          "PL/M",
+    "pro":          "PROMAL",
     "ps":           "Postscript",
     "ps1":          "PowerShell",
     "py2":          "Python 2",
