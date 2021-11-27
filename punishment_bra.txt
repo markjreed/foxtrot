@@ -1,0 +1,4 @@
+0:?i
+& whl '( !i+1:~>500:?i
+  & put$"I will not throw paper airplanes in class.\n"
+)
