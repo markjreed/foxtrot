@@ -1,0 +1,10 @@
+PROC Main()
+
+  CARD COUNT = 0
+
+  FOR COUNT = 1 TO 500
+  DO
+    PrintE("I will not throw paper airplanes in class.")
+  OD
+
+RETURN
