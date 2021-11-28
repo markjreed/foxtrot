@@ -22,7 +22,6 @@
     "bra":          "Bracmat",
     "brs":          "BrightScript",
     "c":            "C",
-    "c64":          "6502 Assembly on a Commodore 8-bit",
     "lfe":          "Lisp-Flavoured Erlang",
     "lisp":         "Common Lisp",
     "clj":          "Clojure",
