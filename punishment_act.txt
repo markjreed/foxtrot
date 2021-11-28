@@ -1,8 +1,8 @@
 PROC Main()
 
-  CARD COUNT = 0
+  CARD count
 
-  FOR COUNT = 1 TO 500
+  FOR count = 1 TO 500
   DO
     PrintE("I will not throw paper airplanes in class.")
   OD
