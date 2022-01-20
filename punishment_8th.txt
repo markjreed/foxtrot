@@ -1,0 +1,5 @@
+: punish \ --
+    "I will not throw paper airplanes in class.\n" .
+;
+' punish 500 times
+bye
