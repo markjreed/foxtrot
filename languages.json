@@ -1,4 +1,5 @@
  {
+    "8th":          "8th",
     "11l":          "11L",
     "6502":         "6502 Assembly for Commodores",
     "a60":          "Algol-60",
@@ -39,7 +40,6 @@
     "doge":         "dogescript",
     "dylan":        "Dylan",
     "e":            "Eiffel",
-    "8th":          "Eighth",
     "elm":          "Elm",
     "erl":          "Erlang",
     "exs":          "Elixir",
