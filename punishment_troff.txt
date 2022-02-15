@@ -1,0 +1,16 @@
+.de hd                \" Page header
+'  sp 0.5i
+..
+.de fo                \" Page footer
+'  sp 0.5i
+..
+.wh 0   hd            \" trap at top of the page
+.wh -0.5i fo            \" trap one inch from bottom
+.de punish
+.if (\\$1 > 0) \{I will not throw paper airplanes in class.
+.punish \\$1-1
+\}
+..
+.nf
+.nh
+.punish 500

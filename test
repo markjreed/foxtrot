@@ -106,7 +106,6 @@ for lang in "${languages[@]}"; do
       p5i) run=(perl5i "$f");;
       raku) run=(raku "$f");;
       pl) run=(swipl -q -g main -l "$f");;
-      ps) result='[33mSKIP[0m';;
       ps1) run=(pwsh "$f");;
       py2) run=(python2 "$f");;
       py3) run=(python3 "$f");;

@@ -1,5 +1,5 @@
 #!/bin/bash
-open -a Preview ./punishment.ps
+open -a Preview $(f ps cat "$1")
 sleep 2
 osascript >/dev/null 2>&1 <<'END_SCRIPT'
   tell application "Preview"
@@ -15,4 +15,4 @@ osascript >/dev/null 2>&1 <<'END_SCRIPT'
   end tell
 END_SCRIPT
 sleep 2
-pbpaste | tr $'\r' $'\n' | grep .
+pbpaste | tr $'\r' $'\n' | sed $'s/\./.\\\n/g' | sed -e 's/^ *//' | grep .

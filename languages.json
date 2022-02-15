@@ -127,6 +127,7 @@
     "tcl":          "Tcl",
     "ts":           "TypeScript",
     "tf":           "Terraform",
+    "troff":        "Troff",
     "unl":          "Unlambda",
     "vala":         "Vala",
     "vim":          "VimL",
