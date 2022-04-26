@@ -1,4 +1,5 @@
         PROGRAM Punishment
+        INTEGER count
         DO 10 count=1, 500
             WRITE(unit=*, fmt=20)
      +      'I will not throw paper airplanes in class.'
