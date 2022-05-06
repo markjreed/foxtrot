@@ -1,3 +1,3 @@
 
-main(_) -> io:put_chars(lists:join("\n",
-   lists:duplicate(500, "I will not throw paper airplanes in class."))), ok.
+main(_) -> lists:map(fun io:put_chars/1,
+   lists:duplicate(500, "I will not throw paper airplanes in class.\n")), ok.
