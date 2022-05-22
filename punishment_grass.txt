@@ -1,0 +1,3 @@
+count=1
+PRINT "I will not throw paper airplanes in class."
+IF (count=count+1)<501 SKIP -1
