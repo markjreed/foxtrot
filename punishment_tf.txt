@@ -3,6 +3,6 @@ data "template_file" "punishment" {
   template = "I will not throw paper airplanes in class."
 }
 
-output "values" {
+output "blackboard" {
   value = join("\n",[for t in data.template_file.punishment: t.rendered])
 }
