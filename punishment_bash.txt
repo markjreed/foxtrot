@@ -1,4 +1,4 @@
-# Modern POSIX-compliant shell
+# Bash/Ksh/Zsh
 for (( count=0; count<500; ++count )); do
   echo "I will not throw paper airplanes in class."
 done
