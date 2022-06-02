@@ -3,3 +3,5 @@ PROC display_punishment, disp ( total, t: INTEGER = 500 )
         DISPLAY_VALUE 'I will not throw paper airplanes in class.'
     FOREND
 PROCEND display_punishment
+
+display_punishment 500
