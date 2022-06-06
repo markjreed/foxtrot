@@ -138,5 +138,6 @@
     "ws":           "WhiteSpace",
     "yorick":       "Yorick",
     "z80":          "Z-80 Assembly on CP/M",
-    "zig":          "Zig"
+    "zig":          "Zig",
+    "zsh":          "The Z Shell"
  }
