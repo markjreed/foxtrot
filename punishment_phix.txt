@@ -1,0 +1,3 @@
+for count=1 to 500 do
+    puts(1,"I will not throw paper airplanes in class.\n")
+end for

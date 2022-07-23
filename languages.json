@@ -94,6 +94,7 @@
     "pil":          "PicoLisp",
     "pilot":        "PILOT",
     "raku":         "Raku (formerly Perl 6)",
+    "phix":         "Phix",
     "php":          "PHP",
     "pl":           "Prolog",
     "pli":          "PL/I",
