@@ -23,6 +23,7 @@
     "bra":          "Bracmat",
     "brs":          "BrightScript",
     "c":            "C",
+    "carbon":       "Google Carbon",
     "lfe":          "Lisp-Flavoured Erlang",
     "lisp":         "Common Lisp",
     "clj":          "Clojure",
