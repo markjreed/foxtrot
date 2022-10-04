@@ -1,2 +1,2 @@
-{ ⎕ ← ⍵ } ¨ 500/⊂'I will not throw paper airplanes in class.'
+⍬⊣{ ⎕ ← ⍵ } ¨ 500/⊂'I will not throw paper airplanes in class.'
 )OFF
