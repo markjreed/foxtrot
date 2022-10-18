@@ -5,7 +5,7 @@ main {
   ubyte count = 0
   sub start() {
     txt.print("\x0e")
-    while count < 50 {
+    while count < 500 {
       txt.print("I will not throw paper airplanes in class.\n")
       count++
     }
