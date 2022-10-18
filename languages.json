@@ -94,6 +94,7 @@
     "p5i":          "Perl 5+i",
     "pil":          "PicoLisp",
     "pilot":        "PILOT",
+    "p8":           "Prog8",
     "raku":         "Raku (formerly Perl 6)",
     "phix":         "Phix",
     "php":          "PHP",

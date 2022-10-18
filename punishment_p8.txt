@@ -1,0 +1,13 @@
+%import textio
+%zeropage basicsafe
+
+main {
+  ubyte count = 0
+  sub start() {
+    txt.print("\x0e")
+    while count < 50 {
+      txt.print("I will not throw paper airplanes in class.\n")
+      count++
+    }
+  }
+}
