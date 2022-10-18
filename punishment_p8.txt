@@ -2,10 +2,9 @@
 %zeropage basicsafe
 
 main {
-  uword count
   sub start() {
     txt.lowercase()
-    for count in 1 to 500 {
+    repeat 500 {
       txt.print("I will not throw paper airplanes in class.\r")
     }
   }
