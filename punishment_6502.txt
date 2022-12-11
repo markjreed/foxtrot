@@ -1,6 +1,9 @@
-chrout = $ffd2     ; system call to output a character
-ptr    = $fb       ; place to store pointer to string
-count  = $fd       ; place to store high byte of counter
+chrout = $ffd2     ; system call to output a character (Commodore KERNAL address)
+
+; zero-page utility locations; adjust to use free space in target machine.
+ptr    = $fb       ; two-byte pointer to string
+count  = $fd       ; high byte of loop counter
+
        lda #<msg   ; initialize pointer
        sta ptr
        lda #>msg
@@ -19,4 +22,4 @@ done:  dex
        dec count
        bne loop
        rts
-msg: .byte 14,"I will not throw paper airplanes in class.",13,0
+msg: .byte $0e,"I will not throw paper airplanes in class.",$0d,0
