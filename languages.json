@@ -13,6 +13,7 @@
     "asm":          "8080 Assembly on CP/M",
     "awk":          "AWK",
     "b":            "B",
+    "bal":          "Ballerina",
     "bas":          "BASIC",
     "bash":         "Bourne-Again Shell",
     "bat":          "DOS Batch File",
