@@ -1,4 +1,4 @@
-;Befunge-93;                                               "}" 4 * v <
+                                                           "}" 4 * v <
                                                                    :
 > v  "I will not throw paper airplanes in class."  *  5  2  0  - 1 _ @
 , :                                                                  #
