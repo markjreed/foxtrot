@@ -143,5 +143,6 @@
     "yorick":       "Yorick",
     "z80":          "Z-80 Assembly on CP/M",
     "zig":          "Zig",
-    "zsh":          "Z Shell"
+    "zsh":          "Z Shell",
+    "🍇":           "EmojiCode"
  }

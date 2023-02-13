@@ -133,6 +133,7 @@ for lang in "${languages[@]}"; do
       wren) run=(wren_cli "$f");;
       yorick) run=(yorick -batch "$f");;
       zig) run=(zig run "$f");;
+      🍇) compile=(emojicodec "$f"); run=("./${f%.$ext}");;
       *) if type -t "$ext"  >/dev/null; then
            run=("$ext" "$f")
          else
