@@ -1,8 +1,7 @@
-data "template_file" "punishment" {
-  count = 500
-  template = "I will not throw paper airplanes in class."
-}
-
 output "blackboard" {
-  value = join("\n",[for t in data.template_file.punishment: t.rendered])
+  value = <<EOT
+    %{~ for i in range(500) ~}
+I will not throw paper airplanes in class.
+    %{~ endfor }
+EOT
 }
