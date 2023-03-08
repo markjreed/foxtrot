@@ -1,1 +1,2 @@
-print "I will not throw paper airplanes in class.\n" for 1..500;
+use v5.12;
+say "I will not throw paper airplanes in class." for 1..500;
