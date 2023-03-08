@@ -3,4 +3,3 @@
 30   PRINT "I will not throw paper airplanes in class."
 40 NEXT COUNT
 50 EXIT
-RUN
