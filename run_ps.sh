@@ -1,5 +1,6 @@
 #!/bin/bash
-open -a Preview $(f ps cat "$1")
+ps2pdf "$1"
+open -a Preview "${1%.ps}.pdf"
 sleep 2
 osascript >/dev/null 2>&1 <<'END_SCRIPT'
   tell application "Preview"
