@@ -1,0 +1,10 @@
+\documentclass{article}
+\pagenumbering{gobble}
+\usepackage{forloop}
+\begin{document}
+\newcounter{count}
+\forloop{count}{0}{\value{count} < 500}{
+\noindent I will not throw paper airplanes in class.
+\\
+}
+\end{document}
