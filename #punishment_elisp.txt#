@@ -1,0 +1,11 @@
+;#!/usr/bin/env emacs --script
+;(dotimes (count 500) (princ "I will not throw paper airplanes in class.
+;"))
+
+;; The above is a standalone script that works from the shell as-is. The
+;; version below is for running inside emacs itself:
+
+(with-current-buffer (get-buffer-create "blackboard")
+  (dotimes (count 500) (insert "I will not throw paper airplanes in class.
+")))
+ (switch-to-buffer "blackboard")
