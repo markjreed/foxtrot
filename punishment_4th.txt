@@ -1,8 +1,8 @@
-: punish ( count -- )
-  0 do
+: punishment ( -- )
+  500 0 do
     ." I will not throw paper airplanes in class."
     cr
   loop
 ;
-500 punish
+punishment
 bye
