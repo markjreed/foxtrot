@@ -4,6 +4,7 @@ header('Content-Type: text/html');
 <html>
  <head>
   <title>Foxtrot Translations</title>
+  <p>Version <?php include "version.txt"?></p>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
   <style>
    html * { font-family: sans-serif; }
@@ -36,6 +37,7 @@ header('Content-Type: text/html');
  </head>
  <body>
   <h1>Foxtrot Translations</h1>
+  <p>Version: <?php include 'version.php' ?></p>
   <div id="comic"><div id="blackboard"><pre id="code">#include &lt;stdio.h>
 int main(void)
 {
