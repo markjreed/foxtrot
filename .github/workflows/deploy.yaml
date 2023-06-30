@@ -9,26 +9,29 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
       - name: get-version
         run: git describe --tags HEAD > ${{ github.workspace }}/version.txt
       - name: get-commit
         run: git rev-parse HEAD > ${{ github.workspace }}/commit.txt
+
       - name: configure-ssh
         run: |
-              mkdir -p ~/.ssh/
-              echo "$SSH_KEY" > ~/.ssh/staging.key
-              chmod 600 ~/.ssh/staging.key
-              cat >>~/.ssh/config <<END
-              Host staging
-                HostName $SSH_HOST
-                User $SSH_USER
-                IdentityFile ~/.ssh/staging.key
-                StrictHostKeyChecking no
-              END
-            env:
-              SSH_USER: ${{ secrets.SSH_USER }}
-              SSH_KEY: ${{ secrets.SSH_KEY }}
-              SSH_HOST: ${{ secrets.SSH_HOST }}
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+
       - name: copy-files
         run: |
               rsync -Cavz --exclude=.git\* --rsh=ssh ${{ github.workspace }}/. staging:www/foxtrot/.
