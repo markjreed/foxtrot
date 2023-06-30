@@ -8,7 +8,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: bump-patchlevel
-      - run: |
+        run: |
           old=$(git describe --tags --abbrev=0)
           msg=${{ github.event.head_commit.message }}
           if [[ "$msg" == *'[major]'* ]]; then
