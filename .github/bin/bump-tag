@@ -3,6 +3,8 @@
 # message
 main() {
   local msg="$*"
+  echo "Tags:"
+  git tag
   local old=$(git describe --tags --abbrev=0 --always HEAD)
   local index
   case "$msg" in
