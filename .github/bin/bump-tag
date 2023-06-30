@@ -3,7 +3,6 @@
 # message
 main() {
   local msg="$*"
-  git --version 
   local old=$(git describe --tags HEAD --abbrev=0)
   local index
   case "$msg" in
