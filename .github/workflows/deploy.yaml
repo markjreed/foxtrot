@@ -2,27 +2,7 @@ name: Commit Stamp
 run-name: ${{ github.actor }} is deploying a new version
 on: [push]
 jobs:
-  add-tag:
-    name: "Add tag to bump version number"
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - name: bump-patchlevel
-        run: |
-          old=$(git describe --tags --abbrev=0)
-          msg=${{ github.event.head_commit.message }}
-          if [[ "$msg" == *'[major]'* ]]; then
-            level=major
-          elif [[ "$msg" == *'[minor]'* || "$msg" == 'feat: '[Aa]dd* ]]; then
-            level=minor
-          else
-            level=patch
-          fi
-          git tag $(${{ github.workspace }}/.github/bin/svbump "$old" "$level")
-          git push --tags
-
   deploy-to-host:
-    needs: add-tag
     name: "Deploy to hosting provider"
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -32,6 +12,12 @@ jobs:
 
       - name: fetch-tags
         run: git fetch --tags
+
+      - name: bump-patchlevel
+        run: |
+          ${{ github.workspace }}/.github/bin/bump-tag "$COMMIT_MSG"
+        env: 
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
 
       - name: get-version
         run: git describe --tags HEAD > ${{ github.workspace }}/version.txt
