@@ -1,11 +1,14 @@
 name: Deploy
 run-name: ${{ github.actor }} is deploying a new version
-on: [push]
+on:
+  push:
+    branches:
+      - 'main'
+
 jobs:
   deploy-to-host:
     name: "Deploy to hosting provider"
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: checkout
         uses: actions/checkout@v3
