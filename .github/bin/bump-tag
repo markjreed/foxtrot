@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# bump the latest tag on the branch according to semver informed by commit
+# message
+main() {
+  local msg="$*"
+  local old=$(g describe --tags --abbrev=0)
+  local index
+  case "$msg" in
+    *\[major\]*) index=0;;        # explicit major bump
+    *\[minor\]*) index=1;;        # explicit minor bump
+    'feat: '[Aa]dd' '*) index=1;; # new language = minor bump
+    *) index=2;; # patch bump
+  esac
+  local prefix=${old%%${old#v}}
+  local version
+  mapfile -d. -t version <<<"${old#v}"
+  (( version[index]++ ))
+  local i
+  for (( i=index+1; i<${#version[@]}; ++i )); do
+    version[i]=0
+  done
+  local new=$prefix${version[0]}
+  new+=$(printf '.%s' "${version[@]:1}")
+  git tag "$new"
+  git push --tags
+}
+main "$@"
