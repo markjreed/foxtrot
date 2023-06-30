@@ -9,17 +9,17 @@ jobs:
     steps:
       - name: bump-patchlevel
       - run: |
-        old=$(git describe --tags --abbrev=0)
-        msg=${{ github.event.head_commit.message }}
-        if [[ "$msg" == *'[major]'* ]]; then
-          level=major
-        elif [[ "$msg" == *'[minor]'* || "$msg" == 'feat: '[Aa]dd* ]]; then
-          level=minor
-        else
-          level=patch
-        fi
-        git tag $(${{ github.workspace }}/.github/bin/svbump "$old" "$level")
-        git push --tags
+          old=$(git describe --tags --abbrev=0)
+          msg=${{ github.event.head_commit.message }}
+          if [[ "$msg" == *'[major]'* ]]; then
+            level=major
+          elif [[ "$msg" == *'[minor]'* || "$msg" == 'feat: '[Aa]dd* ]]; then
+            level=minor
+          else
+            level=patch
+          fi
+          git tag $(${{ github.workspace }}/.github/bin/svbump "$old" "$level")
+          git push --tags
 
   deploy-to-host:
     needs: add-tag
