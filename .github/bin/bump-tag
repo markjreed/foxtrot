@@ -3,7 +3,7 @@
 # message
 main() {
   local msg="$*"
-  local old=$(g describe --tags --abbrev=0)
+  local old=$(git describe --tags --abbrev=0)
   local index
   case "$msg" in
     *\[major\]*) index=0;;        # explicit major bump
