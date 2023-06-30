@@ -1,5 +1,5 @@
 name: Commit Stamp
-run-name: ${{ github.actor }} is testing automatic commit stamping
+run-name: ${{ github.actor }} is deploying a new version
 on: [push]
 jobs:
   deploy-to-host:
@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      - name: fetch-tags
+        run: git fetch --tags HEAD
 
       - name: get-version
         run: git describe --tags HEAD > ${{ github.workspace }}/version.txt
