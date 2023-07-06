@@ -1,0 +1,33 @@
+<p>The <tt>org 0100h</tt> statement begins assembly at the standard entry point
+for code executed from the CP/M command shell, hexadecimal 0100/decimal 256.
+The EQUates set up the system call to print a string, <tt>putstr</tt>. Under
+CP/M, syscalls are executed by loading register C with the call's id and then
+jumping to the BDOS subroutine; that subroutine is at address 5, and the
+identifier for <tt>putstr</tt> is 9.</p>
+
+<p>The Z80 has 16-bit instructions, but there isn't a 16-bit version of DJNZ
+(Decrement and Jump if Not Zero), which is the fastest way to loopl So we
+handle the 16-bittedness manually with two 8-bit registers, namely B and C.
+Normally, when B and C are used together to hold a 16-bit value, B is the high
+byte and C the low, and the joint register is called BC. But DJNZ only
+operates on B, and we want to use it for the more-frequently-decremented low
+byte. So we flip things around and store the high part of the counter in C; I
+guess we're using the "CB" register. In order to initialize it efficiently we
+use the BC load command with the byte-reversed version of our counter value,
+F402 instead of 02F4.</p>
+
+<p>You might notice that hex 02F4 is decimal 756, not 500; the high byte is too
+high by one.  That's because the loop takes advantage of a small optimization
+when repeating a number of times that requires two registers. The loop logic
+consists of decrementing the low half, and jumping to the top of the loop
+if that's not zero. If it is zero, it then decrements the high half, and jumps
+to the top of the loop if <i>that</i>'s not zero. This lets us use condition
+flags with no explicit compares, and no resetting of the low byte; we just let
+it wrap naturally. But the  approach means that when the number of iterations
+is not an exact multiple of 256, the high byte must be incremented before
+entering the loop. 
+
+(The other caveat is that the counter value is not directly usable, since it
+will jump around a bit, e.g. going from 0201 to 0100 to 01ff. But in this case
+we don't care about the value on each iteration, only the number of iterations,
+which will be correct.)</p>
