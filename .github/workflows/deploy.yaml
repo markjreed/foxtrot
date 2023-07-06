@@ -48,4 +48,4 @@ jobs:
 
       - name: copy-files
         run: |
-              rsync -Cavz --exclude=.git\* --rsh=ssh ${{ github.workspace }}/. staging:www/foxtrot/.
+              rsync -Cavz --delete --exclude=.git\* --rsh=ssh ${{ github.workspace }}/. staging:www/foxtrot/.
