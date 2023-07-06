@@ -57,7 +57,7 @@ int main(void)
    <select id="programs" size="15">
 <?php
   $languages = json_decode(file_get_contents('languages.json'), true);
-  $filenames = glob('[Pp]unishment_*');
+  $filenames = glob('solutions/[Pp]unishment_*');
   $programs = array();
   foreach ($filenames as $name) {
     list($a, $b) = explode('_', $name);
