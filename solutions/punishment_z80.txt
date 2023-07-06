@@ -1,7 +1,7 @@
         org 0100h
 bdos    equ 0005h
 putstr  equ 0009h
-         ld bc,62466
+         ld bc,0F402h
 loop:  push bc
          ld c, putstr
          ld de, msg
@@ -11,5 +11,5 @@ loop:  push bc
         dec c
          jp nz,loop
         ret
-msg:   defm 'I will not throw paper airplanes in class.',0dh,0ah,'$'
+msg:   defm 'I will not throw paper airplanes in class.',0Dh,0Ah,'$'
         end 0100h
