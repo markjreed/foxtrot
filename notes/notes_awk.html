@@ -1,0 +1,12 @@
+<p>Created by and named for Alfred Aho, Peter Weinberger, and Brian Kernighan
+(of Kernighan and Ritchie fame), AWK was the first scripting language for UNIX
+that wasn't just the command shell with some programming features tacked on. It uses
+a fairly elegant dispatch system consisting of (condition, block) pairs; the condition
+is checked against each line of input and the corresponding block executed if it's true.
+A block without a condition is always executed; a condition without a block just prints
+the current line back out.</p>
+
+<p>Since the current application has no input, we use the special condition <tt>BEGIN</tt>;
+the attached block is run before any input is read. Since there are no other conditions,
+the program exits after the <tt>BEGIN</tt> block finishes. Since the general syntax of AWK was
+lifted from C, the resulting program is rather similar to Jason's original.</p>

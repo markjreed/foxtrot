@@ -1,0 +1,12 @@
+<p>The original scripting language for MacOS before it became a UNIXlike,
+AppleScript carried on the proud tradition of trying to be friendlier to non-
+programmers by using an overly-wordy English-like syntax. The assignment and
+repeat-loop syntaxes on display here are both excellent examples; most
+languages would make do with either "repeat" <em>or</em> "times", but
+AppleScript requires both.</p>
+
+<p>The body of the loop could consist of a simple <tt>log</tt> command, which
+even writes its argument with a newline. But on a modern POSIXly macOS, the output
+of <tt>log</tt> goes to standard error, while the <tt>result</tt> of a script
+is written to standard output. So I decided to build up one big result string
+containing all 500 lines of output.</p>

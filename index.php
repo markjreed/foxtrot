@@ -7,7 +7,17 @@ header('Content-Type: text/html');
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
   <style>
    html * { font-family: sans-serif; }
-   h1, p, form { margin-left: auto; margin-right: auto; text-align: center; }
+   tt { font-family: fixed }
+   div#captiondiv, div#versiondiv { width: 900px; margin-left: auto; margin-right: auto;
+    text-align: center; }
+   h1 { margin-left: auto; margin-right: auto; text-align: center; font-weight: bold; }
+   input#download, { display: block; margin-left: auto; margin-right: auto; text-align: center; }
+   form { display: block; float: left; width: 40% }
+   div#bottom { width:900px; margin-left: auto; margin-right: auto; text-align: center; }
+   div#notes { margin-top: 1em; float: right; width: 40%; border: solid 1px black; padding: 0.25in;
+               vertical-align: bottom; overflow: scroll; height: 400px;}
+   div#notes p { text-align: left }
+   label, div#notes { vertical-align: top; }
    #comic { width: 900px; height: 296px; background-size:900px 296px;
             background-repeat:no-repeat;
             margin-left: auto; margin-right: auto; text-align: center;
@@ -36,7 +46,7 @@ header('Content-Type: text/html');
  </head>
  <body>
   <h1>Foxtrot Translations</h1>
-  <p>Version <?php include "version.txt"?></p>
+  <div id="versiondiv"><p id="version">Version <?php include "version.txt"?></p></div>
   <div id="comic"><div id="blackboard"><pre id="code">#include &lt;stdio.h>
 int main(void)
 {
@@ -48,12 +58,13 @@ int main(void)
    </div>
   </div>
 
-  <p>Transcribed blackboards in <a href="foxtrot_ccode.jpg">this picture</a> from alternate
-   universes where Jason chose a language other than C (and also to
-   output newlines).</p>
+  <div id="captiondiv"><p id="caption">Transcribed blackboards in <a href="foxtrot_ccode.jpg">this
+  picture</a> from alternate universes where Jason chose a language other than
+  C (and also to output newlines).</p></div>
 
-  <p>Select Language</p>
+  <div id="bottom">
   <form>
+   <label for="programs">Select Language</label>
    <select id="programs" size="15">
 <?php
   $languages = json_decode(file_get_contents('languages.json'), true);
@@ -81,16 +92,24 @@ int main(void)
    </select>
    <input type="button" id="download" value="Download">
   </form>
+  <div id="notes"></div>
+  </div>
  </body>
  <script>
-   function load(filename) {
+   function load(element, filename, quote) {
      var xhr = new XMLHttpRequest();
      var i;
      xhr.open("GET", filename);
      xhr.onreadystatechange = function() {
        if (xhr.readyState==4) {
-         code.innerHTML =
-            xhr.responseText.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+         let text = xhr.responseText
+         if (quote) {
+            text = text.replace(/&/g, '&amp;').
+                        replace(/</g, '&lt;').
+                        replace(/>/g, '&gt;').
+                        replace(/"/g, '&quot;');
+         }
+         element.innerHTML = text;
        }
      }
      for (i=0; i<programs.options.length; ++i) {
@@ -102,9 +121,13 @@ int main(void)
      }
      xhr.send(null);
    }
-   var blackboard, code, programs;
+   var blackboard, code, notes, programs;
    function loadCode() {
-     load(programs.options[programs.selectedIndex].value)
+     const code_file = programs.options[programs.selectedIndex].value;
+     load(code, code_file);
+     const notes_file = code_file.replace(/solutions\/[Pp]unishment_(.*)\.txt/,
+                                          'notes/notes_$1.html');
+     load(notes, notes_file);
      blackboard.scrollTop = 0;
    }
    var show = false;
@@ -117,6 +140,7 @@ int main(void)
      blackboard = document.getElementById("blackboard")
      programs = document.getElementById("programs")
      code = document.getElementById("code")
+     notes = document.getElementById("notes")
      var h, i, o, download = document.getElementById("download")
      download.onclick = function() {
        window.location = programs.options[programs.selectedIndex].value;

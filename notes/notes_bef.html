@@ -1,0 +1,18 @@
+<p>Befunge was created to be an example of a two-dimensional programming
+language. That is, while most programs are written in two dimensions, the flow of
+execution through the code is linear, generally moving forward through the code
+with occasional backward jumps to form loops. The code space for Befunge
+is two-dimensional, and execution can move through an instruction travelling
+left, right, up, or down. The result is that loops are visible, as in the two
+here: the one in the upper right hand corner repeats the whole exercise
+500 times, while the one in the lower left loops through the string
+outputting characters until hitting the NUL terminator.</p>
+
+<p>Other than its two-dimensionality, Befunge is a Forthlike stack-based
+language, operating generally in Reverse Polish Notation. Thus, while the text
+to print out is written left-to-right in the code for easy legibility, it is
+executed right to left; the NUL terminator is pushed onto the stack first, the
+"I" last. But all "words" in Funge are single characters, including digits, so
+another interesting feature is the use of character literals for numeric values
+greater than 9: here we use "{" for its ASCII value of 125, with the expression
+<tt>"{" 4 *</tt> to put 500 on the stack.</p>

@@ -1,0 +1,30 @@
+<p>Brainfuck is a Turing tarpit language; it has the minimal amount of power to
+qualify as Turing-complete, and that's it. Execution operates on a virtual memory
+tape of one-byte cells with a single read/write head that can move along the tape.
+It does have stream-based I/O, which is not found on a pure Turing machine; this
+removes the necessity to set up the contents of the tape before execution or
+read those contents afterward. The tape always starts with nothing but zeroes,
+and its contents at the end of a run are discarded, so the program must
+explicitly output anything it wishes to communicate with the outside world.</p>
+
+<p>There are eight instructions, which move the head left and right one space,
+increment or decrement the current cell by one, form a conditionally-repeated
+block of code, or read or write one character. The conditional/repeat construct
+is particularly elegant: the <tt>[</tt> and <tt>]</tt> instructions must form
+matching pairs, or the program is rejected as invalid. When execution reaches a
+<tt>[</tt>, it checks the current cell; if the value is zero, it skips over
+everything until it reaches the matching <tt>]</tt> and then resumes execution
+with the instruction after it. If the value is nonzero, however, it continues
+with the next instruction. When execution reaches a <tt>]</tt>, it the current
+value is checked again with the reverse consequences: it continues onward if
+it's zero, but jumps back to the instruction after the matching <tt>[</tt> if
+not.</p>
+
+<p>Since a cell is only one byte wide, it can't hold the number 500, so we will
+instead loop 250 times twice. A more severe restriction is the lack of
+any provision for loading literals into memory; the program must construct
+all the values we need, including the character codes for the string to
+be printed, by incrementing cells up from zero. Doing so comprises the
+bulk of the program; the actual printing of the string, once constructed,
+consists of the loop <tt>[.&gt;]</tt>, which outputs the current cell's
+value as a character, moves right, and repeats until it finds a zero.</p>
