@@ -1,7 +1,6 @@
 main() {
   auto count;
   extrn putstr;
-  count=0;
-  while (count++ < 500)
+  for (count=0; count < 500; count++)
     putstr("I will not throw paper airplanes in class.*n");
 }

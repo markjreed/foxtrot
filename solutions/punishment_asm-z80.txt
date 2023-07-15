@@ -1,0 +1,18 @@
+         org 07d00h
+display: equ 0033h
+         ld bc,0F402h
+outer:   ld hl,msg
+
+inner:   ld a,(hl)
+         cp 0
+         jp z, done
+         call display
+         inc hl
+         jr inner
+
+done:    djnz outer
+         dec c
+         jr nz,outer
+         ret
+
+msg:     defm 'I will not throw paper airplanes in class.',0Dh,0

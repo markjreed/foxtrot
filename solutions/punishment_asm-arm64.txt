@@ -1,0 +1,24 @@
+.global _main
+.align 2
+
+.equ len, end-line
+
+_main:
+       mov W3, #500
+
+loop:
+       mov  X0, #1
+       adr  X1, line
+       mov  X2, #len
+       mov  X16, #4
+       svc  0
+
+       sub  W3, W3, #1
+       cbnz W3, loop
+       mov  X0, #0
+       mov  X16, #1
+       svc  0
+
+line:      .ascii  "I will not throw paper airplanes in class.\n"
+end:
+

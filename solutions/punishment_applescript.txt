@@ -1,3 +1,8 @@
+set blackboard to ""
 repeat 500 times
-    log "I will not throw paper airplanes in class."
+    if blackboard is not "" then
+      set blackboard to blackboard & linefeed
+    end if
+    set blackboard to blackboard & "I will not throw paper airplanes in class."
 end
+set the result to blackboard
