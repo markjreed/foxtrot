@@ -1,0 +1,15 @@
+.model tiny
+.code
+.386
+org 0100h
+main:
+  mov cx, 500
+top:
+  lea dx, msg
+  mov ah, 9h
+  int 21h
+  loop top
+  ret
+msg: db "I will not throw paper airplanes in class.",13,10,"$"
+
+end main

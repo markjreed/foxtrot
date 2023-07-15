@@ -13,6 +13,7 @@
     "asm-6502":     "Assembly (6502 on a Commodore 8-bit)",
     "asm-68000":    "Assembly (68000 on a Commodore Amiga)",
     "asm-8080":     "Assembly (8080 under CP/M)",
+    "asm-8086":     "Assembly (x86 under MS-DOS)",
     "asm-arm64":    "Assembly (ARM64 under macOS)",
     "asm-z80":      "Assembly (Z80 on a TRS-80)",
     "awk":          "AWK",
