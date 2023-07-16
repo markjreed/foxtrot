@@ -1,0 +1,20 @@
+.global _start
+.text
+_start:  mov $500, %rcx
+
+top:     mov $1, %rax
+         mov $1, %rdi
+         mov $msg, %rsi
+         mov $msglen, %rdx
+         push %rcx
+         syscall
+         pop %rcx
+         loop top
+
+         mov $60, %rax
+         mov $0, %rdi
+         syscall
+.data
+msg:     .ascii "I will not throw paper airplanes in class."
+         .byte 10
+    .equ msglen, . - msg

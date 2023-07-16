@@ -15,6 +15,7 @@
     "asm-8080":     "Assembly (8080 under CP/M)",
     "asm-8086":     "Assembly (x86 under MS-DOS)",
     "asm-arm64":    "Assembly (ARM64 under macOS)",
+    "asm-x86_64":   "Assembly (AMD64 under Linux)",
     "asm-z80":      "Assembly (Z80 on a TRS-80)",
     "awk":          "AWK",
     "b":            "B",
