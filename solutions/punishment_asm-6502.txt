@@ -1,25 +1,32 @@
-chrout = $ffd2     ; system call to output a character (Commodore KERNAL address)
+;  ca65 syntax
 
-; zero-page utility locations; adjust to use free space in target machine.
-ptr    = $fb       ; two-byte pointer to string
-count  = $fd       ; high byte of loop counter
+; Targeting Commodore computers
+.include "cbm_kernal.inc"
 
-       lda #<msg   ; initialize pointer
-       sta ptr
-       lda #>msg
-       sta ptr+1
-       ldx #+244   ; start .X at 500 mod 256 = 244
-       lda #$02    ; and count it down to 0 twice
-       sta count
-loop:  ldy #0      ; inner loop printing msg one char at a time
-putc:  lda (ptr),y
-       beq done
-       jsr chrout
-       iny
-       bne putc
-done:  dex
-       bne loop
-       dec count
-       bne loop
-       rts
+.segment "ZEROPAGE"
+ptr:             .res 2
+count:           .res 1
+
+.segment "RODATA"
 msg: .byte $0e,"I will not throw paper airplanes in class.",$0d,0
+
+.segment "CODE"
+
+main:           lda #<msg   ; initialize pointer
+                sta ptr
+                lda #>msg
+                sta ptr+1
+                ldx #+244   ; start .X at 500 mod 256 = 244
+                lda #$02    ; and count it down to 0 twice
+                sta count
+loop:           ldy #0      ; inner loop printing msg one char at a time
+putc:           lda (ptr),y
+                beq done
+                jsr CHROUT
+                iny
+                bne putc
+done:           dex
+                bne loop
+                dec count
+                bne loop
+                rts
