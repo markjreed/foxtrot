@@ -25,6 +25,7 @@
     "brs":          "BrightScript",
     "c":            "C",
     "carbon":       "Google Carbon",
+    "fish":         "The Friendly Interactive SHell",
     "lfe":          "Lisp-Flavoured Erlang",
     "lisp":         "Common Lisp",
     "c64":          "Abacus COBOL-64",

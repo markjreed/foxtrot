@@ -1,0 +1,2 @@
+# The Friendly Interactive Shell
+string repeat -n 500 "I will not throw paper airplanes in class."\n
