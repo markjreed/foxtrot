@@ -80,6 +80,7 @@ for lang in "${languages[@]}"; do
       erl) run=(escript "$f");;
       exs) run=(elixir "$f");;
       f) compile=(gfortran -std=legacy "$f" ); export GFORTRAN_UNBUFFERED_ALL=1; run=(./a.out);;
+      "><>") run=(python ~/bin/fish.py "$f");;
       fr) compile=(fregec "$f" ); run=(frege Punishment);;
       4th) run=(gforth "$f");;
       go) run=(go run "$f");;
