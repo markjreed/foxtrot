@@ -41,6 +41,7 @@
     "cpp":          "C++",
     "cs":           "C#",
     "csh":          "C Shell",
+    "csv":          "Microsoft Excel Spreadsheet",
     "cyb":          "CybIL (Cyber Instruction Language)",
     "d":            "D",
     "dart":         "Dart",

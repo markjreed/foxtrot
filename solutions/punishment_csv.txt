@@ -1,0 +1,1 @@
+=TOCOL(MAP(SEQUENCE(1,500), LAMBDA(a, "I will not throw paper airplanes in class.")))
