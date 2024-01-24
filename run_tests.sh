@@ -174,7 +174,7 @@ for lang in "${languages[@]}"; do
         if (( $? == 2 )); then
           result='[33mSKIP[0m'
         else
-          tr -d $'\r' <$ext.out1 >$ext.out
+          tr -d $'\r' <$ext.out1 | grep . >$ext.out
           if [ -z "$result" ]; then
             if [ "$(sed -e $'s/^[ \t]*//' -e $'s/[ \t]*$//' "$ext.out" | md5 | awk '{print $NF}')" == 6b1f79859ffd35ffe4930ce7d4a1848c ]; then
               result='[32mPASS[0m'
