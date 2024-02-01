@@ -16,7 +16,7 @@ mkdir -p "$dir"
 (cd solutions && cp -r [Pp]unishment_*.txt Gemfile* .bundle vendor "$dir" >&/dev/null)
 (cd tests && cp compile_*.sh run_*.sh "$dir" >&/dev/null)
 cd "$dir"
-IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -k2,2)
+IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -fk2,2)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
   lext=$(tr A-Z a-z <<<"$ext")
