@@ -117,6 +117,7 @@
     "ps1":          "PowerShell",
     "py2":          "Python 2",
     "py3":          "Python 3",
+    "q":            "Qore",
     "r":            "R",
     "reb":          "REBOL",
     "rb":           "Ruby",
