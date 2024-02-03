@@ -1,18 +1,18 @@
-#!/bin/sh -e
+#!/usr/bin/env bash -e
 if (( ! $#  )); then
-  echo >&2 "Usage: $0 8080-assembly-file"
+  echo >&2 "Usage: $0 Algol-M file"
   exit 1
 fi
 dir=/tmp/runcpm$$
 mkdir "$dir" && cp "$1" "$dir/RUNME.ALG" && cd "$dir"
-disksrc=$(echo /usr/local/Cellar/yaze-ag/*/lib/yaze/disks)
+disksrc=$(brew --prefix yaze-ag)/lib/yaze/disks
 for disk in BOOT_UTILS CPM3_SYS; do
   gzcat "$disksrc/$disk.ydsk" >"$disk.ydsk"
 done
 cat >.yazerc <<EOF
 mount a BOOT_UTILS.ydsk
 mount b CPM3_SYS.ydsk
-mount m /Users/mjreed/Downloads/ALGOL-M
+mount m /Users/mjreed/lib/retro/cpm/ALGOL-M
 go
 EOF
 cat >PROFILE.SUB <<EOF
