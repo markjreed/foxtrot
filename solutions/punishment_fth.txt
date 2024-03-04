@@ -1,0 +1,8 @@
+: punishment ( -- )
+  500 0 do
+    ." I will not throw paper airplanes in class."
+    cr
+  loop
+;
+punishment
+bye

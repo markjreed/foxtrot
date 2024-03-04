@@ -1,8 +1,3 @@
-: punishment ( -- )
-  500 0 do
-    ." I will not throw paper airplanes in class."
-    cr
-  loop
-;
-punishment
-bye
+: line ." I will not throw paper airplanes in class." cr ;
+: punish 0 do line loop ;
+500 punish
