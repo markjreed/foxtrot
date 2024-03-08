@@ -133,7 +133,7 @@ for lang in "${languages[@]}"; do
       ts) compile=(tsc "$f"); run=(node "${f%.$ext}.js");;
       unl) run=(unlambda "$f");;
       vala) compile=(valac "$f"); run=("./${f%.$ext}");;
-      vq) run=(varaq "$f");;
+      vq) run=(varaq -s "$f");;
       wren) run=(wren_cli "$f");;
       yorick) run=(yorick -batch "$f");;
       zig) run=(zig run "$f");;
