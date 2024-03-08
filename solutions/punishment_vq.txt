@@ -1,9 +1,3 @@
-~ bIj {
-  latlh 0 law''a' {
+500 {
       "I will not throw paper airplanes in class." cha'
-      wa'boqHa' bIj
-  } HIja'chugh
-  woD
-} pong
-
-500 bIj
+} vangqa'
