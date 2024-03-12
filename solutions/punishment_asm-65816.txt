@@ -1,18 +1,18 @@
-;  ca65 syntax
-
 ; Targeting Commodore computers that have been upgraded with an 816
 ; (e.g. C64/128 with a SuperCPU, or the Commander X16)
 .include "cbm_kernal.inc"
+
+; load macros for switching modes and register widths
 .macpack cpu65816
 
 .segment "ZEROPAGE"
 ptr:             .res 2
 
 .segment "RODATA"
-msg: .byte $0e,"I will not throw paper airplanes in class.",$0d
+msg: .byte $0e,"I will not throw paper airplanes in class.",$0d,0
 
 ; make sure the null-terminator is a whole word regardless of string length
-     .byte 0, 0, 0 ; make sure nul terminator is a whole word 
+     .word 0
 
 .segment "CODE"
 main:
@@ -39,8 +39,9 @@ done:           dex
                 cli
                 rts
 
-nchrout:        phx
-                phy
+; CBM KERNAL only works in emulation mode; provide native-mode wrapper
+nchrout:        phx         ; switching modes zeroes high byte of index regs,
+                phy         ; so save them on the stack
                 ai8
                 jsr CHROUT
                 xba
