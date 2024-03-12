@@ -9,17 +9,20 @@
 ptr:             .res 2
 
 .segment "RODATA"
-msg: .byte $0e,"I will not throw paper airplanes in class.",$0d,0
+msg: .byte $0e,"I will not throw paper airplanes in class.",$0d
+
+; make sure the null-terminator is a whole word regardless of string length
+     .byte 0, 0, 0 ; make sure nul terminator is a whole word 
 
 .segment "CODE"
 main:
                 sei
-                native_mode
-                i16
+                native_mode  ; 65816 starts up in 6502 emulation mode
+                ai16         ; and even in native mode defaults to 8-bit regs
                 cli
 
-                ldx #msg
-                stx ptr
+                lda #msg
+                sta ptr
 
                 ldx #500
 loop:           ldy #0
@@ -27,7 +30,8 @@ putc:           lda (ptr),y
                 beq done
                 jsr nchrout
                 iny
-                bne putc
+                iny
+                bra putc
 done:           dex
                 bne loop
                 sei
@@ -37,9 +41,12 @@ done:           dex
 
 nchrout:        phx
                 phy
-                i8
+                ai8
                 jsr CHROUT
-                i16
+                xba
+                beq @skip
+                jsr CHROUT
+@skip:          ai16
                 ply
                 plx
                 rts
