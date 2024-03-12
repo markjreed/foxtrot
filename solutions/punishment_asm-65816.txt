@@ -1,0 +1,45 @@
+;  ca65 syntax
+
+; Targeting Commodore computers that have been upgraded with an 816
+; (e.g. C64/128 with a SuperCPU, or the Commander X16)
+.include "cbm_kernal.inc"
+.macpack cpu65816
+
+.segment "ZEROPAGE"
+ptr:             .res 2
+
+.segment "RODATA"
+msg: .byte $0e,"I will not throw paper airplanes in class.",$0d,0
+
+.segment "CODE"
+main:
+                sei
+                native_mode
+                i16
+                cli
+
+                ldx #msg
+                stx ptr
+
+                ldx #500
+loop:           ldy #0
+putc:           lda (ptr),y
+                beq done
+                jsr nchrout
+                iny
+                bne putc
+done:           dex
+                bne loop
+                sei
+                emulation_mode
+                cli
+                rts
+
+nchrout:        phx
+                phy
+                i8
+                jsr CHROUT
+                i16
+                ply
+                plx
+                rts
