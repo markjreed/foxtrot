@@ -21,9 +21,7 @@ for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
   lext=$(tr A-Z a-z <<<"$ext")
   lname=$(tr A-Z a-z <<<"$name")
-  for f in {p,P}unishment_$ext.txt; do
-     if [ -r "$f" ]; then break; fi
-  done
+  f=$(ls | grep "[Pp]unishment_$ext.txt")
   old_f=$f
   f=${f%.txt}
   f=${f//_/.}
