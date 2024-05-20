@@ -83,6 +83,7 @@ for lang in "${languages[@]}"; do
       4th) run=(gforth "$f");;
       go) run=(go run "$f");;
       hs) . "$HOME/.ghcup/env"; run=(runhaskell "$f");;
+      hx) run=(haxe --main Punishment --interp);;
       i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
       ico)  run=(icon "$f");;
       idr) compile=(idris -o a.out "$f"); run=(./a.out);;

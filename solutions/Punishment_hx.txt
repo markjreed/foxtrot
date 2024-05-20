@@ -1,0 +1,7 @@
+class Punishment {
+    static public function main():Void {
+        for (count in 0...500) {
+            Sys.println("I will not throw paper airplanes in class.");
+        }
+    }
+}
