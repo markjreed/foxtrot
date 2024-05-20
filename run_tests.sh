@@ -105,6 +105,7 @@ for lang in "${languages[@]}"; do
       (ml) run=(ocaml  "$f");;
       (nim) run=(nim --verbosity:0 --run compile "$f");;
       (occ) compile=(kroc "$f" -lcourse); run=(./punishment);;
+      (octave) run=(octave -qf "$f");;
       (p) compile=(fpc "$f" ); run=("./${f%.$ext}");;
       (p4) run=(perl4 "$f");;
       (p5) run=(perl "$f");;
