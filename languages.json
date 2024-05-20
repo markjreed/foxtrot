@@ -16,6 +16,7 @@
     "asm-8086":     "Assembly (x86 under MS-DOS)",
     "asm-amd64":    "Assembly (AMD64 under Linux)",
     "asm-arm64":    "Assembly (ARM64 under macOS)",
+    "asm-sparc":    "Assembly (SPARC under Solaris)",
     "asm-z80":      "Assembly (Z80 on a TRS-80)",
     "awk":          "AWK",
     "b":            "B",
