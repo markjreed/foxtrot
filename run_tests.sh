@@ -16,7 +16,15 @@ mkdir -p "$dir"
 (cd solutions && cp -r [Pp]unishment_*.txt Gemfile* .bundle vendor "$dir" >&/dev/null)
 (cd tests && cp compile_*.sh run_*.sh "$dir" >&/dev/null)
 cd "$dir"
-IFS=$'\n' read -d '' -a languages < <(jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json | sort -fk2,2)
+IFS=$'\n' read -d '' -a languages < <(
+    jq -r 'to_entries[]|.key+"\t"+.value' <~-/languages.json |
+    sort -fk2,2 |
+    if (( $# )); then
+        grep -iwf <(printf '%s\n' "$@")
+    else
+        cat
+    fi
+)
 for lang in "${languages[@]}"; do
   read ext name <<<"$lang"
   lext=$(tr A-Z a-z <<<"$ext")
@@ -28,24 +36,14 @@ for lang in "${languages[@]}"; do
   mv "$old_f" "$f"
   lf="$(tr A-Z a-z <<<"$f")"
   old_f="$(tr A-Z a-z <<<"${lf%.$lext}_$lext.txt")"
-  if (( $# )); then
-    for arg in "$@"; do
-      found=0
-      case "$(tr A-Z a-z <<<"$arg")" in
-        $lext|$lname|$lf|$old_f) found=1; break;;
-      esac
-    done
-    if (( ! found )); then
-      continue
-    fi
-  fi
   echo -n "$name:"
   if [ ! -r "$f" ]; then
     result='[33mSKIP[0m'
   else
     mkdir "$ext"
     mv "$f" "$ext"
-    (cd "$ext"
+    exec 3>&1
+    keep=$(cd "$ext"
     result=
     compile=()
     run=()
@@ -58,6 +56,7 @@ for lang in "${languages[@]}"; do
     else
       case "$ext" in
       (11l) run=(python -m11l "$f");;
+      (4th) run=(4th cxq "$f");;
       (a68) run=(a68g "$f");;
       (adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       (awk) run=(awk -f ./"$f");;
@@ -83,7 +82,7 @@ for lang in "${languages[@]}"; do
       (f) compile=(gfortran -std=legacy "$f" ); export GFORTRAN_UNBUFFERED_ALL=1; run=(./a.out);;
       ("><>") run=(python ~/bin/fish.py "$f");;
       (fr) compile=(fregec "$f" ); run=(frege Punishment);;
-      (4th) run=(gforth "$f");;
+      (fth) run=(gforth "$f");;
       (go) run=(go run "$f");;
       (hs) . "$HOME/.ghcup/env"; run=(runhaskell "$f");;
       (hx) run=(haxe --main Punishment --interp);;
@@ -159,7 +158,7 @@ for lang in "${languages[@]}"; do
             result='[33mSKIP[0m'
           else
             result='[31mFAIL[0m'
-	    keep=1
+	          keep=1
           fi
         else
           result='[33mSKIP[0m'
@@ -191,7 +190,8 @@ for lang in "${languages[@]}"; do
         fi
       fi
     fi
-    echo "$result")
+    echo "$result" >&3
+    echo $keep)
   fi
 done
 if (( keep )); then
