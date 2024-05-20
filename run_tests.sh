@@ -158,7 +158,7 @@ for lang in "${languages[@]}"; do
             result='[33mSKIP[0m'
           else
             result='[31mFAIL[0m'
-	          keep=1
+            keep=1
           fi
         else
           result='[33mSKIP[0m'
