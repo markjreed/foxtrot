@@ -1,0 +1,9 @@
+PROC punishment()
+    WORD: count;
+    count := 500;
+    WHILE count
+    DO
+        WRITE 'I will not throw paper airplanes in class.';
+        count := count - 1
+    END
+ENDPROC
