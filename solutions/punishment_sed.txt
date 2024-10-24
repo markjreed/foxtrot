@@ -12,7 +12,6 @@ G
 s/\n//
 /^501$/{d;q;}
 h
-
 a\
 I will not throw paper airplanes in class.
 be
