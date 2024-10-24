@@ -1,4 +1,4 @@
-:e
+:l
 x
 /^$/ s/^.*$/0/
 /^9*$/ s/^/0/
@@ -14,4 +14,4 @@ s/\n//
 h
 a\
 I will not throw paper airplanes in class.
-be
+bl
