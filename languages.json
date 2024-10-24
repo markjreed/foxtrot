@@ -135,6 +135,7 @@
     "sci":          "SciLab",
     "scl":          "SCL (NOS/VE System Command Language)",
     "scm":          "Scheme",
+    "sed":          "SED, the UNIX Stream EDitor",
     "semi":         "Semicolon",
     "sf":           "Sidef",
     "sno":          "SNOBOL 4",

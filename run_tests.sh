@@ -122,6 +122,7 @@ for lang in "${languages[@]}"; do
       (rs) compile=(rustc "$f"); run=("./${f%.$ext}");;
       (sci) run=(scilab-cli -nb -f "$f" -quit);;
       (scm) run=(scheme --quiet --load "$f" --eval '(exit)');;
+      (sed) run=(bash -c "sed -f '$f' <(echo)");;
       (semi) run=(semicolon "$f");;
       (sf) run=(sidef "$f");;
       (sim) compile=(cim "$f"); run=("./${f%.$ext}");;
