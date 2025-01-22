@@ -1,0 +1,1143 @@
+{
+  "8th": {
+    "id": "8th",
+    "name": "8th",
+    "suffix": "8th",
+    "compile": null,
+    "run": "8th"
+  },
+  "11l": {
+    "id": "11l",
+    "name": "11L",
+    "suffix": "11l",
+    "compile": null,
+    "run": "python -m11l"
+  },
+  "algol60": {
+    "id": "algol60",
+    "name": "Algol-60",
+    "suffix": "a60",
+    "compile": null,
+    "run": null
+  },
+  "algol68": {
+    "id": "algol68",
+    "name": "Algol-68",
+    "suffix": "a68",
+    "compile": null,
+    "run": "a68g"
+  },
+  "act": {
+    "id": "act",
+    "name": "Action!",
+    "suffix": "act",
+    "compile": null,
+    "run": null
+  },
+  "ada": {
+    "id": "ada",
+    "name": "Ada",
+    "suffix": "adb",
+    "compile": "gnat make",
+    "run": null
+  },
+  "algolm": {
+    "id": "algolm",
+    "name": "Algol-M",
+    "suffix": "alg",
+    "compile": null,
+    "run": null
+  },
+  "apl": {
+    "id": "apl",
+    "name": "APL",
+    "suffix": "apl",
+    "compile": null,
+    "run": "apl"
+  },
+  "applescript": {
+    "id": "applescript",
+    "name": "AppleScript",
+    "suffix": "applescript",
+    "compile": null,
+    "run": "osascript"
+  },
+  "arc": {
+    "id": "arc",
+    "name": "Arc",
+    "suffix": "arc",
+    "compile": null,
+    "run": null
+  },
+  "6502": {
+    "id": "6502",
+    "name": "Assembly (6502 on a Commodore 8-bit)",
+    "suffix": "asm-6502",
+    "compile": null,
+    "run": null
+  },
+  "65816": {
+    "id": "65816",
+    "name": "Assembly (65816 on an upgraded Commodore 8-bit)",
+    "suffix": "asm-65816",
+    "compile": null,
+    "run": null
+  },
+  "68000": {
+    "id": "68000",
+    "name": "Assembly (68000 on a Commodore Amiga)",
+    "suffix": "asm-68000",
+    "compile": null,
+    "run": null
+  },
+  "8080": {
+    "id": "8080",
+    "name": "Assembly (8080 under CP/M)",
+    "suffix": "asm-8080",
+    "compile": null,
+    "run": null
+  },
+  "8086": {
+    "id": "8086",
+    "name": "Assembly (x86 under MS-DOS)",
+    "suffix": "asm-8086",
+    "compile": null,
+    "run": null
+  },
+  "amd64": {
+    "id": "amd64",
+    "name": "Assembly (AMD64 under Linux)",
+    "suffix": "asm-amd64",
+    "compile": null,
+    "run": null
+  },
+  "arm64": {
+    "id": "arm64",
+    "name": "Assembly (ARM64 under macOS)",
+    "suffix": "asm-arm64",
+    "compile": null,
+    "run": null
+  },
+  "sparc": {
+    "id": "sparc",
+    "name": "Assembly (SPARC under Solaris)",
+    "suffix": "asm-sparc",
+    "compile": null,
+    "run": null
+  },
+  "z80": {
+    "id": "z80",
+    "name": "Assembly (Z80 on a TRS-80)",
+    "suffix": "asm-z80",
+    "compile": null,
+    "run": null
+  },
+  "awk": {
+    "id": "awk",
+    "name": "AWK",
+    "suffix": "awk",
+    "compile": null,
+    "run": "awk"
+  },
+  "b": {
+    "id": "b",
+    "name": "B",
+    "suffix": "b",
+    "compile": "ybc",
+    "run": null
+  },
+  "ballerina": {
+    "id": "ballerina",
+    "name": "Ballerina",
+    "suffix": "bal",
+    "compile": null,
+    "run": "bal run"
+  },
+  "basic": {
+    "id": "basic",
+    "name": "BASIC",
+    "suffix": "bas",
+    "compile": null,
+    "run": "basic"
+  },
+  "bash": {
+    "id": "bash",
+    "name": "Bourne-Again Shell",
+    "suffix": "bash",
+    "compile": null,
+    "run": "bash"
+  },
+  "bat": {
+    "id": "bat",
+    "name": "DOS Batch File",
+    "suffix": "bat",
+    "compile": null,
+    "run": "4bat"
+  },
+  "batsh": {
+    "id": "batsh",
+    "name": "Batsh",
+    "suffix": "batsh",
+    "compile": null,
+    "run": "batsh"
+  },
+  "bcpl": {
+    "id": "bcpl",
+    "name": "BCPL",
+    "suffix": "bcpl",
+    "compile": null,
+    "run": null
+  },
+  "befunge": {
+    "id": "befunge",
+    "name": "Befunge",
+    "suffix": "bef",
+    "compile": null,
+    "run": "bef"
+  },
+  "brainfuck": {
+    "id": "brainfuck",
+    "name": "Brainf@!<",
+    "suffix": "bf",
+    "compile": null,
+    "run": "bf"
+  },
+  "bracmat": {
+    "id": "bracmat",
+    "name": "Bracmat",
+    "suffix": "bra",
+    "compile": null,
+    "run": null
+  },
+  "brightscript": {
+    "id": "brightscript",
+    "name": "BrightScript",
+    "suffix": "brs",
+    "compile": null,
+    "run": null
+  },
+  "c": {
+    "id": "c",
+    "name": "C",
+    "suffix": "c",
+    "compile": "gcc",
+    "run": null
+  },
+  "carbon": {
+    "id": "carbon",
+    "name": "Google Carbon",
+    "suffix": "carbon",
+    "compile": null,
+    "run": null
+  },
+  "lfe": {
+    "id": "lfe",
+    "name": "Lisp-Flavoured Erlang",
+    "suffix": "lfe",
+    "compile": null,
+    "run": null
+  },
+  "lisp": {
+    "id": "lisp",
+    "name": "Common Lisp",
+    "suffix": "lisp",
+    "compile": null,
+    "run": "clisp"
+  },
+  "cobol64": {
+    "id": "cobol64",
+    "name": "Abacus COBOL-64",
+    "suffix": "c64",
+    "compile": null,
+    "run": null
+  },
+  "clojure": {
+    "id": "clojure",
+    "name": "Clojure",
+    "suffix": "clj",
+    "compile": null,
+    "run": "lein exec"
+  },
+  "cobol": {
+    "id": "cobol",
+    "name": "COBOL",
+    "suffix": "cob",
+    "compile": "cobc",
+    "run": null
+  },
+  "coffeescript": {
+    "id": "coffeescript",
+    "name": "CoffeeScript",
+    "suffix": "coffee",
+    "compile": null,
+    "run": "coffee"
+  },
+  "comal": {
+    "id": "comal",
+    "name": "COMAL",
+    "suffix": "com",
+    "compile": null,
+    "run": null
+  },
+  "c++": {
+    "id": "c++",
+    "name": "C++",
+    "suffix": "cpp",
+    "compile": "g++",
+    "run": null
+  },
+  "c#": {
+    "id": "c#",
+    "name": "C#",
+    "suffix": "cs",
+    "compile": "mcs",
+    "run": null
+  },
+  "csh": {
+    "id": "csh",
+    "name": "C Shell",
+    "suffix": "csh",
+    "compile": null,
+    "run": "csh"
+  },
+  "excel": {
+    "id": "excel",
+    "name": "Microsoft Excel Spreadsheet",
+    "suffix": "csv",
+    "compile": null,
+    "run": null
+  },
+  "cybil": {
+    "id": "cybil",
+    "name": "CybIL (Cyber Instruction Language)",
+    "suffix": "cyb",
+    "compile": null,
+    "run": null
+  },
+  "d": {
+    "id": "d",
+    "name": "D",
+    "suffix": "d",
+    "compile": "dmd",
+    "run": null
+  },
+  "dart": {
+    "id": "dart",
+    "name": "Dart",
+    "suffix": "dart",
+    "compile": null,
+    "run": "dart"
+  },
+  "dc": {
+    "id": "dc",
+    "name": "UNIX Desktop Calculator",
+    "suffix": "dc",
+    "compile": null,
+    "run": "dc"
+  },
+  "dcl": {
+    "id": "dcl",
+    "name": "DEC Command Language",
+    "suffix": "dcl",
+    "compile": null,
+    "run": null
+  },
+  "dogescript": {
+    "id": "dogescript",
+    "name": "dogescript",
+    "suffix": "doge",
+    "compile": null,
+    "run": "dogescript"
+  },
+  "dylan": {
+    "id": "dylan",
+    "name": "Dylan",
+    "suffix": "dylan",
+    "compile": null,
+    "run": "rundylan"
+  },
+  "eiffel": {
+    "id": "eiffel",
+    "name": "Eiffel",
+    "suffix": "e",
+    "compile": null,
+    "run": null
+  },
+  "elisp": {
+    "id": "elisp",
+    "name": "Emacs Lisp",
+    "suffix": "elisp",
+    "compile": null,
+    "run": "emacs --batch --load"
+  },
+  "elm": {
+    "id": "elm",
+    "name": "Elm",
+    "suffix": "elm",
+    "compile": null,
+    "run": null
+  },
+  "erlang": {
+    "id": "erlang",
+    "name": "Erlang",
+    "suffix": "erl",
+    "compile": null,
+    "run": "escript"
+  },
+  "elixir": {
+    "id": "elixir",
+    "name": "Elixir",
+    "suffix": "exs",
+    "compile": null,
+    "run": "elixir"
+  },
+  "fortran": {
+    "id": "fortran",
+    "name": "Fortran",
+    "suffix": "f",
+    "compile": "gfortran",
+    "run": null
+  },
+  "factor": {
+    "id": "factor",
+    "name": "Factor",
+    "suffix": "factor",
+    "compile": null,
+    "run": null
+  },
+  "fish": {
+    "id": "fish",
+    "name": "Fish (the Friendly Interactive SHell)",
+    "suffix": "fish",
+    "compile": null,
+    "run": "fish"
+  },
+  "><>": {
+    "id": "><>",
+    "name": "><> (pronounced Fish)",
+    "suffix": "><>",
+    "compile": null,
+    "run": "fish.py"
+  },
+  "focal": {
+    "id": "focal",
+    "name": "FOCAL",
+    "suffix": "foc",
+    "compile": null,
+    "run": null
+  },
+  "4th": {
+    "id": "4th",
+    "name": "4tH",
+    "suffix": "4th",
+    "compile": null,
+    "run": "4th"
+  },
+  "frege": {
+    "id": "frege",
+    "name": "Frege",
+    "suffix": "fr",
+    "compile": null,
+    "run": null
+  },
+  "f#": {
+    "id": "f#",
+    "name": "F#",
+    "suffix": "fsx",
+    "compile": null,
+    "run": "dotnet fsi"
+  },
+  "forth": {
+    "id": "forth",
+    "name": "Forth",
+    "suffix": "fth",
+    "compile": null,
+    "run": "gforth"
+  },
+  "go": {
+    "id": "go",
+    "name": "Go",
+    "suffix": "go",
+    "compile": null,
+    "run": "go run"
+  },
+  "grass": {
+    "id": "grass",
+    "name": "Grass",
+    "suffix": "grass",
+    "compile": null,
+    "run": null
+  },
+  "groovy": {
+    "id": "groovy",
+    "name": "Groovy",
+    "suffix": "groovy",
+    "compile": null,
+    "run": "groovy"
+  },
+  "haskell": {
+    "id": "haskell",
+    "name": "Haskell",
+    "suffix": "hs",
+    "compile": "ghc",
+    "run": null
+  },
+  "hush": {
+    "id": "hush",
+    "name": "Hush",
+    "suffix": "hush",
+    "compile": null,
+    "run": null
+  },
+  "haxe": {
+    "id": "haxe",
+    "name": "Haxe",
+    "suffix": "hx",
+    "compile": null,
+    "run": null
+  },
+  "hy": {
+    "id": "hy",
+    "name": "Hy",
+    "suffix": "hy",
+    "compile": null,
+    "run": null
+  },
+  "intercal": {
+    "id": "intercal",
+    "name": "INTERCAL",
+    "suffix": "i",
+    "compile": "ick",
+    "run": null
+  },
+  "icon": {
+    "id": "icon",
+    "name": "Icon",
+    "suffix": "ico",
+    "compile": null,
+    "run": null
+  },
+  "idris": {
+    "id": "idris",
+    "name": "Idris",
+    "suffix": "idr",
+    "compile": null,
+    "run": null
+  },
+  "inform6": {
+    "id": "inform6",
+    "name": "Inform 6",
+    "suffix": "inf",
+    "compile": null,
+    "run": null
+  },
+  "io": {
+    "id": "io",
+    "name": "Io",
+    "suffix": "io",
+    "compile": null,
+    "run": null
+  },
+  "j": {
+    "id": "j",
+    "name": "J",
+    "suffix": "j",
+    "compile": null,
+    "run": null
+  },
+  "janet": {
+    "id": "janet",
+    "name": "Janet",
+    "suffix": "janet",
+    "compile": null,
+    "run": null
+  },
+  "java": {
+    "id": "java",
+    "name": "Java",
+    "suffix": "java",
+    "compile": "javac",
+    "run": null
+  },
+  "joy": {
+    "id": "joy",
+    "name": "Joy",
+    "suffix": "joy",
+    "compile": null,
+    "run": null
+  },
+  "jq": {
+    "id": "jq",
+    "name": "JQ",
+    "suffix": "jq",
+    "compile": null,
+    "run": "jq -f"
+  },
+  "javascript": {
+    "id": "javascript",
+    "name": "JavaScript",
+    "suffix": "js",
+    "compile": null,
+    "run": "node"
+  },
+  "julia": {
+    "id": "julia",
+    "name": "Julia",
+    "suffix": "julia",
+    "compile": null,
+    "run": null
+  },
+  "kotlin": {
+    "id": "kotlin",
+    "name": "Kotlin",
+    "suffix": "kt",
+    "compile": "kotlinc",
+    "run": null
+  },
+  "lasso": {
+    "id": "lasso",
+    "name": "Lasso",
+    "suffix": "lasso",
+    "compile": null,
+    "run": null
+  },
+  "lily": {
+    "id": "lily",
+    "name": "Lily",
+    "suffix": "lily",
+    "compile": null,
+    "run": null
+  },
+  "logo": {
+    "id": "logo",
+    "name": "Logo",
+    "suffix": "logo",
+    "compile": null,
+    "run": "ucblogo"
+  },
+  "lolcode": {
+    "id": "lolcode",
+    "name": "LOLCODE",
+    "suffix": "lol",
+    "compile": null,
+    "run": "lci"
+  },
+  "lsl": {
+    "id": "lsl",
+    "name": "LSL",
+    "suffix": "lsl",
+    "compile": null,
+    "run": null
+  },
+  "lua": {
+    "id": "lua",
+    "name": "Lua",
+    "suffix": "lua",
+    "compile": null,
+    "run": "lua"
+  },
+  "objc": {
+    "id": "objc",
+    "name": "Objective-C",
+    "suffix": "m",
+    "compile": "clang -framework Foundation",
+    "run": null
+  },
+  "mad": {
+    "id": "mad",
+    "name": "MAD",
+    "suffix": "mad",
+    "compile": null,
+    "run": null
+  },
+  "modula2": {
+    "id": "modula2",
+    "name": "Modula-2",
+    "suffix": "mod",
+    "compile": "gm2  -fno-pth -flibs=log,pim",
+    "run": null
+  },
+  "modula3": {
+    "id": "modula3",
+    "name": "Modula-3",
+    "suffix": "m3",
+    "compile": "cm3",
+    "run": null
+  },
+  "m4": {
+    "id": "m4",
+    "name": "M4 Macros",
+    "suffix": "m4",
+    "compile": null,
+    "run": "gm4"
+  },
+  "c64lisp": {
+    "id": "c64lisp",
+    "name": "MicroLisp C64",
+    "suffix": "microlisp",
+    "compile": null,
+    "run": null
+  },
+  "ocaml": {
+    "id": "ocaml",
+    "name": "OCaml",
+    "suffix": "ml",
+    "compile": null,
+    "run": null
+  },
+  "mumps": {
+    "id": "mumps",
+    "name": "MUMPS",
+    "suffix": "mumps",
+    "compile": null,
+    "run": null
+  },
+  "moonscript": {
+    "id": "moonscript",
+    "name": "MoonScript",
+    "suffix": "moon",
+    "compile": null,
+    "run": null
+  },
+  "nim": {
+    "id": "nim",
+    "name": "Nim",
+    "suffix": "nim",
+    "compile": null,
+    "run": null
+  },
+  "occam": {
+    "id": "occam",
+    "name": "Occam",
+    "suffix": "occ",
+    "compile": null,
+    "run": null
+  },
+  "octave": {
+    "id": "octave",
+    "name": "GNU Octave",
+    "suffix": "octave",
+    "compile": null,
+    "run": null
+  },
+  "oil": {
+    "id": "oil",
+    "name": "Oil Shell",
+    "suffix": "oil",
+    "compile": null,
+    "run": null
+  },
+  "pascal": {
+    "id": "pascal",
+    "name": "Pascal",
+    "suffix": "p",
+    "compile": "fpc",
+    "run": null
+  },
+  "pearl": {
+    "id": "pearl",
+    "name": "PEARL",
+    "suffix": "pearl",
+    "compile": null,
+    "run": null
+  },
+  "perl4": {
+    "id": "perl4",
+    "name": "Perl 4",
+    "suffix": "p4",
+    "compile": null,
+    "run": null
+  },
+  "perl5": {
+    "id": "perl5",
+    "name": "Perl 5",
+    "suffix": "p5",
+    "compile": null,
+    "run": "perl"
+  },
+  "perl5+i": {
+    "id": "perl5+i",
+    "name": "Perl 5+i",
+    "suffix": "p5i",
+    "compile": null,
+    "run": null
+  },
+  "picolisp": {
+    "id": "picolisp",
+    "name": "PicoLisp",
+    "suffix": "pil",
+    "compile": null,
+    "run": null
+  },
+  "pilot": {
+    "id": "pilot",
+    "name": "PILOT",
+    "suffix": "pilot",
+    "compile": null,
+    "run": null
+  },
+  "prog8": {
+    "id": "prog8",
+    "name": "Prog8",
+    "suffix": "p8",
+    "compile": "prog8c",
+    "run": null
+  },
+  "raku": {
+    "id": "raku",
+    "name": "Raku (formerly Perl 6)",
+    "suffix": "raku",
+    "compile": null,
+    "run": "raku"
+  },
+  "phix": {
+    "id": "phix",
+    "name": "Phix",
+    "suffix": "phix",
+    "compile": null,
+    "run": null
+  },
+  "php": {
+    "id": "php",
+    "name": "PHP",
+    "suffix": "php",
+    "compile": null,
+    "run": "php"
+  },
+  "prolog": {
+    "id": "prolog",
+    "name": "Prolog",
+    "suffix": "pl",
+    "compile": "swipl -q -g main -l",
+    "run": null
+  },
+  "pli": {
+    "id": "pli",
+    "name": "PL/I",
+    "suffix": "pli",
+    "compile": null,
+    "run": null
+  },
+  "plm": {
+    "id": "plm",
+    "name": "PL/M",
+    "suffix": "plm",
+    "compile": null,
+    "run": null
+  },
+  "promal": {
+    "id": "promal",
+    "name": "PROMAL",
+    "suffix": "pro",
+    "compile": null,
+    "run": null
+  },
+  "postscript": {
+    "id": "postscript",
+    "name": "Postscript",
+    "suffix": "ps",
+    "compile": null,
+    "run": "gs"
+  },
+  "powershell": {
+    "id": "powershell",
+    "name": "PowerShell",
+    "suffix": "ps1",
+    "compile": null,
+    "run": "pwsh"
+  },
+  "python2": {
+    "id": "python2",
+    "name": "Python 2",
+    "suffix": "py2",
+    "compile": null,
+    "run": "python2"
+  },
+  "python3": {
+    "id": "python3",
+    "name": "Python 3",
+    "suffix": "py3",
+    "compile": null,
+    "run": "python3"
+  },
+  "qore": {
+    "id": "qore",
+    "name": "Qore",
+    "suffix": "q",
+    "compile": null,
+    "run": null
+  },
+  "r": {
+    "id": "r",
+    "name": "R",
+    "suffix": "r",
+    "compile": null,
+    "run": null
+  },
+  "rebol": {
+    "id": "rebol",
+    "name": "REBOL",
+    "suffix": "reb",
+    "compile": null,
+    "run": null
+  },
+  "ruby": {
+    "id": "ruby",
+    "name": "Ruby",
+    "suffix": "rb",
+    "compile": null,
+    "run": "ruby"
+  },
+  "rexx": {
+    "id": "rexx",
+    "name": "Rexx",
+    "suffix": "rexx",
+    "compile": null,
+    "run": null
+  },
+  "racket": {
+    "id": "racket",
+    "name": "Racket",
+    "suffix": "rkt",
+    "compile": null,
+    "run": null
+  },
+  "ratfor": {
+    "id": "ratfor",
+    "name": "Ratfor",
+    "suffix": "rf",
+    "compile": null,
+    "run": null
+  },
+  "rust": {
+    "id": "rust",
+    "name": "Rust",
+    "suffix": "rs",
+    "compile": "rustc",
+    "run": null
+  },
+  "starset": {
+    "id": "starset",
+    "name": "Starset",
+    "suffix": "s3",
+    "compile": null,
+    "run": null
+  },
+  "scala": {
+    "id": "scala",
+    "name": "Scala",
+    "suffix": "scala",
+    "compile": "scalac",
+    "run": null
+  },
+  "scilab": {
+    "id": "scilab",
+    "name": "SciLab",
+    "suffix": "sci",
+    "compile": null,
+    "run": null
+  },
+  "scl": {
+    "id": "scl",
+    "name": "SCL (NOS/VE System Command Language)",
+    "suffix": "scl",
+    "compile": null,
+    "run": null
+  },
+  "scheme": {
+    "id": "scheme",
+    "name": "Scheme",
+    "suffix": "scm",
+    "compile": null,
+    "run": "scheme --quiet --load %s --eval '(exit)' --"
+  },
+  "sed": {
+    "id": "sed",
+    "name": "SED, the UNIX Stream EDitor",
+    "suffix": "sed",
+    "compile": null,
+    "run": "sed -f"
+  },
+  "semicolon": {
+    "id": "semicolon",
+    "name": "Semicolon",
+    "suffix": "semi",
+    "compile": null,
+    "run": null
+  },
+  "sidef": {
+    "id": "sidef",
+    "name": "Sidef",
+    "suffix": "sf",
+    "compile": null,
+    "run": null
+  },
+  "snobol 4": {
+    "id": "snobol 4",
+    "name": "SNOBOL 4",
+    "suffix": "sno",
+    "compile": null,
+    "run": "snobol4"
+  },
+  "spl": {
+    "id": "spl",
+    "name": "SPL",
+    "suffix": "spl",
+    "compile": null,
+    "run": null
+  },
+  "sh": {
+    "id": "sh",
+    "name": "Bourne Shell",
+    "suffix": "sh",
+    "compile": null,
+    "run": "sh"
+  },
+  "simula": {
+    "id": "simula",
+    "name": "Simula",
+    "suffix": "sim",
+    "compile": null,
+    "run": null
+  },
+  "s-lang": {
+    "id": "s-lang",
+    "name": "S-Lang",
+    "suffix": "sl",
+    "compile": null,
+    "run": null
+  },
+  "ml": {
+    "id": "ml",
+    "name": "Standard ML",
+    "suffix": "sml",
+    "compile": null,
+    "run": null
+  },
+  "subleq": {
+    "id": "subleq",
+    "name": "SUBLEQ",
+    "suffix": "sq",
+    "compile": null,
+    "run": null
+  },
+  "smalltalk": {
+    "id": "smalltalk",
+    "name": "SmallTalk",
+    "suffix": "st",
+    "compile": null,
+    "run": null
+  },
+  "swift": {
+    "id": "swift",
+    "name": "Swift",
+    "suffix": "swift",
+    "compile": null,
+    "run": null
+  },
+  "tcl": {
+    "id": "tcl",
+    "name": "Tcl",
+    "suffix": "tcl",
+    "compile": null,
+    "run": "tclsh"
+  },
+  "latex": {
+    "id": "latex",
+    "name": "LaTeX",
+    "suffix": "tex",
+    "compile": null,
+    "run": null
+  },
+  "typescript": {
+    "id": "typescript",
+    "name": "TypeScript",
+    "suffix": "ts",
+    "compile": null,
+    "run": null
+  },
+  "terraform": {
+    "id": "terraform",
+    "name": "Terraform",
+    "suffix": "tf",
+    "compile": null,
+    "run": null
+  },
+  "troff": {
+    "id": "troff",
+    "name": "Troff",
+    "suffix": "troff",
+    "compile": null,
+    "run": "groff"
+  },
+  "unlambda": {
+    "id": "unlambda",
+    "name": "Unlambda",
+    "suffix": "unl",
+    "compile": null,
+    "run": null
+  },
+  "vala": {
+    "id": "vala",
+    "name": "Vala",
+    "suffix": "vala",
+    "compile": null,
+    "run": null
+  },
+  "viml": {
+    "id": "viml",
+    "name": "VimL",
+    "suffix": "vim",
+    "compile": null,
+    "run": null
+  },
+  "varaq": {
+    "id": "varaq",
+    "name": "var'aq",
+    "suffix": "vq",
+    "compile": null,
+    "run": null
+  },
+  "wren": {
+    "id": "wren",
+    "name": "Wren",
+    "suffix": "wren",
+    "compile": null,
+    "run": null
+  },
+  "whitespace": {
+    "id": "whitespace",
+    "name": "WhiteSpace",
+    "suffix": "ws",
+    "compile": null,
+    "run": null
+  },
+  "yorick": {
+    "id": "yorick",
+    "name": "Yorick",
+    "suffix": "yorick",
+    "compile": null,
+    "run": null
+  },
+  "zig": {
+    "id": "zig",
+    "name": "Zig",
+    "suffix": "zig",
+    "compile": "zigc",
+    "run": null
+  },
+  "zsh": {
+    "id": "zsh",
+    "name": "Z Shell",
+    "suffix": "zsh",
+    "compile": null,
+    "run": "zsh"
+  },
+  "emojicode": {
+    "id": "emojicode",
+    "name": "Emojicode",
+    "suffix": "🍇",
+    "compile": "emojic",
+    "run": null
+  }
+}
