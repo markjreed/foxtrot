@@ -82,6 +82,7 @@ for lang in "${languages[@]}"; do
       (f) compile=(gfortran -std=legacy "$f" ); export GFORTRAN_UNBUFFERED_ALL=1; run=(./a.out);;
       ("><>") run=(python ~/bin/fish.py "$f");;
       (fr) compile=(fregec "$f" ); run=(frege Punishment);;
+      (fsx) run=(dotnet fsi "$f");;
       (fth) run=(gforth "$f");;
       (go) run=(go run "$f");;
       (hs) . "$HOME/.ghcup/env"; run=(runhaskell "$f");;
