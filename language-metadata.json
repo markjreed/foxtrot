@@ -137,7 +137,7 @@
     "name": "AWK",
     "suffix": "awk",
     "compile": null,
-    "run": "awk"
+    "run": "awk -f"
   },
   "b": {
     "id": "b",
