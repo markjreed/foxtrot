@@ -872,7 +872,7 @@
     "name": "R",
     "suffix": "r",
     "compile": null,
-    "run": null
+    "run": "rscript"
   },
   "rebol": {
     "id": "rebol",
