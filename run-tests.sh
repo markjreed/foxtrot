@@ -111,7 +111,7 @@ for lang in "${languages[@]}"; do
       (p5) run=(perl "$f");;
       (p5i) run=(perl5i "$f");;
       (raku) run=(raku "$f");;
-      (pilot) run=(rpilot "$f");;
+      (pilot) run=(pilot "$f");;
       (pl) run=(swipl -q -g main -l "$f");;
       (ps1) run=(pwsh "$f");;
       (py2) run=(python2 "$f");;
