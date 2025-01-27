@@ -1,6 +1,5 @@
-      C:               #Count = 0
-*Loop
-      T:               I will not throw paper airplanes in class.
-      C:               #Count = #Count+1
-      J(#Count < 500): Loop
+      C:C=0
+*Loop T:I will not throw paper airplanes in class.
+      C:C=#C+1
+      J(#C<500):Loop
       E:
