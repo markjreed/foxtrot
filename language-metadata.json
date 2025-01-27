@@ -774,7 +774,7 @@
     "name": "PILOT",
     "suffix": "pilot",
     "compile": null,
-    "run": "rpilot"
+    "run": "pilot"
   },
   "prog8": {
     "id": "prog8",
