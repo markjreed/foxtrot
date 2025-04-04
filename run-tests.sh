@@ -51,7 +51,7 @@ for lang in "${languages[@]}"; do
     if [ -x "../compile_$ext.sh" ]; then
       compile=("../compile_$ext.sh" "$f" )
     fi
-    if [ -x "run_$ext.sh" ]; then
+    if [ -x "../run_$ext.sh" ]; then
       run=("../run_$ext.sh" "$f" )
     else
       case "$ext" in

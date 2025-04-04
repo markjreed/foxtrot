@@ -5,7 +5,7 @@ main {
   sub start() {
     txt.lowercase()
     repeat 500 {
-      txt.print("I will not throw paper airplanes in class.\r")
+      txt.print("I will not throw paper airplanes in class.\n")
     }
   }
 }
