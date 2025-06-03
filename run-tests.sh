@@ -89,6 +89,7 @@ for lang in "${languages[@]}"; do
       (hx) run=(haxe --main Punishment --interp);;
       (i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
       (ico)  run=(icon "$f");;
+      (ics) compile=(ics "$f"); run=(node "${f%.$ext}.mjs");;
       (idr) compile=(idris -o a.out "$f"); run=(./a.out);;
       (inf) compile=(inform "$f"); run=(dfrotz -mp "${f%.$ext}.z5");;
       (j) run=(jconsole "$f");;

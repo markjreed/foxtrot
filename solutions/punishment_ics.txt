@@ -1,0 +1,5 @@
+count = 0;
+do while count < 500 then
+    print("I will not throw paper airplanes in class.");
+    count = count +. 1
+end
