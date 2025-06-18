@@ -117,6 +117,7 @@ for lang in "${languages[@]}"; do
       (ps1) run=(pwsh "$f");;
       (py2) run=(python2 "$f");;
       (py3) run=(python3 "$f");;
+      (pyth) export PYTHONPATH=$HOME/lib/pyth; run=(python ~/bin/pyth.py -c "$(<"$f")");;
       (q) run=(qore "$f");;
       (r)  run=(r -q --slave -f "$f");;
       (rb) run=(ruby "$f");;
