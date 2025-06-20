@@ -1,0 +1,15 @@
+app [main!] { cli: platform "https://github.com/roc-lang/basic-cli/releases/download/0.19.0/Hj-J_zxz7V9YurCSTFcFdu6cQJie4guzsPMUi5kBYUk.tar.br" }
+
+import cli.Stdout
+import cli.Arg exposing [Arg]
+
+punish! = |count|
+    ret = Stdout.line!("I will not throw paper airplanes in class.")
+    if count > 1 then
+        punish!(count - 1)
+    else
+        ret
+
+main! : List Arg => Result {} _
+main! = |_args|
+    punish!(500)
