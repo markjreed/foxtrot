@@ -4,11 +4,14 @@ import cli.Stdout
 import cli.Arg exposing [Arg]
 
 punish! = |count|
-    ret = Stdout.line!("I will not throw paper airplanes in class.")
-    if count > 1 then
-        punish!(count - 1)
+    if count > 0 then
+        ret = Stdout.line!("I will not throw paper airplanes in class.")
+        if Result.is_ok(ret) then
+            punish!(count - 1)
+        else
+            ret
     else
-        ret
+        Ok({})
 
 main! : List Arg => Result {} _
 main! = |_args|
