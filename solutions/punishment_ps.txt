@@ -1,31 +1,5 @@
 %!
-/inch { 72 mul } def
-12 dup /font_size exch def
-1.5 mul /line_size exch def
-/page_height 11 inch def
-/page_width 8.5 inch def
-/top_margin 0.75 inch def
-/bottom_margin 1 inch def
-/left_margin 1 inch def
-/usable_height page_height top_margin sub bottom_margin sub def
-/lines_per_page usable_height line_size div cvi def
-/pages 500 lines_per_page div ceiling cvi def
-/y0 page_height top_margin sub line_size sub def
-/newline {
-  currentpoint /y exch def pop
-  left_margin y line_size sub moveto
-} def
-/msg (I will not throw paper airplanes in class.) def
-
-/Courier findfont font_size scalefont setfont
-1 1 pages { /page exch def
-  left_margin y0 moveto
-  msg show
-  2 1 lines_per_page {
-    page 1 sub lines_per_page mul add
-    dup 500 gt { exit } if
-    newline
-    msg show
-  } for
-  showpage
+1 1 500 {
+    (I will not throw paper airplanes in class.) =
 } for
+quit
