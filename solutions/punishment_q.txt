@@ -1,0 +1,2 @@
+{-1 "I will not throw paper airplanes in class."} each til 500 ;
+\\

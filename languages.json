@@ -125,7 +125,7 @@
     "py2":          "Python 2",
     "py3":          "Python 3",
     "pyth":         "Pyth",
-    "q":            "Q",
+    "q":            "Q (Kx Systems kdb+ query language)",
     "qore":         "Qore",
     "r":            "R",
     "raku":         "Raku (formerly Perl 6)",
