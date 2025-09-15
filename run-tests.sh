@@ -138,6 +138,7 @@ for lang in "${languages[@]}"; do
       (st) run=(gst "$f");;
       (tcl) run=(tclsh "$f");;
       (ts) compile=(tsc "$f"); run=(node "${f%.$ext}.js");;
+      (ua) run=(uiua run "$f");;
       (unl) run=(unlambda "$f");;
       (vala) compile=(valac "$f"); run=("./${f%.$ext}");;
       (vq) run=(varaq -s "$f");;
