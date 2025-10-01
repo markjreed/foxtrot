@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-  for (int count=1; count<=500; ++count) {
+  for (int count=1; count<=500; count++) {
     std::cout << "I will not throw paper airplanes in class." << std::endl;
   }
 }
