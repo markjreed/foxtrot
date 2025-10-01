@@ -1,11 +1,8 @@
-$ N = 0
-$LOOP:
-$ WRITE SYS$OUTPUT "I will not throw paper airplanes in class."
-$ N = N + 1
-$ IF N .EQ. 500
-$ THEN
-$  GOTO DONE
-$ ENDIF
-$ GOTO LOOP
-$DONE:
+$ COUNT = 1
+$ LOOP:
+$     WRITE SYS$OUTPUT "I will not throw paper airplanes in class."
+$     COUNT = COUNT + 1
+$     IF COUNT .GT. 500 THEN GOTO DONE
+$     GOTO LOOP
+$ DONE:
 $ EXIT

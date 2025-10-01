@@ -1,5 +1,5 @@
-@ n = 0
-while ($n < 500)
+@ n = 1
+while ($n <= 500)
   echo "I will not throw paper airplanes in class."
   @ n += 1
 end
