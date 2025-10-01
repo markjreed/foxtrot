@@ -1,2 +1,2 @@
-for (var count=0; count<500; count++)
+for (var count=1; count<=500; count++)
     write("I will not throw paper airplanes in class.\n");

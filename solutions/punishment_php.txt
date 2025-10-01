@@ -1,5 +1,5 @@
 <?php
-  for ($count=0; $count<500; ++$count) {
+  for ($count=1; $count<=500; ++$count) {
     ?>I will not throw paper airplanes in class.
 <?php
   }

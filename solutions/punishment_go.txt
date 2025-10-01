@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	for count := 0; count < 500; count++ {
+	for count := 1; count <= 500; count++ {
 		fmt.Println("I will not throw paper airplanes in class.")
 	}
 }

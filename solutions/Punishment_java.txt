@@ -2,7 +2,7 @@ class Punishment
 {
   public static void main(String[] args) {
     int count;
-    for (count=0; count<500; ++count)
+    for (count=1; count<=500; ++count)
       System.out.println("I will not throw paper airplanes in class.");
   }
 }

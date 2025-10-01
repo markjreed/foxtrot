@@ -1,5 +1,5 @@
-count=0
-while [ $count -lt 500 ]; do
+count=1
+while [ $count -le 500 ]; do
   echo "I will not throw paper airplanes in class."
   count=`expr $count + 1`
 done
