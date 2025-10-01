@@ -1,0 +1,31 @@
+; Targeting CoCo via lwasm
+                org $2a00
+ 
+outdev          = $6f
+chrout          = $a282
+cls             = $a928
+
+start           bra main
+
+msg             .str "I WILL NOT THROW PAPER AIRPLANES IN CLASS."
+                .db  $0d,$00
+olds            rmb 2
+stk             rmw 12
+
+main            sts olds
+                lds #24+stk
+                jsr cls
+
+                clr outdev  ; 0 means write to screen
+                ldx #500
+outer           ldy #msg
+inner           lda ,y+
+                beq idone
+                jsr chrout
+                bra inner
+idone	leax -1,x
+                bne outer
+
+                lds olds
+                rts
+                end start
