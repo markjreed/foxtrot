@@ -36,7 +36,7 @@
     "bra":          "Bracmat",
     "brs":          "BrightScript",
     "c":            "C",
-    "c64":          "Abacus COBOL-64",
+    "c64":          "COBOL (Abacus C64 compiler)",
     "carbon":       "Google Carbon",
     "clj":          "Clojure",
     "cob":          "COBOL",
