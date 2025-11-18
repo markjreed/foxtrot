@@ -91,7 +91,7 @@ for lang in "${languages[@]}"; do
       (ico)  run=(icon "$f");;
       (ics) compile=(ics "$f"); run=(node "${f%.$ext}.mjs");;
       (idr) compile=(idris -o a.out "$f"); run=(./a.out);;
-      (inf) compile=(inform "$f"); run=(dfrotz -mp "${f%.$ext}.z5");;
+      (inf) compile=(inform "$f"); run=(dfrotz -mpq "${f%.$ext}.z5");;
       (j) run=(jconsole "$f");;
       (java) compile=(javac "$f"); run=(java Punishment);;
       (js) run=(node "$f");;
