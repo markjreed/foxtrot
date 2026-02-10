@@ -71,7 +71,7 @@ for lang in "${languages[@]}"; do
       (lisp) run=(clisp "$f");;
       (clj) run=(lein exec "$f");;
       (cob) compile=(cobc -x "$f"); run=("./${f%.$ext}");;
-      (cpp) compile=(g++ "$f" ); run=(./a.out);;
+      (cpp) compile=(g++ -std=c++20 "$f" ); run=(./a.out);;
       (cs) compile=(mcs "$f"); run=(mono "${f%.*}.exe");;
       (d) compile=(dmd "$f" ); run=("./${f%.$ext}");;
       (dc) run=(dc -f "$f");;
