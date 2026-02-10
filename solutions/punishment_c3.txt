@@ -1,0 +1,7 @@
+import std::io;
+
+fn void main() {
+    for (int count=1; count<=500; count++) {
+        io::printn("I will not throw paper airplanes in class.");
+    }
+}

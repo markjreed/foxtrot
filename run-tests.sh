@@ -66,6 +66,7 @@ for lang in "${languages[@]}"; do
       (batsh) eval "$(opam env)";if ! type -p batsh >/dev/null; then result='[33mSKIP[0m'; else  compile=(bash -c "batsh bash '$f' >batsh.out"); run=(bash ./batsh.out); fi;;
       (bef) run=(bef -q "$f");;
       (bf) run=(bf); in="$f";;
+      (c3) compile=(c3c compile "$f" ); run=("./${f%.*}");;
       (c) compile=(gcc "$f" ); run=(./a.out);;
       (lisp) run=(clisp "$f");;
       (clj) run=(lein exec "$f");;

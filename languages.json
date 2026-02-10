@@ -1,5 +1,4 @@
- {
-    "🍇":           "Emojicode",
+ { "🍇":           "Emojicode",
     "><>":          "><> (pronounced Fish)",
     "11l":          "11L",
     "4th":          "4tH",
@@ -36,6 +35,7 @@
     "bra":          "Bracmat",
     "brs":          "BrightScript",
     "c":            "C",
+    "c3":           "C3",
     "c64":          "COBOL (Abacus C64 compiler)",
     "carbon":       "Google Carbon",
     "clj":          "Clojure",
