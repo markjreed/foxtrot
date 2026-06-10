@@ -169,6 +169,7 @@
     "wren":         "Wren",
     "ws":           "WhiteSpace",
     "yorick":       "Yorick",
+    "ys":           "YAMLScript",
     "zig":          "Zig",
     "zsh":          "Z Shell"
  }
