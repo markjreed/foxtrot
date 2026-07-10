@@ -86,6 +86,7 @@ for lang in "${languages[@]}"; do
       (fsx) run=(dotnet fsi "$f");;
       (fth) run=(gforth "$f");;
       (go) run=(go run "$f");;
+      (ha) run=(hare run "$f");;
       (hs) . "$HOME/.ghcup/env"; run=(runhaskell "$f");;
       (hx) run=(haxe --main Punishment --interp);;
       (i) compile=(ick -b "$f"); run=("./${f%.$ext}");;
