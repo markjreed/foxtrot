@@ -1,0 +1,18 @@
+        ; MACRO Assembly for VAX-11 running VMS
+        .PSECT RODATA, NOWRT, NOEXE
+CR = 13
+LF = 10
+message: .ascid /I will not throw paper airplanes in class.<CR><LF>/
+
+        .PSECT CODE, NOWRT, EXE
+
+        .ENTRY START, 0
+
+        MOVL #500, R1
+loop:
+        PUSHAQ message
+        CALLS @1, G^lib$put_output
+        SOBGTR R1, loop
+        RET
+        
+        .END START
