@@ -1,0 +1,8 @@
+using { /Fortnite.com/Devices }
+using { /Verse.org/Simulation }
+using { /UnrealEngine.com/Temporary/Diagnostics }
+
+hello_world_device := class(creative_device):
+    OnBegin<override>()<suspends> : void =
+        for (Count := 1 .. 500):
+            Print("I will not throw paper airplanes in class.")
