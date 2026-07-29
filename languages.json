@@ -38,6 +38,7 @@
     "c":            "C",
     "c3":           "C3",
     "c64":          "COBOL (Abacus C64 compiler)",
+    "calc":         "UNIX calculator calc(1)",
     "carbon":       "Google Carbon",
     "clj":          "Clojure",
     "cob":          "COBOL",
