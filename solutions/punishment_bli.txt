@@ -1,0 +1,24 @@
+MODULE HELLO_WORLD (IDENT='V1.0', MAIN=HELLO_WORLD,
+                    ADDRESSING_MODE(EXTERNAL=GENERAL)) =
+BEGIN
+
+GLOBAL ROUTINE HELLO_WORLD =
+BEGIN
+    ! Explicitly bind the external system routine
+    EXTERNAL ROUTINE LIB$PUT_OUTPUT;
+
+    ! Bind the descriptor directly to an exact compilation macro
+    BIND
+        MESSAGE = %ASCID 'I will not throw paper airplanes in class.';
+
+    INCR count FROM 1 to 500 DO
+    BEGIN
+        LIB$PUT_OUTPUT(MESSAGE);
+    END;
+
+    ! Return standard VMS Success status code (SS$_NORMAL)
+    RETURN 1;
+END;
+
+END
+ELUDOM
