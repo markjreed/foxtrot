@@ -7,12 +7,9 @@ BEGIN
     LIBRARY 'SYS$LIBRARY:STARLET';
     EXTERNAL ROUTINE LIB$PUT_OUTPUT;
 
-    BIND
-        Message = %ASCID 'I will not throw paper airplanes in class.';
-
     INCR count FROM 1 TO 500 DO
     BEGIN
-        LIB$PUT_OUTPUT(Message);
+        LIB$PUT_OUTPUT(%ASCID 'I will not throw paper airplanes in class.');
     END;
 
     RETURN SS$_NORMAL;
