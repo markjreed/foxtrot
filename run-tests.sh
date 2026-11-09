@@ -55,9 +55,10 @@ for lang in "${languages[@]}"; do
       run=("../run_$ext.sh" "$f" )
     else
       case "$ext" in
-      (11l) run=(python -m11l "$f");;
+      (11l) compile=(11l "$f"); run=("./${f%.$ext}");;
       (4th) run=(4th cxq "$f");;
       (a68) run=(a68g "$f");;
+      (act) result='[33mSKIP[0m';;
       (adb) compile=(gnat make "$f"); run=("./${f%.$ext}");;
       (awk) run=(awk -f ./"$f");;
       (b) if ! type -p ybc >&/dev/null; then result='[33mSKIP[0m'; else compile=(bash -c "ybc -c "$PWD/$f"; clang -m32 $f.o /usr/local/opt/ybc/b-lib.o"); run=(./a.out); fi;;
@@ -82,6 +83,7 @@ for lang in "${languages[@]}"; do
       (erl) run=(escript "$f");;
       (exs) run=(elixir "$f");;
       (f) compile=(gfortran -std=legacy "$f" ); export GFORTRAN_UNBUFFERED_ALL=1; run=(./a.out);;
+      (factor) result='[33mSKIP[0m';;
       ("><>") run=(python ~/bin/fish.py "$f");;
       (fr) compile=(fregec "$f" ); run=(frege Punishment);;
       (fsx) run=(dotnet fsi "$f");;

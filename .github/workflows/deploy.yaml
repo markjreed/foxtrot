@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: fetch-tags
-        run: git fetch --tags
+        run: git fetch --force --tags
 
       - name: bump-patchlevel
         run: |
@@ -26,7 +26,7 @@ jobs:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
 
       - name: get-version
-        run: git describe --tags HEAD > ${{ github.workspace }}/version.txt
+        run: git describe --tags --always HEAD > ${{ github.workspace }}/version.txt
       - name: get-commit
         run: git rev-parse HEAD > ${{ github.workspace }}/commit.txt
 

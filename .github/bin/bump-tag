@@ -4,7 +4,8 @@
 main() {
   local msg="$*"
   echo "in $PWD, commit is $GITHUB_SHA"
-  local old=$(git describe --tags --abbrev=0 "${GITHUB_SHA}^")
+  local old
+  old=$(git describe --tags --abbrev=0 "${GITHUB_SHA}^" 2>/dev/null || echo "v0.0.0")
   local index
   case "$msg" in
     *\[major\]*) index=0;;        # explicit major bump
