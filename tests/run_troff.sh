@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./run_ps.sh <(groff "$@")
+gs -q -sOutputFile=- -sDEVICE=pdfwrite -dBATCH -dNOPAUSE <(groff "$@") | pdftotext - - | tr -d '\f' | grep .

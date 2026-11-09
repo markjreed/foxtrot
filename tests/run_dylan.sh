@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash 
 name="$(sed -ne $'s/^Module:[\t ]*//p' "$1")"
 name="${name:-runme}"
-"./dylan-build/$name/_build/bin/$name" "$@"
+"./dylan-build/$name/_build/bin/$name" "$@" || exit 2

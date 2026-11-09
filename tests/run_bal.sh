@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-bal run "$@"
+bal run "$@" || exit 2

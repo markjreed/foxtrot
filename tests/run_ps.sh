@@ -1,2 +1,2 @@
 #!/bin/bash
-gs -q "$1"
+gs -q "$@"

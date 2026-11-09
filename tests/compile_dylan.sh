@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 name="$(sed -ne $'s/^Module:[\t ]*//p' "$1")"
 name="${name:-runme}"
 unset dir
@@ -8,4 +8,4 @@ mkdir "$dir"
 cp "$dir/$name/$name.lid" "$dir/$name/$name.hdp"
 rsync -a "$HOME/lib/dylan/prebuilt/_build" "$dir/$name"
 cp "$1" "$dir/$name/$name.dylan"
-(cd "$dir/$name" && dylan-compiler -build "$name".lid) >/dev/null 2>&1
+(cd "$dir/$name" && dylan-compiler -build "$name".lid) >/dev/null 2>&1 || exit 2

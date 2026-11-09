@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-bracmat 'get$"'"$1"'"'
+bracmat 'get$"'"$1"'"' || exit 2
