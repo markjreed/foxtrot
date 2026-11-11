@@ -37,12 +37,12 @@ header('Content-Type: text/html');
  <body>
   <h1>Foxtrot Translations</h1>
   <p>Version <?php include "version.txt"?></p>
-  <div id="comic"><div id="blackboard"><pre id="code">#include &lt;stdio.h>
+  <div id="comic"><div id="blackboard"><pre id="code">#include &lt;stdio.h&gt;
 int main(void)
 {
   int count;
   for(count=1;count&lt;=500;count++)
-    printf("I will not throw paper airplanes in class.");
+    printf("I will not throw paper airplanes in class.\n");
   return 0;
 }</pre>
    </div>
@@ -50,7 +50,8 @@ int main(void)
 
   <p>Transcribed blackboards in <a href="foxtrot_ccode.jpg">this picture</a> from alternate
    universes where Jason chose a language other than C (and also to
-   output newlines).</p>
+   output newlines). All code handwritten, mostly by me, but some was contributed by
+   former coworkers; I no longer recall who coded what.</p>
 
   <p>Select Language</p>
   <form>
