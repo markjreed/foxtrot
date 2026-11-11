@@ -50,7 +50,8 @@ int main(void)
 
   <p>Transcribed blackboards in <a href="foxtrot_ccode.jpg">this picture</a> from alternate
    universes where Jason chose a language other than C (and also to
-   output newlines). All code handwritten, mostly by me, but some was contributed by
+   output newlines).</p>
+   <p>All code handwritten, mostly by me, but some was contributed by
    former coworkers; I no longer recall who coded what.</p>
 
   <p>Select Language</p>
