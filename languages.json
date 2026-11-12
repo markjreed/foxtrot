@@ -20,6 +20,7 @@
     "asm-8086":     "Assembly (x86 under MS-DOS)",
     "asm-amd64":    "Assembly (AMD64 under Linux)",
     "asm-arm64":    "Assembly (ARM64 under macOS)",
+    "asm-mips":     "Assembly (MIPS under MARS)",
     "asm-sparc":    "Assembly (SPARC under Solaris)",
     "asm-vax":      "Assembly (VAX-11 under VMS)",
     "asm-z80":      "Assembly (Z80 on a TRS-80)",

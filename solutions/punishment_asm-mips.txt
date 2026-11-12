@@ -1,0 +1,14 @@
+.data
+message: 	.asciiz "I will not throw paper airplanes in class.\n"
+
+.text
+                li $s0, 500
+                li $v0,4
+                la $a0, message
+loop:
+                syscall
+                subi $s0,$s0,1
+                bne $s0,$0,loop
+                
+                li $v0,10
+                syscall
