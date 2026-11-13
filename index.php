@@ -115,7 +115,7 @@ int main(void)
    function fitCode() {
      var text = code.dataset.text, lines, probe, cw, lh, i, n, rows, chars, w,
          s, best = null, W = blackboard.clientWidth, H = blackboard.clientHeight,
-         BASE = 10, SINGLE_MAX = 12, GAP = 2;
+         BASE = 10, MAX_FONT = 28, GAP = 2, SQUEEZE = 0.75, scores = [];
      if (text === undefined) {
        text = code.dataset.text = code.textContent;
      }
@@ -141,13 +141,17 @@ int main(void)
          lines.slice(i, i + rows).forEach(function(l) { w = Math.max(w, l.length); });
          chars += w;
        }
-       s = Math.min(H / (rows * lh), W / (chars * cw));
-       if (n == 1 && s >= SINGLE_MAX) {
-         best = {n: 1, s: SINGLE_MAX};
-         break;
-       }
+       s = Math.min(H / (rows * lh), W / (chars * cw * SQUEEZE), MAX_FONT);
+       scores.push(s);
        if (!best || s > best.s) {
          best = {n: n, s: s};
+       }
+     }
+     /* Prefer fewer columns unless more columns buy a noticeably larger font. */
+     for (n = 1; n <= scores.length; ++n) {
+       if (scores[n - 1] >= best.s * 0.95) {
+         best = {n: n, s: scores[n - 1]};
+         break;
        }
      }
 
@@ -160,12 +164,13 @@ int main(void)
      code.style.fontSize = BASE + 'px';
      /* Refine with the real rendered size (matters for proportional fonts). */
      code.style.width = 'max-content';
-     s = Math.min(W / code.offsetWidth, H / code.offsetHeight) * BASE;
+     s = Math.min(W / (code.offsetWidth * SQUEEZE), H / code.offsetHeight) * BASE;
      code.style.width = '';
-     if (best.n == 1) {
-       s = Math.min(s, SINGLE_MAX);
-     }
+     s = Math.min(s, MAX_FONT);
      code.style.zoom = String(s / BASE * 0.99);
+     /* Condense horizontally, like chalk handwriting. */
+     code.style.transformOrigin = '0 50%';
+     code.style.transform = 'scaleX(' + SQUEEZE + ')';
    }
    function initialize() {
      blackboard = document.getElementById("blackboard")
