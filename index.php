@@ -14,12 +14,14 @@ header('Content-Type: text/html');
             background-image: url(foxtrot_ccode.jpg);
             padding-left: 2; padding-top: 0 }
    #blackboard { width: 533px; height: 240px; max-height: 240px;
-                 background-color: black;  word-wrap: break-word; overflow-y: scroll;
+                 background-color: black;  word-wrap: break-word; overflow: hidden;
                  color: white; margin-left: 0; margin-top: 0;
-                 scroll: auto; padding: 0; margin: 0; text-align: left }
+                 padding: 0; margin: 0; text-align: left;
+                 display: flex; align-items: center }
    #blackboard pre { margin: 0; font-family: "dejavu sans mono", "comic mono", "comic sans ms", sans-serif;
-                     font-size: 75%; padding-top: 0;}
-   #blackboard::-webkit-scrollbar { height: 0px; width: 0px; }
+                     font-size: 75%; padding-top: 0;
+                     display: flex; gap: 2ch; }
+   #blackboard pre div { font-family: inherit; }
    #programs::-webkit-scrollbar { -webkit-appearance: none; }
    #programs::-webkit-scrollbar:vertical { width: 11px; }
    #programs::-webkit-scrollbar-thumb  {
@@ -91,8 +93,8 @@ int main(void)
      xhr.open("GET", filename);
      xhr.onreadystatechange = function() {
        if (xhr.readyState==4) {
-         code.innerHTML =
-            xhr.responseText.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+         code.dataset.text = xhr.responseText;
+         fitCode();
        }
      }
      for (i=0; i<programs.options.length; ++i) {
@@ -107,13 +109,63 @@ int main(void)
    var blackboard, code, programs;
    function loadCode() {
      load(programs.options[programs.selectedIndex].value)
-     blackboard.scrollTop = 0;
    }
-   var show = false;
-   function scrollCode() {
-     if (blackboard.scrollHeight > blackboard.clientHeight) {
-        blackboard.scrollTop += 1;
+   /* Lay the text out in N side-by-side columns, each only as wide as its own
+      longest line, and pick the N that allows the largest font. */
+   function fitCode() {
+     var text = code.dataset.text, lines, probe, cw, lh, i, n, rows, chars, w,
+         s, best = null, W = blackboard.clientWidth, H = blackboard.clientHeight,
+         BASE = 10, SINGLE_MAX = 12, GAP = 2;
+     if (text === undefined) {
+       text = code.dataset.text = code.textContent;
      }
+     lines = text.replace(/\s+$/, '').split('\n').map(function(l) {
+       return l.replace(/\t/g, '        ');
+     });
+     /* Measure character cell size at the base font size. */
+     code.style.zoom = '';
+     code.style.fontSize = BASE + 'px';
+     code.textContent = '';
+     probe = document.createElement('div');
+     probe.textContent = new Array(10).fill('x'.repeat(100)).join('\n');
+     code.appendChild(probe);
+     cw = probe.offsetWidth / 100 / BASE;
+     lh = probe.offsetHeight / 10 / BASE;
+     code.removeChild(probe);
+
+     for (n = 1; n <= lines.length; ++n) {
+       rows = Math.ceil(lines.length / n);
+       chars = GAP * (n - 1);
+       for (i = 0; i < lines.length; i += rows) {
+         w = 1;
+         lines.slice(i, i + rows).forEach(function(l) { w = Math.max(w, l.length); });
+         chars += w;
+       }
+       s = Math.min(H / (rows * lh), W / (chars * cw));
+       if (n == 1 && s >= SINGLE_MAX) {
+         best = {n: 1, s: SINGLE_MAX};
+         break;
+       }
+       if (!best || s > best.s) {
+         best = {n: n, s: s};
+       }
+     }
+
+     rows = Math.ceil(lines.length / best.n);
+     for (i = 0; i < lines.length; i += rows) {
+       var col = document.createElement('div');
+       col.textContent = lines.slice(i, i + rows).join('\n');
+       code.appendChild(col);
+     }
+     code.style.fontSize = BASE + 'px';
+     /* Refine with the real rendered size (matters for proportional fonts). */
+     code.style.width = 'max-content';
+     s = Math.min(W / code.offsetWidth, H / code.offsetHeight) * BASE;
+     code.style.width = '';
+     if (best.n == 1) {
+       s = Math.min(s, SINGLE_MAX);
+     }
+     code.style.zoom = String(s / BASE * 0.99);
    }
    function initialize() {
      blackboard = document.getElementById("blackboard")
@@ -124,7 +176,11 @@ int main(void)
        window.location = programs.options[programs.selectedIndex].value;
      }
      programs.onchange = loadCode
-     setInterval(scrollCode,100);
+     window.onresize = fitCode
+     fitCode();
+     if (document.fonts && document.fonts.ready) {
+       document.fonts.ready.then(fitCode);
+     }
      if (window.location.hash) {
        h = decodeURIComponent(window.location.hash.substring(1)).toLowerCase()
        for (i=0; i<programs.options.length; ++i) {
